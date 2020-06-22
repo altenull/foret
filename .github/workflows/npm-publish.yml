@@ -22,7 +22,7 @@ jobs:
             ${{ runner.OS }}-build-
             ${{ runner.OS }}-
 
-      - name: install Dependencies
+      - name: install dependencies
         working-directory: ./foret-react
         run: npm install
 
@@ -35,7 +35,7 @@ jobs:
         run: npm ci
 
       - name: npm publish
-        working-directory: ${{env.working-directory}}
+        working-directory: ./foret-react
         run: npm publish
         env:
           NPM_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
