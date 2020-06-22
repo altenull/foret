@@ -6,7 +6,7 @@ on:
       - v*
 
 jobs:
-  build:
+  publish-npm:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,20 +29,6 @@ jobs:
       - name: build
         working-directory: ./foret-react
         run: npm run build
-
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: checkout source code
-        uses: actions/checkout@v2
-
-      - name: setup node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
 
       - name: npm ci
         working-directory: ./foret-react
