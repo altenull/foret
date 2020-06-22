@@ -36,9 +36,9 @@ jobs:
 
     steps:
       - name: checkout source code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
-      - name: setup node
+      - name: setup node.js
         uses: actions/setup-node@v1
         with:
           node-version: 12
@@ -52,4 +52,4 @@ jobs:
         working-directory: ${{env.working-directory}}
         run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NPM_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
