@@ -1,3 +1,3 @@
-# Foret Design System (React)
+# Foret (React)
 
 WIP;
