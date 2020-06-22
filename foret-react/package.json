@@ -1,5 +1,5 @@
 {
-  "name": "foret-react",
+  "name": "@altenull/foret-react",
   "version": "1.0.0-0",
   "description": "Foret design system for React",
   "keywords": [
@@ -7,10 +7,16 @@
     "design system",
     "react"
   ],
-  "author": "Heonyoung Kim <altenull@gamil.com> (https://github.com/altenull)",
+  "author": "Heonyoung Kim <altenull@gmail.com> (https://github.com/altenull)",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altenull/foret.git"
+  },
   "scripts": {
     "build": "tsc --outDir dist --declarationDir dist/types --declaration true && rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -46,5 +52,10 @@
     "@emotion/core": "^10.0.28",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/altenull/foret/issues"
+  },
+  "homepage": "https://github.com/altenull/foret#readme",
+  "main": "rollup.config.js"
 }
