@@ -8,6 +8,10 @@
     "react"
   ],
   "author": "Heonyoung Kim <altenull@gmail.com> (https://github.com/altenull)",
+  "bugs": {
+    "url": "https://github.com/altenull/foret/issues"
+  },
+  "homepage": "https://github.com/altenull/foret#readme",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "files": [
@@ -52,9 +56,5 @@
     "@emotion/core": "^10.0.28",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
-  },
-  "bugs": {
-    "url": "https://github.com/altenull/foret/issues"
-  },
-  "homepage": "https://github.com/altenull/foret#readme",
+  }
 }
