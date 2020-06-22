@@ -8,17 +8,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./foret-react
 
     steps:
       - name: checkout source code
         uses: actions/checkout@v2
-        working-directory: ${{env.working-directory}}
 
       - name: cache node modules
         uses: actions/cache@v1
-        working-directory: ${{env.working-directory}}
         with:
           path: node_modules
           key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
@@ -27,36 +23,32 @@ jobs:
             ${{ runner.OS }}-
 
       - name: install Dependencies
+        working-directory: ./foret-react
         run: npm install
-        working-directory: ${{env.working-directory}}
 
       - name: build
+        working-directory: ./foret-react
         run: npm run build
-        working-directory: ${{env.working-directory}}
 
   publish-npm:
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./foret-react
 
     steps:
       - name: checkout source code
         uses: actions/checkout@v1
-        working-directory: ${{env.working-directory}}
 
       - name: setup node
         uses: actions/setup-node@v1
-        working-directory: ${{env.working-directory}}
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
 
       - name: npm ci
+        working-directory: ./foret-react
         run: npm ci
-        working-directory: ${{env.working-directory}}
 
       - name: npm publish
-        run: npm publish
         working-directory: ${{env.working-directory}}
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
