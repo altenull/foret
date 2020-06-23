@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-          scope: @altenull
+          scope: '@altenull'
 
       - name: install dependencies
         working-directory: ./foret-react
