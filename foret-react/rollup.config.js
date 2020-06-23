@@ -15,7 +15,7 @@ export default {
   output: [
     {
       file: packageJson.module,
-      format: "es",
+      format: 'es',
     },
   ],
   plugins: [
@@ -23,6 +23,6 @@ export default {
     resolve(), // efficiently bundles third party dependencies we've installed in node_modules
     commonjs(), // enables transpilation into CommonJS (CJS) format
     typescript(),
-    babel({ extensions, include: ['src/**/*'], babelHelpers: 'runtime'})
-  ]
+    babel({ extensions, include: ['src/**/*'], babelHelpers: 'runtime' }),
+  ],
 };
