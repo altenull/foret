@@ -10,6 +10,7 @@ const heading1Styles = css`
   font-weight: ${fontWeights.light};
   font-size: 72px;
   line-height: 1.25;
+  letter-spacing: -1.2px;
 `;
 
 export const Heading1: React.FC<TypographyProps> = ({ children, ...props }: TypographyProps) => {
