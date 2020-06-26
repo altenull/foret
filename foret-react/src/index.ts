@@ -1,5 +1,5 @@
-import { Button } from './lib/components/Button/Button';
+import { PrimaryButton } from './lib/components/Button';
 import { Heading1, Heading2, Heading3, Paragraph } from './lib/typography';
 
-export { Button };
+export { PrimaryButton };
 export { Heading1, Heading2, Heading3, Paragraph };
