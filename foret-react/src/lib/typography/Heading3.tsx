@@ -13,10 +13,12 @@ const heading3Styles = css(resetTypography, setFontFace, {
   letterSpacing: '-0.5px',
 });
 
-export const Heading3: React.FC<TypographyProps> = ({ children, ...props }: TypographyProps) => {
+const Heading3: React.FC<TypographyProps> = ({ children, ...props }: TypographyProps) => {
   return (
     <h3 css={heading3Styles} {...props}>
       {children}
     </h3>
   );
 };
+
+export default Heading3;

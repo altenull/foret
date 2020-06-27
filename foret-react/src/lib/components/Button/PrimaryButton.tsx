@@ -24,10 +24,12 @@ const primaryButtonStyles = css(baseButtonStyles, primaryButtonEffectStyles, {
   color: colors.white,
 });
 
-export const PrimaryButton = ({ children, ...props }: ButtonProps) => {
+const PrimaryButton: React.FC<ButtonProps> = ({ children, ...props }: ButtonProps) => {
   return (
     <button css={primaryButtonStyles} {...props}>
       {children}
     </button>
   );
 };
+
+export default PrimaryButton;

@@ -12,10 +12,12 @@ const paragraphStyles = css(resetTypography, setFontFace, {
   lineHeight: 1.8,
 });
 
-export const Paragraph: React.FC<TypographyProps> = ({ children, ...props }: TypographyProps) => {
+const Paragraph: React.FC<TypographyProps> = ({ children, ...props }: TypographyProps) => {
   return (
     <p css={paragraphStyles} {...props}>
       {children}
     </p>
   );
 };
+
+export default Paragraph;
