@@ -13,24 +13,21 @@
     "url": "https://github.com/altenull/foret/issues"
   },
   "homepage": "https://github.com/altenull/foret/tree/master/foret-ng#readme",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/altenull/foret.git"
   },
+  "files": [
+    "dist/foret-ng"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build foret-ng --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~10.0.0",
     "@angular/common": "~10.0.0",
