@@ -2,4 +2,4 @@
  * Public API Surface of foret-ng
  */
 
-export * from './lib/foret-ng.module';
+export * from './lib/button';
