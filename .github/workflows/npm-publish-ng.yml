@@ -1,9 +1,9 @@
-name: NPM Publish
+name: Publish foret-ng to NPM
 
 on:
   push:
     tags:
-      - v*
+      - v*-ng
 
 jobs:
   publish-npm:
@@ -18,22 +18,22 @@ jobs:
         with:
           node-version: 12
           registry-url: https://registry.npmjs.org/
-          scope: '@altenull'
+          scope: "@altenull"
 
       - name: install dependencies
-        working-directory: ./foret-react
+        working-directory: ./foret-ng
         run: npm install
 
       - name: build
-        working-directory: ./foret-react
+        working-directory: ./foret-ng
         run: npm run build
 
       - name: npm ci
-        working-directory: ./foret-react
+        working-directory: ./foret-ng
         run: npm ci
 
       - name: npm publish
-        working-directory: ./foret-react
+        working-directory: ./foret-ng
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}

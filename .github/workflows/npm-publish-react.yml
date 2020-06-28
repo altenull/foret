@@ -1,0 +1,39 @@
+name: Publish foret-react to NPM
+
+on:
+  push:
+    tags:
+      - v*-react
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout source code
+        uses: actions/checkout@v2
+
+      - name: setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+          scope: "@altenull"
+
+      - name: install dependencies
+        working-directory: ./foret-react
+        run: npm install
+
+      - name: build
+        working-directory: ./foret-react
+        run: npm run build
+
+      - name: npm ci
+        working-directory: ./foret-react
+        run: npm ci
+
+      - name: npm publish
+        working-directory: ./foret-react
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
