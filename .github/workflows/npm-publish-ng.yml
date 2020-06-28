@@ -33,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: npm publish
-        working-directory: ./foret-ng
+        working-directory: ./foret-ng/dist/foret-ng
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
