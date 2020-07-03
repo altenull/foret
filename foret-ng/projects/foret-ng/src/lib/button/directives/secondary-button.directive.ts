@@ -1,39 +1,39 @@
-import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
-import { baseButtonStyles, buttonText } from '../utils/button.utils';
+import { Directive, HostListener, ElementRef, Renderer2 } from '@angular/core';
 import { colors } from '../../utils/color.utils';
+import { baseButtonStyles, buttonText } from '../utils/button.utils';
 
-const primaryButtonBackgroundColorSet = {
-  default: colors.foretGreen,
-  hover: colors.foretGreenDarken1,
-  active: colors.foretGreenDarken2,
-  disabled: colors.foretGreenLighten,
+const secondaryButtonBackgroundColorSet = {
+  default: colors.soil,
+  hover: colors.soilDarken1,
+  active: colors.soilDarken2,
+  disabled: colors.soilLighten,
 };
 
 @Directive({
-  selector: '[foretPrimaryButton]',
+  selector: '[foretSecondaryButton]',
 })
-export class PrimaryButtonDirective {
+export class SecondaryButtonDirective {
   isDisabled: boolean = false;
 
   @HostListener('mouseover') onMouseOver() {
     this.el.nativeElement.style.backgroundColor =
-      primaryButtonBackgroundColorSet.hover;
+      secondaryButtonBackgroundColorSet.hover;
     this.el.nativeElement.style.cursor = 'pointer';
   }
 
   @HostListener('mouseout') onMouseOut() {
     this.el.nativeElement.style.backgroundColor =
-      primaryButtonBackgroundColorSet.default;
+      secondaryButtonBackgroundColorSet.default;
   }
 
   @HostListener('mousedown') onMouseDown() {
     this.el.nativeElement.style.backgroundColor =
-      primaryButtonBackgroundColorSet.active;
+      secondaryButtonBackgroundColorSet.active;
     this.el.nativeElement.style.borderStyle = 'none';
   }
 
   @HostListener('focus') onFocus() {
-    this.el.nativeElement.style.boxShadow = 'rgba(46, 139, 87, 0.35) 0 0 0 3px';
+    this.el.nativeElement.style.boxShadow = 'rgba(89, 55, 21, 0.35) 0 0 0 3px';
   }
 
   @HostListener('blur') onBlur() {
@@ -45,17 +45,17 @@ export class PrimaryButtonDirective {
 
     this.isDisabled = nativeElement.hasAttribute('disabled');
 
-    const primaryButtonStyles = {
+    const secondaryButtonStyles = {
       ...baseButtonStyles,
       ...buttonText,
       color: colors.white,
       'background-color': this.isDisabled
-        ? primaryButtonBackgroundColorSet.disabled
-        : primaryButtonBackgroundColorSet.default,
+        ? secondaryButtonBackgroundColorSet.disabled
+        : secondaryButtonBackgroundColorSet.default,
     };
 
-    Object.keys(primaryButtonStyles).forEach((style) => {
-      renderer.setStyle(nativeElement, style, primaryButtonStyles[style]);
+    Object.keys(secondaryButtonStyles).forEach((style) => {
+      renderer.setStyle(nativeElement, style, secondaryButtonStyles[style]);
     });
 
     if (this.isDisabled) {
