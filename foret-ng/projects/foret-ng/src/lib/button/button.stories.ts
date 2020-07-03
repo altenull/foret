@@ -7,7 +7,8 @@ storiesOf('Button', module).add('primary button', () => ({
   },
   template: `
     <div style="margin: 32px;">
-      <button foretPrimaryButton>primary button</button>
+      <button foretPrimaryButton style="margin-right: 32px;">primary button</button>
+      <button foretPrimaryButton disabled>primary button</button>
     </div>
   `,
 }));
