@@ -6,6 +6,9 @@ export const colors = {
   foretGreenDarken2: '#267449', // darken - 16%
   foretGreenLighten: '#a7e1c1', // lighten - 64%
   soil: '#503715',
+  soilDarken1: '#493213', // darken - 8%
+  soilDarken2: '#432E11', // darken - 16%
+  soilLighten: '#E0BB8A', // lighten - 64%
   ink: '#262626',
   black: '#000000',
   white: '#ffffff',

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Heading1 } from './Heading1.tsx';
-import { Heading2 } from './Heading2.tsx';
-import { Heading3 } from './Heading3.tsx';
-import { Paragraph } from './Paragraph.tsx';
+import Heading1 from './Heading1.tsx';
+import Heading2 from './Heading2.tsx';
+import Heading3 from './Heading3.tsx';
+import Paragraph from './Paragraph.tsx';
 
 export default {
   title: 'Typography',
