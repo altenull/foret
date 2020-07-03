@@ -66,6 +66,7 @@ export class SecondaryButtonDirective {
 
     if (isDisabled) {
       this.el.nativeElement.style.cursor = 'not-allowed';
+      this.el.nativeElement.style.boxShadow = 'none';
     }
   }
 }
