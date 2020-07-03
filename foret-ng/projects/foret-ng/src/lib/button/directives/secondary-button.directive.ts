@@ -41,24 +41,30 @@ export class SecondaryButtonDirective {
   }
 
   constructor(private el: ElementRef, private renderer: Renderer2) {
-    const nativeElement = el.nativeElement;
+    this.isDisabled = el.nativeElement.hasAttribute('disabled');
 
-    this.isDisabled = nativeElement.hasAttribute('disabled');
+    this.initSecondaryButtonStyles(this.isDisabled);
+  }
 
+  initSecondaryButtonStyles(isDisabled: boolean): void {
     const secondaryButtonStyles = {
       ...baseButtonStyles,
       ...buttonText,
       color: colors.white,
-      'background-color': this.isDisabled
+      'background-color': isDisabled
         ? secondaryButtonBackgroundColorSet.disabled
         : secondaryButtonBackgroundColorSet.default,
     };
 
     Object.keys(secondaryButtonStyles).forEach((style) => {
-      renderer.setStyle(nativeElement, style, secondaryButtonStyles[style]);
+      this.renderer.setStyle(
+        this.el.nativeElement,
+        style,
+        secondaryButtonStyles[style]
+      );
     });
 
-    if (this.isDisabled) {
+    if (isDisabled) {
       this.el.nativeElement.style.cursor = 'not-allowed';
     }
   }

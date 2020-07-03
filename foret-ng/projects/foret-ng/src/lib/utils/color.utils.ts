@@ -10,6 +10,7 @@ export const colors = {
   soilDarken2: '#432E11', // darken - 16%
   soilLighten: '#E0BB8A', // lighten - 64%
   ink: '#262626',
+  paper: '#f5f5f0',
   black: '#000000',
   white: '#ffffff',
   danger: '#de2e21',

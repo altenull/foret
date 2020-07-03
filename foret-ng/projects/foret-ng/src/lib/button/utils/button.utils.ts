@@ -1,3 +1,5 @@
+import { fontWeights } from '../../utils/typography.utils';
+
 export const baseButtonStyles = {
   display: 'inline-flex',
   'justify-content': 'center',
@@ -13,7 +15,7 @@ export const baseButtonStyles = {
 
 export const buttonText = {
   'font-style': 'normal',
-  'font-weight': 600,
+  'font-weight': fontWeights.semiBold,
   'font-size': '18px',
   'text-transform': 'uppercase',
   'line-height': 1.25,

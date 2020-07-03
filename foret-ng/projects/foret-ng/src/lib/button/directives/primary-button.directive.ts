@@ -41,24 +41,30 @@ export class PrimaryButtonDirective {
   }
 
   constructor(private el: ElementRef, private renderer: Renderer2) {
-    const nativeElement = el.nativeElement;
+    this.isDisabled = el.nativeElement.hasAttribute('disabled');
 
-    this.isDisabled = nativeElement.hasAttribute('disabled');
+    this.initPrimaryButtonStyles(this.isDisabled);
+  }
 
+  initPrimaryButtonStyles(isDisabled: boolean): void {
     const primaryButtonStyles = {
       ...baseButtonStyles,
       ...buttonText,
       color: colors.white,
-      'background-color': this.isDisabled
+      'background-color': isDisabled
         ? primaryButtonBackgroundColorSet.disabled
         : primaryButtonBackgroundColorSet.default,
     };
 
     Object.keys(primaryButtonStyles).forEach((style) => {
-      renderer.setStyle(nativeElement, style, primaryButtonStyles[style]);
+      this.renderer.setStyle(
+        this.el.nativeElement,
+        style,
+        primaryButtonStyles[style]
+      );
     });
 
-    if (this.isDisabled) {
+    if (isDisabled) {
       this.el.nativeElement.style.cursor = 'not-allowed';
     }
   }
