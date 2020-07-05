@@ -2,14 +2,14 @@
 import { css, jsx } from '@emotion/core';
 import React, { useState } from 'react';
 import { Color } from '../../enums/color.enum';
-import { Paragraph } from '../../typography';
+import { Subtitle1 } from '../../typography';
 import { RadioButtonProps } from './models/radio-button-props';
 
 const radioButtonWrapperStyles = css({
   display: 'inline-block',
   position: 'relative',
   '& + &': {
-    marginTop: '4px',
+    marginTop: '16px',
   },
 });
 
@@ -113,7 +113,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
           <span css={radioOuterCircleStyles(checked, isHovered, isFocused)} />
           <span css={radioInnerCircleStyles(checked, isHovered)} />
         </div>
-        <Paragraph>{labelText}</Paragraph>
+        <Subtitle1>{labelText}</Subtitle1>
       </label>
     </div>
   );

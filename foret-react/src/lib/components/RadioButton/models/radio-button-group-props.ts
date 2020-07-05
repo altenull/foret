@@ -1,5 +1,3 @@
-import { RadioButtonProps } from './radio-button-props';
-
 export interface RadioButtonGroupProps {
   children: React.ReactNode;
   legendText: string;
