@@ -1,3 +1,6 @@
-export { PrimaryButton } from './lib/components/Button';
+import { RadioButton } from './lib/components/RadioButton';
+
+export { PrimaryButton, SecondaryButton } from './lib/components/Button';
+export { RadioButton, RadioButtonGroup } from './lib/components/RadioButton';
 
 export { Heading1, Heading2, Heading3, Paragraph } from './lib/typography';

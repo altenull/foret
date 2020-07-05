@@ -8,7 +8,7 @@ const heading3Styles = css(resetTypography, setFontFace, {
   fontStyle: 'normal',
   fontWeight: fontWeights.regular,
   fontSize: '36px',
-  color: Color.ink,
+  color: Color.Ink,
   lineHeight: 1.5,
   letterSpacing: '-0.5px',
 });
