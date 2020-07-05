@@ -4,21 +4,21 @@ import { Color } from '../enums/color.enum';
 import { TypographyProps } from './models/typography-props';
 import { fontWeights, resetTypography, setFontFace } from './utils/typography.utils';
 
-const subtitle1Styles = css(resetTypography, setFontFace, {
+const subtitle2Styles = css(resetTypography, setFontFace, {
   fontStyle: 'normal',
-  fontWeight: fontWeights.light,
-  fontSize: '18px',
+  fontWeight: fontWeights.semiBold,
+  fontSize: '16px',
   color: Color.Ink,
   lineHeight: 1.5,
-  letterSpacing: '0.5px',
+  letterSpacing: '0.25px',
 });
 
-const Subtitle1: React.FC<TypographyProps> = ({ children, ...props }: TypographyProps) => {
+const Subtitle2: React.FC<TypographyProps> = ({ children, ...props }: TypographyProps) => {
   return (
-    <div css={subtitle1Styles} {...props}>
+    <div css={subtitle2Styles} {...props}>
       {children}
     </div>
   );
 };
 
-export default Subtitle1;
+export default Subtitle2;
