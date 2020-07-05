@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
 import { baseButtonStyles, buttonText } from '../utils/button.utils';
-import { colors } from '../../utils/color.utils';
+import { Color } from '../../enums/color.enum';
 
 const primaryButtonBackgroundColorSet = {
-  default: colors.foretGreen,
-  hover: colors.foretGreenDarken1,
-  active: colors.foretGreenDarken2,
-  disabled: colors.foretGreenLighten,
+  default: Color.ForetGreen,
+  hover: Color.ForetGreenDarken1,
+  active: Color.ForetGreenDarken2,
+  disabled: Color.ForetGreenLighten,
 };
 
 @Directive({
@@ -50,7 +50,7 @@ export class PrimaryButtonDirective {
     const primaryButtonStyles = {
       ...baseButtonStyles,
       ...buttonText,
-      color: colors.white,
+      color: Color.White,
       'background-color': isDisabled
         ? primaryButtonBackgroundColorSet.disabled
         : primaryButtonBackgroundColorSet.default,

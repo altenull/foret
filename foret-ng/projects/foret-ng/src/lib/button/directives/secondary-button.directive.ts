@@ -1,12 +1,12 @@
 import { Directive, HostListener, ElementRef, Renderer2 } from '@angular/core';
-import { colors } from '../../utils/color.utils';
 import { baseButtonStyles, buttonText } from '../utils/button.utils';
+import { Color } from '../../enums/color.enum';
 
 const secondaryButtonBackgroundColorSet = {
-  default: colors.soil,
-  hover: colors.soilDarken1,
-  active: colors.soilDarken2,
-  disabled: colors.soilLighten,
+  default: Color.Soil,
+  hover: Color.SoilDarken1,
+  active: Color.SoilDarken2,
+  disabled: Color.SoilLighten,
 };
 
 @Directive({
@@ -50,7 +50,7 @@ export class SecondaryButtonDirective {
     const secondaryButtonStyles = {
       ...baseButtonStyles,
       ...buttonText,
-      color: colors.white,
+      color: Color.White,
       'background-color': isDisabled
         ? secondaryButtonBackgroundColorSet.disabled
         : secondaryButtonBackgroundColorSet.default,

@@ -2,13 +2,13 @@
 import { jsx, css } from '@emotion/core';
 import { resetTypography, fontWeights, setFontFace } from './utils/typography.utils';
 import { TypographyProps } from './models/typography-props';
-import { colors } from '../utils/color.utils';
+import { Color } from '../enums/color.enum';
 
 const paragraphStyles = css(resetTypography, setFontFace, {
   fontStyle: 'normal',
   fontWeight: fontWeights.regular,
   fontSize: '20px',
-  color: colors.ink,
+  color: Color.Ink,
   lineHeight: 1.8,
 });
 

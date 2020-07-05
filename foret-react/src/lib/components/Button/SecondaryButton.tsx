@@ -1,27 +1,27 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
-import { colors } from '../../utils/color.utils';
 import { baseButtonStyles } from './utils/button.utils';
 import { ButtonProps } from './models/button-props';
+import { Color } from '../../enums/color.enum';
 
 const secondaryButtonEffectStyles = css({
   '&:hover': {
-    backgroundColor: colors.soilDarken1,
+    backgroundColor: Color.SoilDarken1,
   },
   '&:active': {
-    backgroundColor: colors.soilDarken2,
+    backgroundColor: Color.SoilDarken2,
   },
   '&:focus': {
     boxShadow: `rgba(89, 55, 21, 0.35) 0 0 0 3px`,
   },
   '&:disabled': {
-    backgroundColor: colors.soilLighten,
+    backgroundColor: Color.SoilLighten,
   },
 });
 
 const secondaryButtonStyles = css(baseButtonStyles, secondaryButtonEffectStyles, {
-  backgroundColor: colors.soil,
-  color: colors.white,
+  backgroundColor: Color.Soil,
+  color: Color.White,
 });
 
 const SecondaryButton: React.FC<ButtonProps> = ({ children, ...props }: ButtonProps) => {
