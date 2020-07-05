@@ -11,6 +11,7 @@ export const colors = {
   soilLighten: '#E0BB8A', // lighten - 64%
   ink: '#262626',
   paper: '#f5f5f0',
+  stone: '#8c8c8c',
   black: '#000000',
   white: '#ffffff',
   danger: '#de2e21',
