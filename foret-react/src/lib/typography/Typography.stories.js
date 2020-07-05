@@ -5,6 +5,7 @@ import Heading3 from './Heading3.tsx';
 import Paragraph from './Paragraph.tsx';
 import Subtitle1 from './Subtitle1.tsx';
 import Subtitle2 from './Subtitle2.tsx';
+import SmallText from './SmallText.tsx';
 
 export default {
   title: 'Typography',
@@ -21,3 +22,5 @@ export const withParagraph = () => <Paragraph>Paragraph</Paragraph>;
 export const withSubtitle1 = () => <Subtitle1>Subtitle1</Subtitle1>;
 
 export const withSubtitle2 = () => <Subtitle2>Subtitle2</Subtitle2>;
+
+export const withSmallText = () => <SmallText>SmallText</SmallText>;
