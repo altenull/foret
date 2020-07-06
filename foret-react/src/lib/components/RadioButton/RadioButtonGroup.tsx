@@ -36,7 +36,7 @@ const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
 
   const getRadioButtons = () =>
     React.Children.map(children, (radioButton) => {
-      if (radioButton.props != null) {
+      if (React.isValidElement(radioButton)) {
         const { value, ...props } = radioButton.props;
 
         return (
@@ -49,6 +49,8 @@ const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
             {...props}
           />
         );
+      } else {
+        return radioButton;
       }
     });
 
