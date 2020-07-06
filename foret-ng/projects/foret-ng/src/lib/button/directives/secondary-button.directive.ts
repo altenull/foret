@@ -1,6 +1,6 @@
-import { Directive, HostListener, ElementRef, Renderer2 } from '@angular/core';
+import { Color } from '@altenull/foret-core';
+import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { baseButtonStyles, buttonText } from '../utils/button.utils';
-import { Color } from '../../enums/color.enum';
 
 const secondaryButtonBackgroundColorSet = {
   default: Color.Soil,
