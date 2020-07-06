@@ -1,0 +1,32 @@
+{
+  "name": "@altenull/foret-core",
+  "version": "1.0.0-0",
+  "description": "Foret design system core",
+  "keywords": [
+    "foret",
+    "design system",
+    "core"
+  ],
+  "author": "Heonyoung Kim <altenull@gmail.com> (https://github.com/altenull)",
+  "bugs": {
+    "url": "https://github.com/altenull/foret/issues"
+  },
+  "homepage": "https://github.com/altenull/foret/tree/master/foret-core#readme",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altenull/foret.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.9.6"
+  }
+}
