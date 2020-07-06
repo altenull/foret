@@ -21,19 +21,19 @@ jobs:
           scope: "@altenull"
 
       - name: install dependencies
-        working-directory: ./foret-react
+        working-directory: ./foret-core
         run: npm install
 
       - name: build
-        working-directory: ./foret-react
+        working-directory: ./foret-core
         run: npm run build
 
       - name: npm ci
-        working-directory: ./foret-react
+        working-directory: ./foret-core
         run: npm ci
 
       - name: npm publish
-        working-directory: ./foret-react
+        working-directory: ./foret-core
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
