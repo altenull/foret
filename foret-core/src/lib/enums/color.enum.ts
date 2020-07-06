@@ -1,4 +1,4 @@
-// Darken and lighten colors are from following link.
+// Darken and lighten colors were generated from following link.
 // https://pinetools.com/c-colors/
 export enum Color {
   ForetGreen = "#2e8b57",
