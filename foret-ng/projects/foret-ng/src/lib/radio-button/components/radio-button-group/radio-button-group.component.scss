@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+.__fieldset {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.__legend {
+  padding: 0;
+  border: none;
+  margin-bottom: 12px;
+}

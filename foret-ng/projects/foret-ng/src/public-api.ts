@@ -3,3 +3,4 @@
  */
 
 export * from './lib/button';
+export * from './lib/radio-button';
