@@ -1,7 +1,7 @@
 /** @jsx jsx */
+import { Color } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
 import React, { useState } from 'react';
-import { Color } from '../../enums/color.enum';
 import { Subtitle1 } from '../../typography';
 import { RadioButtonProps } from './models/radio-button-props';
 

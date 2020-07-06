@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, css } from '@emotion/core';
-import { baseButtonStyles } from './utils/button.utils';
+import { Color } from '@altenull/foret-core';
+import { css, jsx } from '@emotion/core';
 import { ButtonProps } from './models/button-props';
-import { Color } from '../../enums/color.enum';
+import { baseButtonStyles } from './utils/button.utils';
 
 const primaryButtonEffectStyles = css({
   '&:hover': {

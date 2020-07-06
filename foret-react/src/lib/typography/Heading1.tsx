@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, css } from '@emotion/core';
-import { resetTypography, fontWeights, setFontFace } from './utils/typography.utils';
+import { Color } from '@altenull/foret-core';
+import { css, jsx } from '@emotion/core';
 import { TypographyProps } from './models/typography-props';
-import { Color } from '../enums/color.enum';
+import { fontWeights, resetTypography, setFontFace } from './utils/typography.utils';
 
 const heading1Styles = css(resetTypography, setFontFace, {
   fontStyle: 'normal',
