@@ -1,11 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnInit,
-  HostListener,
-  HostBinding,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, HostListener, HostBinding } from '@angular/core';
 
 @Component({
   selector: 'foret-radio-button',

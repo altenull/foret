@@ -16,19 +16,16 @@ export class PrimaryButtonDirective {
   isDisabled: boolean = false;
 
   @HostListener('mouseover') onMouseOver() {
-    this.el.nativeElement.style.backgroundColor =
-      primaryButtonBackgroundColorSet.hover;
+    this.el.nativeElement.style.backgroundColor = primaryButtonBackgroundColorSet.hover;
     this.el.nativeElement.style.cursor = 'pointer';
   }
 
   @HostListener('mouseout') onMouseOut() {
-    this.el.nativeElement.style.backgroundColor =
-      primaryButtonBackgroundColorSet.default;
+    this.el.nativeElement.style.backgroundColor = primaryButtonBackgroundColorSet.default;
   }
 
   @HostListener('mousedown') onMouseDown() {
-    this.el.nativeElement.style.backgroundColor =
-      primaryButtonBackgroundColorSet.active;
+    this.el.nativeElement.style.backgroundColor = primaryButtonBackgroundColorSet.active;
     this.el.nativeElement.style.borderStyle = 'none';
   }
 
@@ -57,11 +54,7 @@ export class PrimaryButtonDirective {
     };
 
     Object.keys(primaryButtonStyles).forEach((style) => {
-      this.renderer.setStyle(
-        this.el.nativeElement,
-        style,
-        primaryButtonStyles[style]
-      );
+      this.renderer.setStyle(this.el.nativeElement, style, primaryButtonStyles[style]);
     });
 
     if (isDisabled) {

@@ -41,10 +41,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/foret-ng/tsconfig.lib.json",
-              "projects/foret-ng/tsconfig.spec.json"
-            ],
+            "tsConfig": ["projects/foret-ng/tsconfig.lib.json", "projects/foret-ng/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
           }
         }
