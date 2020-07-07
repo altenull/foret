@@ -3,16 +3,15 @@
 :host {
   display: inline-block;
   position: relative;
-  // TODO: Find out the way to able to use it.
-  // & + & {
-  //   margin-top: 16px;
-  // }
-}
 
-:host(.--hovered) {
-  .__radio-outer-circle {
-    border-color: $foret-green;
-    background-color: $paper;
+  :hover {
+    .__radio-outer-circle {
+      border-color: $foret-green;
+      background-color: $paper;
+    }
+    .__radio-inner-circle {
+      background-color: $paper;
+    }
   }
 }
 
@@ -36,6 +35,20 @@
   width: 24px;
   height: 24px;
   margin-right: 16px;
+
+  &--focused {
+    .__radio-outer-circle {
+      box-shadow: rgba($foret-green, 0.35) 0 0 0 3px;
+    }
+  }
+  &--checked {
+    .__radio-outer-circle {
+      border-color: $foret-green;
+    }
+    .__radio-inner-circle {
+      background-color: $foret-green !important;
+    }
+  }
 }
 
 .__radio-outer-circle {
@@ -47,13 +60,10 @@
   width: 24px;
   height: 24px;
   border: 1px solid;
-  // border-color: checked || isHovered ? Color.ForetGreen : Color.Stone;
+  border-color: $stone;
   border-radius: 50%;
   background-color: $white;
   transition: all 0.15s ease-in-out;
-  &--focused {
-    box-shadow: rgba($foret-green, 0.35) 0 0 0 3px;
-  }
 }
 
 .__radio-inner-circle {
@@ -63,6 +73,6 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  // background-color: checked ? Color.ForetGreen : isHovered ? Color.Paper : Color.White;
+  background-color: $white;
   transition: background-color 0.15s ease-in-out;
 }

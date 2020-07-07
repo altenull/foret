@@ -1,32 +1,31 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit, HostListener, HostBinding } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'foret-radio-button',
   templateUrl: './radio-button.component.html',
   styleUrls: ['./radio-button.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RadioButtonComponent implements OnInit {
-  @HostBinding('class.--hovered') hostHovered: boolean = false;
-
   @Input() id: string;
   @Input() labelText: string;
   @Input() value: string;
-  @Input() name: string;
   @Input() checked: boolean = false;
+
+  @Output() selectRadioButton: EventEmitter<void> = new EventEmitter();
 
   isFocused: boolean = false;
 
-  constructor() {}
+  // To be able to set its style property from radio-button-group, declare elementRef as public
+  constructor(public elementRef: ElementRef) {}
 
   ngOnInit(): void {}
 
-  @HostListener('mouseover') onMouseOver() {
-    this.hostHovered = true;
+  @HostListener('click') onClick() {
+    this.selectRadioButton.emit();
   }
 
-  @HostListener('mouseout') onMouseOut() {
-    this.hostHovered = false;
+  onChange(event: Event) {
+    event.stopPropagation();
   }
 
   onFocus(): void {

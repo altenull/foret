@@ -1,7 +1,19 @@
-<input class="__input" type="radio" [id]="id" [checked]="checked" (focus)="onFocus()" (blur)="onBlur()" />
+<input
+  class="__input"
+  type="radio"
+  [id]="id"
+  [checked]="checked"
+  (focus)="onFocus()"
+  (blur)="onBlur()"
+  (change)="onChange($event)"
+/>
 <label class="__label" htmlFor="{{ id }}" [attr.aria-label]="labelText">
-  <div class="__radio-circle-container">
-    <span class="__radio-outer-circle" [class.__radio-outer-circle--focused]="isFocused"></span>
+  <div
+    class="__radio-circle-container"
+    [class.__radio-circle-container--focused]="isFocused"
+    [class.__radio-circle-container--checked]="checked"
+  >
+    <span class="__radio-outer-circle"></span>
     <span class="__radio-inner-circle"></span>
   </div>
   {{ labelText }}
