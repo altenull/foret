@@ -1,4 +1,4 @@
-import { fontWeights } from '../../utils/typography.utils';
+import { FontWeight } from '@altenull/foret-core';
 
 export const baseButtonStyles = {
   display: 'inline-flex',
@@ -15,7 +15,7 @@ export const baseButtonStyles = {
 
 export const buttonText = {
   'font-style': 'normal',
-  'font-weight': fontWeights.semiBold,
+  'font-weight': FontWeight.semiBold,
   'font-size': '18px',
   'text-transform': 'uppercase',
   'line-height': 1.25,
