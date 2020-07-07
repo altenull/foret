@@ -1,0 +1,28 @@
+{
+  "name": "@altenull/foret-sass",
+  "version": "1.0.0-0",
+  "description": "Foret design system sass",
+  "keywords": [
+    "foret",
+    "design system",
+    "sass"
+  ],
+  "author": "Heonyoung Kim <altenull@gmail.com> (https://github.com/altenull)",
+  "bugs": {
+    "url": "https://github.com/altenull/foret/issues"
+  },
+  "homepage": "https://github.com/altenull/foret/tree/master/foret-sass#readme",
+  "main": "assets/_foret.scss",
+  "style": "assets/_foret.scss",
+  "files": [
+    "assets"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altenull/foret.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}
