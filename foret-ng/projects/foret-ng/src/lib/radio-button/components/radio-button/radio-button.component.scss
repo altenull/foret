@@ -25,6 +25,7 @@
 }
 
 .__label {
+  @include subtitle1();
   display: flex;
   align-items: center;
   cursor: pointer;
