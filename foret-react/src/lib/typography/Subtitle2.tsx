@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { Color } from '@altenull/foret-core';
+import { Color, FontWeight } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
 import { TypographyProps } from './models/typography-props';
-import { fontWeights, resetTypography, setFontFace } from './utils/typography.utils';
+import { resetTypography, setFontFace } from './utils/typography.utils';
 
 const subtitle2Styles = css(resetTypography, setFontFace, {
   fontStyle: 'normal',
-  fontWeight: fontWeights.semiBold,
+  fontWeight: FontWeight.semiBold,
   fontSize: '16px',
   color: Color.Ink,
   lineHeight: 1.5,
