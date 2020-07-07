@@ -1,0 +1,51 @@
+@import "../color";
+@import "../font-weight";
+
+// https://meyerweb.com/eric/tools/css/reset/
+@mixin resetTypography() {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+@mixin setFontFace() {
+  @import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap");
+
+  font-family: "Overpass", sans-serif;
+}
+
+@mixin smallText() {
+  @include resetTypography();
+  @include setFontFace();
+  font-size: normal;
+  font-weight: $light;
+  font-size: 15px;
+  color: $ink;
+  line-height: 1.35;
+  letter-spacing: 0.8px;
+}
+
+@mixin subtitle1() {
+  @include resetTypography();
+  @include setFontFace();
+  font-size: normal;
+  font-weight: $light;
+  font-size: 18px;
+  color: $ink;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+@mixin subtitle2() {
+  @include resetTypography();
+  @include setFontFace();
+  font-size: normal;
+  font-weight: $semiBold;
+  font-size: 16px;
+  color: $ink;
+  line-height: 1.5;
+  letter-spacing: 0.25px;
+}
