@@ -12,8 +12,8 @@
     "url": "https://github.com/altenull/foret/issues"
   },
   "homepage": "https://github.com/altenull/foret/tree/master/foret-sass#readme",
-  "main": "assets/_foret.scss",
-  "style": "assets/_foret.scss",
+  "main": "assets/stylesheets/_foret.scss",
+  "style": "assets/stylesheets/_foret.scss",
   "files": [
     "assets"
   ],
