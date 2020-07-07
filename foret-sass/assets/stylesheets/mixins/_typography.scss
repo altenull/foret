@@ -1,5 +1,4 @@
-@import "../color";
-@import "../font-weight";
+@import "../variables";
 
 // https://meyerweb.com/eric/tools/css/reset/
 @mixin resetTypography() {
@@ -11,13 +10,9 @@
   vertical-align: baseline;
 }
 
-@mixin setFontFace() {
-  font-family: "Overpass", sans-serif;
-}
-
 @mixin smallText() {
   @include resetTypography();
-  @include setFontFace();
+  font-family: $foret-font;
   font-style: normal;
   font-weight: $light;
   font-size: 15px;
@@ -28,7 +23,7 @@
 
 @mixin subtitle1() {
   @include resetTypography();
-  @include setFontFace();
+  font-family: $foret-font;
   font-style: normal;
   font-weight: $light;
   font-size: 18px;
@@ -39,7 +34,7 @@
 
 @mixin subtitle2() {
   @include resetTypography();
-  @include setFontFace();
+  font-family: $foret-font;
   font-style: normal;
   font-weight: $semiBold;
   font-size: 16px;
