@@ -1,0 +1,27 @@
+name: Publish foret-sass to NPM
+
+on:
+  push:
+    tags:
+      - v*-sass
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout source code
+        uses: actions/checkout@v2
+
+      - name: setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+          scope: "@altenull"
+
+      - name: npm publish
+        working-directory: ./foret-sass
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
