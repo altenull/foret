@@ -23,6 +23,7 @@ const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
   legendText,
   selectedValue,
   name,
+  disabled,
   onChange = () => {},
 }: RadioButtonGroupProps) => {
   const [selected, setSelected] = useState<string>(selectedValue);
@@ -45,6 +46,7 @@ const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
             name={name}
             value={value}
             checked={value === selected}
+            disabled={disabled}
             onChange={handleChange}
             {...props}
           />

@@ -22,11 +22,12 @@ const inputStyles = css({
   clip: 'rect(0, 0, 0, 0)',
 });
 
-const labelStyles = css({
-  display: 'flex',
-  alignItems: 'center',
-  cursor: 'pointer',
-});
+const labelStyles = (disabled: boolean) =>
+  css({
+    display: 'flex',
+    alignItems: 'center',
+    cursor: disabled ? 'initial' : 'pointer',
+  });
 
 const radioCircleContainerStyles = css({
   position: 'relative',
@@ -35,7 +36,7 @@ const radioCircleContainerStyles = css({
   marginRight: '16px',
 });
 
-const radioOuterCircleStyles = (checked: boolean, isHovered: boolean, isFocused: boolean) =>
+const radioOuterCircleStyles = (checked: boolean, disabled: boolean, isHovered: boolean, isFocused: boolean) =>
   css({
     position: 'absolute',
     left: '0',
@@ -45,14 +46,14 @@ const radioOuterCircleStyles = (checked: boolean, isHovered: boolean, isFocused:
     width: '24px',
     height: '24px',
     border: '1px solid',
-    borderColor: checked || isHovered ? Color.ForetGreen : Color.Stone,
+    borderColor: disabled ? Color.Fog : checked || isHovered ? Color.ForetGreen : Color.Stone,
     borderRadius: '50%',
-    backgroundColor: isHovered ? Color.Paper : Color.White,
+    backgroundColor: !disabled && isHovered ? Color.Paper : Color.White,
     transition: 'all 0.15s ease-in-out',
     ...(isFocused && { boxShadow: `rgba(46, 139, 87, 0.35) 0 0 0 3px` }),
   });
 
-const radioInnerCircleStyles = (checked: boolean, isHovered: boolean) =>
+const radioInnerCircleStyles = (checked: boolean, disabled: boolean, isHovered: boolean) =>
   css({
     position: 'absolute',
     left: '6px',
@@ -60,8 +61,24 @@ const radioInnerCircleStyles = (checked: boolean, isHovered: boolean) =>
     width: '12px',
     height: '12px',
     borderRadius: '50%',
-    backgroundColor: checked ? Color.ForetGreen : isHovered ? Color.Paper : Color.White,
+    backgroundColor: disabled
+      ? checked
+        ? Color.Fog
+        : Color.White
+      : checked
+      ? Color.ForetGreen
+      : isHovered
+      ? Color.Paper
+      : Color.White,
     transition: 'background-color 0.15s ease-in-out',
+  });
+
+const radioSubtitle1Style = (disabled: boolean) =>
+  css({
+    ...(disabled && {
+      color: Color.Fog,
+      transition: 'color 0.15s ease-in-out',
+    }),
   });
 
 const RadioButton: React.FC<RadioButtonProps> = ({
@@ -70,6 +87,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   value,
   name,
   checked,
+  disabled,
   onChange,
   ...props
 }: RadioButtonProps) => {
@@ -77,7 +95,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   const [isFocused, setIsFocused] = useState(false);
 
   const handleMouseOver = () => {
-    setIsHovered(true);
+    setIsHovered(!disabled && true);
   };
 
   const handleMouseOut = () => {
@@ -85,7 +103,7 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   };
 
   const handleFocus = () => {
-    setIsFocused(true);
+    setIsFocused(!disabled && true);
   };
 
   const handleBlur = () => {
@@ -103,17 +121,18 @@ const RadioButton: React.FC<RadioButtonProps> = ({
         type='radio'
         id={id}
         checked={checked}
+        disabled={disabled}
         onChange={handleChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
         {...props}
       />
-      <label css={labelStyles} htmlFor={id} aria-label={labelText}>
+      <label css={labelStyles(disabled)} htmlFor={id} aria-label={labelText}>
         <div css={radioCircleContainerStyles}>
-          <span css={radioOuterCircleStyles(checked, isHovered, isFocused)} />
-          <span css={radioInnerCircleStyles(checked, isHovered)} />
+          <span css={radioOuterCircleStyles(checked, disabled, isHovered, isFocused)} />
+          <span css={radioInnerCircleStyles(checked, disabled, isHovered)} />
         </div>
-        <Subtitle1>{labelText}</Subtitle1>
+        <Subtitle1 css={radioSubtitle1Style(disabled)}>{labelText}</Subtitle1>
       </label>
     </div>
   );

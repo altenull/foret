@@ -3,5 +3,6 @@ export interface RadioButtonGroupProps {
   legendText: string;
   selectedValue: string;
   name: string;
+  disabled: boolean;
   onChange: (newSelection: string, name: string, event: React.ChangeEvent<HTMLInputElement>) => void;
 }

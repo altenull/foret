@@ -25,3 +25,29 @@ export const withRadioButton = () => {
     </RadioButtonGroup>
   );
 };
+
+export const withDisabledRadioButton = () => {
+  return (
+    <RadioButtonGroup
+      legendText={`Can't select your option`}
+      selectedValue={'disabledRadioButton2'}
+      name={'sample-disabled-radio-button'}
+      disabled={true}>
+      <RadioButton
+        id={'disabled-radio-button-1'}
+        labelText={'Disabled Radio button 1'}
+        value={'disabledRadioButton1'}
+      />
+      <RadioButton
+        id={'disabled-radio-button-3'}
+        labelText={'Disabled Radio button 3'}
+        value={'disabledRadioButton3'}
+      />
+      <RadioButton
+        id={'disabled-radio-button-2'}
+        labelText={'Disabled Radio button 2'}
+        value={'disabledRadioButton2'}
+      />
+    </RadioButtonGroup>
+  );
+};
