@@ -14,6 +14,7 @@
   "homepage": "https://github.com/altenull/foret/tree/master/foret-sass#readme",
   "main": "assets/stylesheets/_foret.scss",
   "style": "assets/stylesheets/_foret.scss",
+  "sass": "assets/stylesheets/_foret.scss",
   "files": [
     "assets"
   ],
