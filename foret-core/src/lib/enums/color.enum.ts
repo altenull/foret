@@ -12,6 +12,7 @@ export enum Color {
   Ink = "#262626",
   Paper = "#f5f5f0",
   Stone = "#8c8c8c",
+  Fog = "#c6c6c6",
   Black = "#000000",
   White = "#ffffff",
   Danger = "#de2e21",
