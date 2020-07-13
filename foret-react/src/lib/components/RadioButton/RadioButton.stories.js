@@ -39,14 +39,14 @@ export const withDisabledRadioButton = () => {
         value={'disabledRadioButton1'}
       />
       <RadioButton
-        id={'disabled-radio-button-3'}
-        labelText={'Disabled Radio button 3'}
-        value={'disabledRadioButton3'}
-      />
-      <RadioButton
         id={'disabled-radio-button-2'}
         labelText={'Disabled Radio button 2'}
         value={'disabledRadioButton2'}
+      />
+      <RadioButton
+        id={'disabled-radio-button-3'}
+        labelText={'Disabled Radio button 3'}
+        value={'disabledRadioButton3'}
       />
     </RadioButtonGroup>
   );
