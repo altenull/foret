@@ -2,32 +2,14 @@
 import { Color } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
 import React, { useState } from 'react';
+import {
+  hiddenInputStyles,
+  inputSubtitle1Style,
+  inputWrapperStyles,
+  labelStyles,
+} from '../../shared/styles/input.styles';
 import { Subtitle1 } from '../../typography';
 import { CheckboxProps } from './models/checkbox-props';
-
-const checkboxWrapperStyles = css({
-  display: 'inline-block',
-  position: 'relative',
-  '& + &': {
-    marginTop: '16px',
-  },
-});
-
-const inputStyles = css({
-  position: 'absolute',
-  width: '1px',
-  height: '1px',
-  margin: '-1px',
-  overflow: 'hidden',
-  clip: 'rect(0, 0, 0, 0)',
-});
-
-const labelStyles = (disabled: boolean) =>
-  css({
-    display: 'flex',
-    alignItems: 'center',
-    cursor: disabled ? 'initial' : 'pointer',
-  });
 
 const roundSquareBoxContainerStyles = css({
   position: 'relative',
@@ -76,14 +58,6 @@ const checkMarkStyles = (checked: boolean) =>
     visibility: checked ? 'visible' : 'hidden',
   });
 
-const checkboxSubtitle1Style = (disabled: boolean) =>
-  css({
-    ...(disabled && {
-      color: Color.Fog,
-      transition: 'color 0.15s ease-in-out',
-    }),
-  });
-
 const Checkbox: React.FC<CheckboxProps> = ({
   id,
   labelText,
@@ -119,9 +93,9 @@ const Checkbox: React.FC<CheckboxProps> = ({
   };
 
   return (
-    <div css={checkboxWrapperStyles} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+    <div css={inputWrapperStyles} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
       <input
-        css={inputStyles}
+        css={hiddenInputStyles}
         type='checkbox'
         id={id}
         checked={isChecked}
@@ -136,7 +110,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
           <span css={roundSquareBoxStyles(isChecked, disabled, isHovered, isFocused)} />
           <span css={checkMarkStyles(isChecked)} />
         </div>
-        <Subtitle1 css={checkboxSubtitle1Style(disabled)}>{labelText}</Subtitle1>
+        <Subtitle1 css={inputSubtitle1Style(disabled)}>{labelText}</Subtitle1>
       </label>
     </div>
   );

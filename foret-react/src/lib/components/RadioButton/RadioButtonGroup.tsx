@@ -1,22 +1,10 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import React, { useState } from 'react';
+import { fieldSetStyles, legendStyles } from '../../shared/styles/form.styles';
 import { Subtitle2 } from '../../typography';
 import { RadioButtonGroupProps } from './models/radio-button-group-props';
 import RadioButton from './RadioButton';
-
-const fieldSetStyles = css({
-  display: 'inline-flex',
-  margin: 0,
-  padding: 0,
-  border: 'none',
-});
-
-const legendStyles = css({
-  padding: 0,
-  border: 'none',
-  marginBottom: '12px',
-});
 
 const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
   children,

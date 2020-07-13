@@ -2,32 +2,9 @@
 import { Color } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
 import React, { useState } from 'react';
+import { hiddenInputStyles, inputWrapperStyles, labelStyles } from '../../shared/styles/input.styles';
 import { Subtitle1 } from '../../typography';
 import { RadioButtonProps } from './models/radio-button-props';
-
-const radioButtonWrapperStyles = css({
-  display: 'inline-block',
-  position: 'relative',
-  '& + &': {
-    marginTop: '16px',
-  },
-});
-
-const inputStyles = css({
-  position: 'absolute',
-  width: '1px',
-  height: '1px',
-  margin: '-1px',
-  overflow: 'hidden',
-  clip: 'rect(0, 0, 0, 0)',
-});
-
-const labelStyles = (disabled: boolean) =>
-  css({
-    display: 'flex',
-    alignItems: 'center',
-    cursor: disabled ? 'initial' : 'pointer',
-  });
 
 const radioCircleContainerStyles = css({
   position: 'relative',
@@ -115,9 +92,9 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   };
 
   return (
-    <div css={radioButtonWrapperStyles} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+    <div css={inputWrapperStyles} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
       <input
-        css={inputStyles}
+        css={hiddenInputStyles}
         type='radio'
         id={id}
         checked={checked}
