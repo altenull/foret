@@ -28,10 +28,6 @@ jobs:
         working-directory: ./foret-react
         run: npm run build
 
-      - name: npm ci
-        working-directory: ./foret-react
-        run: npm ci
-
       - name: npm publish
         working-directory: ./foret-react
         run: npm publish --access public
