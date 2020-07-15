@@ -5,10 +5,12 @@ import {
   ContentChildren,
   EventEmitter,
   Input,
+  OnChanges,
   OnDestroy,
   OnInit,
   Output,
   QueryList,
+  SimpleChanges,
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -21,7 +23,7 @@ import { RadioButtonComponent } from '../radio-button/radio-button.component';
   styleUrls: ['./radio-button-group.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnDestroy {
+export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnChanges, OnDestroy {
   @ContentChildren(RadioButtonComponent) radioButtons: QueryList<RadioButtonComponent>;
 
   @Input() legendText: string;
@@ -33,23 +35,32 @@ export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnDe
 
   private destroyed$: Subject<boolean> = new Subject();
 
-  ngAfterContentInit() {
-    if (this.radioButtons.length > 1) {
-      this.setSpacingBetweenRadioButtons();
-    }
-
-    if (this.disabled) {
-      this.setDisabledState();
-    } else {
-      this.subscribeSelectRadioButtonEvent();
-    }
-
-    this.updateCheckedState();
-  }
-
   constructor() {}
 
   ngOnInit(): void {}
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['selectedValue'] && !!this.selectedValue) {
+      this.updateCheckedState();
+    }
+
+    if (changes['disabled']) {
+      this.updateDisabledState();
+    }
+  }
+
+  ngAfterContentInit() {
+    this.radioButtons.changes.subscribe(() => {
+      this.setSpacingBetweenRadioButtons();
+      this.subscribeSelectRadioButtonEvent();
+    });
+
+    this.setSpacingBetweenRadioButtons();
+    this.subscribeSelectRadioButtonEvent();
+
+    this.updateCheckedState();
+    this.updateDisabledState();
+  }
 
   ngOnDestroy() {
     this.destroyed$.next(true);
@@ -57,43 +68,55 @@ export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnDe
   }
 
   private setSpacingBetweenRadioButtons(): void {
-    this.radioButtons.toArray().forEach((radioButton: RadioButtonComponent, index: number) => {
-      const isNotFirstItem: boolean = index > 0;
+    if (this.radioButtons != null && this.radioButtons.length > 1) {
+      this.radioButtons.toArray().forEach((radioButton: RadioButtonComponent, index: number) => {
+        const isNotFirstItem: boolean = index > 0;
 
-      if (isNotFirstItem) {
-        radioButton.elementRef.nativeElement.style.marginTop = '16px';
-      }
-    });
-  }
-
-  private setDisabledState(): void {
-    this.radioButtons.toArray().forEach((radioButon: RadioButtonComponent) => (radioButon.disabled = this.disabled));
+        if (isNotFirstItem) {
+          radioButton.elementRef.nativeElement.style.marginTop = '16px';
+        }
+      });
+    }
   }
 
   private updateCheckedState(): void {
-    this.radioButtons
-      .toArray()
-      .forEach((radioButton: RadioButtonComponent) => (radioButton.checked = radioButton.value === this.selectedValue));
+    if (this.radioButtons != null) {
+      this.radioButtons
+        .toArray()
+        .forEach(
+          (radioButton: RadioButtonComponent) => (radioButton.checked = radioButton.value === this.selectedValue)
+        );
+    }
+  }
+
+  private updateDisabledState(): void {
+    if (this.radioButtons != null) {
+      this.radioButtons
+        .toArray()
+        .forEach((radioButon: RadioButtonComponent) => (radioButon.disabled = !!this.disabled));
+    }
   }
 
   private subscribeSelectRadioButtonEvent(): void {
-    this.radioButtons.toArray().forEach((radioButton: RadioButtonComponent) => {
-      radioButton.selectRadioButton.pipe(takeUntil(this.destroyed$)).subscribe(() => {
-        const isNewRadioButtonSelected: boolean = this.selectedValue !== radioButton.value;
+    if (this.radioButtons != null && !this.disabled) {
+      this.radioButtons.toArray().forEach((radioButton: RadioButtonComponent) => {
+        radioButton.selectRadioButton.pipe(takeUntil(this.destroyed$)).subscribe(() => {
+          const isNewRadioButtonSelected: boolean = this.selectedValue !== radioButton.value;
 
-        if (isNewRadioButtonSelected) {
-          const newSelection: string = radioButton.value;
+          if (isNewRadioButtonSelected) {
+            const newSelection: string = radioButton.value;
 
-          this.selectedValue = newSelection;
+            this.selectedValue = newSelection;
 
-          this.updateCheckedState();
+            this.updateCheckedState();
 
-          this.changeRadioButton.emit({
-            newSelection,
-            name: this.name,
-          });
-        }
+            this.changeRadioButton.emit({
+              newSelection,
+              name: this.name,
+            });
+          }
+        });
       });
-    });
+    }
   }
 }
