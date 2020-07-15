@@ -46,6 +46,7 @@ export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnCh
 
     if (changes['disabled']) {
       this.updateDisabledState();
+      this.subscribeSelectRadioButtonEvent();
     }
   }
 
