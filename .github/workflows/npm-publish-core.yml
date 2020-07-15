@@ -22,15 +22,11 @@ jobs:
 
       - name: install dependencies
         working-directory: ./foret-core
-        run: npm install
+        run: npm ci
 
       - name: build
         working-directory: ./foret-core
         run: npm run build
-
-      - name: npm ci
-        working-directory: ./foret-core
-        run: npm ci
 
       - name: npm publish
         working-directory: ./foret-core
