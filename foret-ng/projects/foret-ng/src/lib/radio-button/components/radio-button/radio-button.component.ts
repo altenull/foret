@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'foret-radio-button',
@@ -6,10 +6,24 @@ import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Outpu
   styleUrls: ['./radio-button.component.scss'],
 })
 export class RadioButtonComponent implements OnInit {
+  @HostBinding('class.--disabled') hostDisabled: boolean = false;
+
   @Input() id: string;
   @Input() labelText: string;
   @Input() value: string;
   @Input() checked: boolean = false;
+
+  get disabled(): boolean {
+    return this._disabled;
+  }
+  @Input()
+  set disabled(value: boolean) {
+    if (value != null) {
+      this._disabled = value;
+      this.hostDisabled = this._disabled;
+    }
+  }
+  private _disabled: boolean = false;
 
   @Output() selectRadioButton: EventEmitter<void> = new EventEmitter();
 

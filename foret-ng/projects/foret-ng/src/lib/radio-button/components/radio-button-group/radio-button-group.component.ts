@@ -27,6 +27,7 @@ export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnDe
   @Input() legendText: string;
   @Input() selectedValue: string;
   @Input() name: string;
+  @Input() disabled: boolean = false;
 
   @Output() changeRadioButton: EventEmitter<ChangeRadioButtonPayload> = new EventEmitter();
 
@@ -37,8 +38,13 @@ export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnDe
       this.setSpacingBetweenRadioButtons();
     }
 
-    this.updateCheckedRadioButton();
-    this.subscribeSelectRadioButtonEvent();
+    if (this.disabled) {
+      this.setDisabledState();
+    } else {
+      this.subscribeSelectRadioButtonEvent();
+    }
+
+    this.updateCheckedState();
   }
 
   constructor() {}
@@ -60,7 +66,11 @@ export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnDe
     });
   }
 
-  private updateCheckedRadioButton(): void {
+  private setDisabledState(): void {
+    this.radioButtons.toArray().forEach((radioButon: RadioButtonComponent) => (radioButon.disabled = this.disabled));
+  }
+
+  private updateCheckedState(): void {
     this.radioButtons
       .toArray()
       .forEach((radioButton: RadioButtonComponent) => (radioButton.checked = radioButton.value === this.selectedValue));
@@ -76,7 +86,7 @@ export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnDe
 
           this.selectedValue = newSelection;
 
-          this.updateCheckedRadioButton();
+          this.updateCheckedState();
 
           this.changeRadioButton.emit({
             newSelection,

@@ -3,16 +3,19 @@
   type="radio"
   [id]="id"
   [checked]="checked"
+  [disabled]="disabled"
   (focus)="onFocus()"
   (blur)="onBlur()"
   (change)="onChange($event)"
 />
-<label class="__label" htmlFor="{{ id }}" [attr.aria-label]="labelText">
-  <div
-    class="__radio-circle-container"
-    [class.__radio-circle-container--focused]="isFocused"
-    [class.__radio-circle-container--checked]="checked"
-  >
+<label
+  class="__label"
+  htmlFor="{{ id }}"
+  [attr.aria-label]="labelText"
+  [class.__label--focused]="isFocused"
+  [class.__label--checked]="checked"
+>
+  <div class="__radio-circle-container">
     <span class="__radio-outer-circle"></span>
     <span class="__radio-inner-circle"></span>
   </div>
