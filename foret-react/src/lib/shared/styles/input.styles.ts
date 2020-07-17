@@ -22,7 +22,7 @@ export const labelStyles = (disabled: boolean) =>
   css({
     display: 'flex',
     alignItems: 'center',
-    cursor: disabled ? 'initial' : 'pointer',
+    cursor: disabled ? 'not-allowed' : 'pointer',
   });
 
 export const inputSubtitle1Style = (disabled: boolean) =>
