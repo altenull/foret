@@ -1,0 +1,12 @@
+@mixin fieldSet() {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+@mixin legend() {
+  padding: 0;
+  border: none;
+  margin-bottom: 12px;
+}

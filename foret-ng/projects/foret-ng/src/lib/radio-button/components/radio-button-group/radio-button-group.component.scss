@@ -1,4 +1,5 @@
 @import '../../../../assets/stylesheets/foret';
+@import '../../../../assets/stylesheets/mixins/shared/form';
 
 :host {
   display: block;
@@ -6,15 +7,10 @@
 }
 
 .__fieldset {
-  display: inline-flex;
-  margin: 0;
-  padding: 0;
-  border: none;
+  @include fieldSet();
 }
 
 .__legend {
+  @include legend();
   @include subtitle2();
-  padding: 0;
-  border: none;
-  margin-bottom: 12px;
 }

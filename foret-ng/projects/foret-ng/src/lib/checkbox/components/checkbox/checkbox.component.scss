@@ -1,8 +1,8 @@
 @import '../../../../assets/stylesheets/foret';
+@import '../../../../assets/stylesheets/mixins/shared/input';
 
 :host {
-  display: inline-block;
-  position: relative;
+  @include inputWrapper();
 }
 
 :host(:hover) {
@@ -39,31 +39,12 @@
 }
 
 .__input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  @include hiddenInput();
 }
 
-// TODO: round-square-box
-// borderColor: disabled ? Color.Fog : checked || isHovered ? Color.ForetGreen : Color.Stone,
-// backgroundColor: disabled
-//   ? checked
-//     ? Color.Fog
-//     : Color.White
-//   : checked
-//   ? Color.ForetGreen
-//   : isHovered
-//   ? Color.Paper
-//   : Color.White,
-
 .__label {
+  @include label();
   @include subtitle1();
-  display: flex;
-  align-items: center;
-  cursor: pointer;
 
   &--focused {
     .__round-square-box {
