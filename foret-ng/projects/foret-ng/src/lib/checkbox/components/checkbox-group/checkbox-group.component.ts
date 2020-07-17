@@ -87,8 +87,9 @@ export class CheckboxGroupComponent implements OnInit, AfterContentInit, OnChang
           const { value } = checkbox;
 
           this.changeCheckbox.emit({
-            newChecked,
+            name: this.name,
             value,
+            newChecked,
           });
         });
       });
