@@ -34,14 +34,12 @@ export class RadioButtonComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  @HostListener('click') onClick() {
+  onChange(event: Event) {
+    event.stopPropagation();
+
     if (!this.disabled) {
       this.selectRadioButton.emit();
     }
-  }
-
-  onChange(event: Event) {
-    event.stopPropagation();
   }
 
   onFocus(): void {
