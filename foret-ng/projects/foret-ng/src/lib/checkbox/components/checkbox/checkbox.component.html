@@ -1,0 +1,23 @@
+<input
+  class="__input"
+  type="checkbox"
+  [id]="id"
+  [checked]="checked"
+  [disabled]="disabled"
+  (focus)="onFocus()"
+  (blur)="onBlur()"
+  (change)="onChange($event)"
+/>
+<label
+  class="__label"
+  htmlFor="{{ id }}"
+  [attr.aria-label]="labelText"
+  [class.__label--focused]="isFocused"
+  [class.__label--checked]="checked"
+>
+  <div class="__round-square-box-container">
+    <span class="__round-square-box"></span>
+    <span class="__check-mark"></span>
+  </div>
+  {{ labelText }}
+</label>

@@ -1,0 +1,120 @@
+@import '../../../../assets/stylesheets/foret';
+
+:host {
+  display: inline-block;
+  position: relative;
+}
+
+:host(:hover) {
+  .__label {
+    .__round-square-box {
+      border-color: $foret-green;
+      background-color: $paper;
+    }
+
+    &--checked {
+      .__round-square-box {
+        background-color: $foret-green;
+      }
+    }
+  }
+}
+
+:host(.--disabled) {
+  .__label {
+    cursor: not-allowed;
+    color: $fog;
+
+    .__round-square-box {
+      border-color: $fog;
+      background-color: $white;
+    }
+
+    &--checked {
+      .__round-square-box {
+        background-color: $fog;
+      }
+    }
+  }
+}
+
+.__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+// TODO: round-square-box
+// borderColor: disabled ? Color.Fog : checked || isHovered ? Color.ForetGreen : Color.Stone,
+// backgroundColor: disabled
+//   ? checked
+//     ? Color.Fog
+//     : Color.White
+//   : checked
+//   ? Color.ForetGreen
+//   : isHovered
+//   ? Color.Paper
+//   : Color.White,
+
+.__label {
+  @include subtitle1();
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &--focused {
+    .__round-square-box {
+      box-shadow: rgba($foret-green, 0.35) 0 0 0 3px;
+    }
+  }
+
+  &--checked {
+    .__round-square-box {
+      border-color: $foret-green;
+      background-color: $foret-green;
+    }
+
+    .__check-mark {
+      visibility: visible;
+    }
+  }
+}
+
+.__round-square-box-container {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+}
+
+.__round-square-box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  border: 1px solid;
+  border-color: $stone;
+  border-radius: 4px;
+  background-color: $white;
+  transition: all 0.15s ease-in-out;
+}
+
+.__check-mark {
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  width: 14px;
+  height: 6px;
+  border-left: 2px solid $white;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid $white;
+  transform: rotate(-45deg);
+  visibility: hidden;
+}
