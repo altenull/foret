@@ -105,15 +105,15 @@ export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnCh
           const isNewRadioButtonSelected: boolean = this.selectedValue !== radioButton.value;
 
           if (isNewRadioButtonSelected) {
-            const newSelection: string = radioButton.value;
+            const newSelectedValue: string = radioButton.value;
 
-            this.selectedValue = newSelection;
+            this.selectedValue = newSelectedValue;
 
             this.updateCheckedState();
 
             this.changeRadioButton.emit({
-              newSelection,
               name: this.name,
+              newSelectedValue,
             });
           }
         });
