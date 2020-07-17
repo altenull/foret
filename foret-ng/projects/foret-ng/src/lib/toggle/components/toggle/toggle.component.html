@@ -1,0 +1,22 @@
+<input
+  class="__input"
+  type="checkbox"
+  [id]="id"
+  [attr.checked]="toggled"
+  [disabled]="disabled"
+  (focus)="onFocus()"
+  (blur)="onBlur()"
+  (change)="onChange($event)"
+/>
+<label
+  class="__label"
+  htmlFor="{{ id }}"
+  [class.__label--focused]="isFocused"
+  [class.__label--toggled]="toggled"
+  [class.__label--disabled]="disabled"
+>
+  <div class="__toggle-switch-container">
+    <span class="__switch-wrapper"></span>
+    <span class="__switch"></span>
+  </div>
+</label>

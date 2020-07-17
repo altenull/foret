@@ -1,0 +1,68 @@
+@import '../../../../assets/stylesheets/foret';
+@import '../../../../assets/stylesheets/mixins/shared/input';
+
+:host {
+  @include inputWrapper();
+}
+
+.__input {
+  @include hiddenInput();
+}
+
+.__label {
+  @include label();
+
+  &--focused {
+    .__switch-wrapper {
+      box-shadow: rgba($foret-green, 0.35) 0 0 0 3px;
+    }
+  }
+
+  &--toggled {
+    .__switch-wrapper {
+      background-color: $foret-green;
+    }
+    .__switch {
+      transform: translateX(24px);
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+
+    .__switch-wrapper {
+      background-color: $fog;
+    }
+  }
+}
+
+.__toggle-switch-container {
+  position: relative;
+  width: 48px;
+  height: 24px;
+}
+
+.__switch-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  box-sizing: border-box;
+  width: 48px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: $stone;
+  transition: all 0.15s ease-in-out;
+}
+
+.__switch {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: $white;
+  transform: translateX(0);
+  transition: transform 0.15s ease-in-out;
+}
