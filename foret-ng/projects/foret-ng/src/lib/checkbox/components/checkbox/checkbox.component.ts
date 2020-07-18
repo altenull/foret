@@ -35,9 +35,7 @@ export class CheckboxComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onChange(event: Event) {
-    event.stopPropagation();
-
+  onClick() {
     if (!this.disabled) {
       const newChecked: boolean = !this.checked;
 
@@ -47,6 +45,10 @@ export class CheckboxComponent implements OnInit {
         newChecked,
       });
     }
+  }
+
+  onChange(event: Event) {
+    event.stopPropagation();
   }
 
   onFocus(): void {
