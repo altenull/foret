@@ -1,4 +1,5 @@
 import React from 'react';
+import { StorybookTemplate } from '../../storybook-util';
 import RadioButton from './RadioButton';
 import RadioButtonGroup from './RadioButtonGroup';
 
@@ -14,40 +15,44 @@ export const withRadioButton = () => {
   };
 
   return (
-    <RadioButtonGroup
-      legendText={'Select your option'}
-      selectedValue={'radioButton2'}
-      name={'sample-radio-button'}
-      onChange={customHandleChange}>
-      <RadioButton id={'radio-button-1'} labelText={'Radio button 1'} value={'radioButton1'} />
-      <RadioButton id={'radio-button-2'} labelText={'Radio button 2'} value={'radioButton2'} />
-      <RadioButton id={'radio-button-3'} labelText={'Radio button 3'} value={'radioButton3'} />
-    </RadioButtonGroup>
+    <StorybookTemplate>
+      <RadioButtonGroup
+        legendText={'Select your option'}
+        selectedValue={'radioButton2'}
+        name={'sample-radio-button'}
+        onChange={customHandleChange}>
+        <RadioButton id={'radio-button-1'} labelText={'Radio button 1'} value={'radioButton1'} />
+        <RadioButton id={'radio-button-2'} labelText={'Radio button 2'} value={'radioButton2'} />
+        <RadioButton id={'radio-button-3'} labelText={'Radio button 3'} value={'radioButton3'} />
+      </RadioButtonGroup>
+    </StorybookTemplate>
   );
 };
 
 export const withDisabledRadioButton = () => {
   return (
-    <RadioButtonGroup
-      legendText={`Can't select your option`}
-      selectedValue={'disabledRadioButton2'}
-      name={'sample-disabled-radio-button'}
-      disabled={true}>
-      <RadioButton
-        id={'disabled-radio-button-1'}
-        labelText={'Disabled Radio button 1'}
-        value={'disabledRadioButton1'}
-      />
-      <RadioButton
-        id={'disabled-radio-button-2'}
-        labelText={'Disabled Radio button 2'}
-        value={'disabledRadioButton2'}
-      />
-      <RadioButton
-        id={'disabled-radio-button-3'}
-        labelText={'Disabled Radio button 3'}
-        value={'disabledRadioButton3'}
-      />
-    </RadioButtonGroup>
+    <StorybookTemplate>
+      <RadioButtonGroup
+        legendText={`Can't select your option`}
+        selectedValue={'disabledRadioButton2'}
+        name={'sample-disabled-radio-button'}
+        disabled={true}>
+        <RadioButton
+          id={'disabled-radio-button-1'}
+          labelText={'Disabled Radio button 1'}
+          value={'disabledRadioButton1'}
+        />
+        <RadioButton
+          id={'disabled-radio-button-2'}
+          labelText={'Disabled Radio button 2'}
+          value={'disabledRadioButton2'}
+        />
+        <RadioButton
+          id={'disabled-radio-button-3'}
+          labelText={'Disabled Radio button 3'}
+          value={'disabledRadioButton3'}
+        />
+      </RadioButtonGroup>
+    </StorybookTemplate>
   );
 };

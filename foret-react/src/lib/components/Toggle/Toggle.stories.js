@@ -1,4 +1,5 @@
 import React from 'react';
+import { StorybookSpacing, StorybookTemplate } from '../../storybook-util';
 import Toggle from './Toggle';
 
 export default {
@@ -13,18 +14,24 @@ export const withToggle = () => {
   };
 
   return (
-    <React.Fragment>
+    <StorybookTemplate>
       <Toggle id={'toggle-1'} toggled onToggle={customHandleChange} />
+
+      <StorybookSpacing />
+
       <Toggle id={'toggle-2'} onToggle={customHandleChange} />
-    </React.Fragment>
+    </StorybookTemplate>
   );
 };
 
 export const withDisabledToggle = () => {
   return (
-    <React.Fragment>
+    <StorybookTemplate>
       <Toggle id={'toggle-1'} toggled disabled />
+
+      <StorybookSpacing />
+
       <Toggle id={'toggle-2'} disabled />
-    </React.Fragment>
+    </StorybookTemplate>
   );
 };

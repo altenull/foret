@@ -1,5 +1,6 @@
-import React from 'react';
 import { action } from '@storybook/addon-actions';
+import React from 'react';
+import { StorybookSpacing, StorybookTemplate } from '../../storybook-util';
 import PrimaryButton from './PrimaryButton';
 import SecondaryButton from './SecondaryButton';
 
@@ -8,19 +9,21 @@ export default {
 };
 
 export const withPrimaryButton = () => (
-  <div>
+  <StorybookTemplate>
     <PrimaryButton onClick={action('primary button clicked')}>primary button</PrimaryButton>
-    <br />
-    <br />
+
+    <StorybookSpacing />
+
     <PrimaryButton disabled={true}>primary button (disabled)</PrimaryButton>
-  </div>
+  </StorybookTemplate>
 );
 
 export const withSecondaryButton = () => (
-  <div>
+  <StorybookTemplate>
     <SecondaryButton onClick={action('secondary button clicked')}>secondary button</SecondaryButton>
-    <br />
-    <br />
+
+    <StorybookSpacing />
+
     <SecondaryButton disabled={true}>secondary button (disabled)</SecondaryButton>
-  </div>
+  </StorybookTemplate>
 );
