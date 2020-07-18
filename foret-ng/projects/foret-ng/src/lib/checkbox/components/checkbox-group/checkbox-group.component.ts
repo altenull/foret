@@ -36,7 +36,7 @@ export class CheckboxGroupComponent implements OnInit, AfterContentInit, OnChang
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['disabled']) {

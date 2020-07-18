@@ -43,7 +43,7 @@ export class PrimaryButtonDirective {
     this.initPrimaryButtonStyles(this.isDisabled);
   }
 
-  initPrimaryButtonStyles(isDisabled: boolean): void {
+  private initPrimaryButtonStyles(isDisabled: boolean): void {
     const primaryButtonStyles = {
       ...baseButtonStyles,
       ...buttonText,

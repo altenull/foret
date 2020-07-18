@@ -17,7 +17,7 @@ export class ToggleComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit() {}
 
   onChange(event: Event) {
     event.stopPropagation();
@@ -34,11 +34,11 @@ export class ToggleComponent implements OnInit {
     }
   }
 
-  onFocus(): void {
+  onFocus() {
     this.isFocused = true;
   }
 
-  onBlur(): void {
+  onBlur() {
     this.isFocused = false;
   }
 }

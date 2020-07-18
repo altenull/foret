@@ -43,7 +43,7 @@ export class SecondaryButtonDirective {
     this.initSecondaryButtonStyles(this.isDisabled);
   }
 
-  initSecondaryButtonStyles(isDisabled: boolean): void {
+  private initSecondaryButtonStyles(isDisabled: boolean): void {
     const secondaryButtonStyles = {
       ...baseButtonStyles,
       ...buttonText,

@@ -37,7 +37,7 @@ export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnCh
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['selectedValue'] && !!this.selectedValue) {

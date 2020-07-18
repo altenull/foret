@@ -32,7 +32,7 @@ export class RadioButtonComponent implements OnInit {
   // To be able to set its style property from radio-button-group, declare elementRef as public
   constructor(public elementRef: ElementRef) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {}
 
   onClick() {
     if (!this.disabled) {
@@ -44,11 +44,11 @@ export class RadioButtonComponent implements OnInit {
     event.stopPropagation();
   }
 
-  onFocus(): void {
+  onFocus() {
     this.isFocused = true;
   }
 
-  onBlur(): void {
+  onBlur() {
     this.isFocused = false;
   }
 }
