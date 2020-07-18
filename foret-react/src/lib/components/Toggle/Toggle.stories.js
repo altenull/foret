@@ -15,7 +15,7 @@ export const withToggle = () => {
 
   return (
     <StorybookTemplate>
-      <Toggle id={'toggle-1'} toggled onToggle={customHandleChange} />
+      <Toggle id={'toggle-1'} toggled={true} onToggle={customHandleChange} />
 
       <StorybookSpacing />
 
@@ -27,11 +27,11 @@ export const withToggle = () => {
 export const withDisabledToggle = () => {
   return (
     <StorybookTemplate>
-      <Toggle id={'toggle-1'} toggled disabled />
+      <Toggle id={'disabled-toggle-1'} toggled={true} disabled={true} />
 
       <StorybookSpacing />
 
-      <Toggle id={'toggle-2'} disabled />
+      <Toggle id={'disabled-toggle-2'} disabled={true} />
     </StorybookTemplate>
   );
 };
