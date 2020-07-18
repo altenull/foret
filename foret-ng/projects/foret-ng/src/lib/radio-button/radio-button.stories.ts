@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/angular';
 import { RadioButtonModule } from './radio-button.module';
 
-storiesOf('RadioButton', module)
+storiesOf('components|RadioButton', module)
   .add('radio button', () => ({
     moduleMetadata: {
       imports: [RadioButtonModule],

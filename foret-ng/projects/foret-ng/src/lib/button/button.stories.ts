@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/angular';
 import { ButtonModule } from './button.module';
 
-storiesOf('Button', module)
+storiesOf('components|Button', module)
   .add('primary button', () => ({
     moduleMetadata: {
       imports: [ButtonModule],

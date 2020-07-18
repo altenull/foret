@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/angular';
 import { CheckboxModule } from './checkbox.module';
 
-storiesOf('Checkbox', module)
+storiesOf('components|Checkbox', module)
   .add('checkbox', () => ({
     moduleMetadata: {
       imports: [CheckboxModule],

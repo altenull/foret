@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/angular';
 import { ToggleModule } from './toggle.module';
 
-storiesOf('Toggle', module)
+storiesOf('components|Toggle', module)
   .add('toggle', () => ({
     moduleMetadata: {
       imports: [ToggleModule],
