@@ -2,7 +2,7 @@ import { moduleMetadata, storiesOf } from '@storybook/angular';
 import { StorybookUtilModule } from '../../storybook-util';
 import { ToggleModule } from './toggle.module';
 
-storiesOf('components|Toggle', module)
+storiesOf('components/Toggle', module)
   .addDecorator(moduleMetadata({ imports: [StorybookUtilModule, ToggleModule] }))
   .add('toggle', () => ({
     template: `

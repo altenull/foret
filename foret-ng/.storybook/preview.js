@@ -16,5 +16,6 @@ addParameters({
   ],
   options: {
     theme,
+    showRoots: true,
   },
 });

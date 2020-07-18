@@ -4,7 +4,7 @@ import Checkbox from './Checkbox';
 import CheckboxGroup from './CheckboxGroup';
 
 export default {
-  title: 'components|Checkbox',
+  title: 'components/Checkbox',
 };
 
 export const withCheckbox = () => {

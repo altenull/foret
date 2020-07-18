@@ -2,7 +2,7 @@ import { moduleMetadata, storiesOf } from '@storybook/angular';
 import { StorybookUtilModule } from '../../storybook-util';
 import { CheckboxModule } from './checkbox.module';
 
-storiesOf('components|Checkbox', module)
+storiesOf('components/Checkbox', module)
   .addDecorator(moduleMetadata({ imports: [StorybookUtilModule, CheckboxModule] }))
   .add('checkbox', () => ({
     template: `

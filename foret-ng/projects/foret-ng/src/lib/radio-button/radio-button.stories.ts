@@ -2,7 +2,7 @@ import { moduleMetadata, storiesOf } from '@storybook/angular';
 import { StorybookUtilModule } from '../../storybook-util';
 import { RadioButtonModule } from './radio-button.module';
 
-storiesOf('components|RadioButton', module)
+storiesOf('components/RadioButton', module)
   .addDecorator(moduleMetadata({ imports: [StorybookUtilModule, RadioButtonModule] }))
   .add('radio button', () => ({
     template: `

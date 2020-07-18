@@ -9,7 +9,7 @@ import Subtitle1 from './Subtitle1.tsx';
 import Subtitle2 from './Subtitle2.tsx';
 
 export default {
-  title: 'components|Typography',
+  title: 'components/Typography',
 };
 
 export const withHeading1 = () => (

@@ -2,7 +2,7 @@ import { moduleMetadata, storiesOf } from '@storybook/angular';
 import { StorybookUtilModule } from '../../storybook-util';
 import { ButtonModule } from './button.module';
 
-storiesOf('components|Button', module)
+storiesOf('components/Button', module)
   .addDecorator(moduleMetadata({ imports: [StorybookUtilModule, ButtonModule] }))
   .add('primary button', () => ({
     template: `

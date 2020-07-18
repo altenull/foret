@@ -3,7 +3,7 @@ import { StorybookSpacing, StorybookTemplate } from '../../storybook-util';
 import Toggle from './Toggle';
 
 export default {
-  title: 'components|Toggle',
+  title: 'components/Toggle',
 };
 
 export const withToggle = () => {
