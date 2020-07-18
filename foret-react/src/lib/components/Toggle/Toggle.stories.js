@@ -2,7 +2,7 @@ import React from 'react';
 import Toggle from './Toggle';
 
 export default {
-  title: 'Toggle',
+  title: 'components|Toggle',
 };
 
 export const withToggle = () => {

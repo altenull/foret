@@ -4,7 +4,7 @@ import PrimaryButton from './PrimaryButton';
 import SecondaryButton from './SecondaryButton';
 
 export default {
-  title: 'Button',
+  title: 'components|Button',
 };
 
 export const withPrimaryButton = () => (

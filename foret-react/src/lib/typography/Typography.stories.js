@@ -8,7 +8,7 @@ import Subtitle2 from './Subtitle2.tsx';
 import SmallText from './SmallText.tsx';
 
 export default {
-  title: 'Typography',
+  title: 'components|Typography',
 };
 
 export const withHeading1 = () => <Heading1>Heading 1</Heading1>;

@@ -3,7 +3,7 @@ import RadioButton from './RadioButton';
 import RadioButtonGroup from './RadioButtonGroup';
 
 export default {
-  title: 'RadioButton',
+  title: 'components|RadioButton',
 };
 
 export const withRadioButton = () => {
