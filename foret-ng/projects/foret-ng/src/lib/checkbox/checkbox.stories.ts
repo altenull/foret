@@ -7,10 +7,10 @@ storiesOf('components/Checkbox', module)
   .add('checkbox', () => ({
     template: `
       <foret-storybook-template>
-        <foret-checkbox-group [legendText]="'Select your option'" [name]="'sample-checkbox'">
-          <foret-checkbox [id]="'checkbox-1'" [labelText]="'Checkbox 1'" [value]="'checkbox1'"></foret-checkbox>
-          <foret-checkbox [id]="'checkbox-2'" [labelText]="'Checkbox 2'" [value]="'checkbox2'" [checked]="true"></foret-checkbox>
-          <foret-checkbox [id]="'checkbox-3'" [labelText]="'Checkbox 3'" [value]="'checkbox3'" [checked]="true"></foret-checkbox>
+        <foret-checkbox-group [legendText]="'checkbox'" [name]="'foret-ng-checkbox'">
+          <foret-checkbox [id]="'checkbox-1'" [labelText]="'option 1'" [value]="'checkbox1'"></foret-checkbox>
+          <foret-checkbox [id]="'checkbox-2'" [labelText]="'option 2'" [value]="'checkbox2'" [checked]="true"></foret-checkbox>
+          <foret-checkbox [id]="'checkbox-3'" [labelText]="'option 3'" [value]="'checkbox3'" [checked]="true"></foret-checkbox>
         </foret-checkbox-group>
       </foret-storybook-template>
     `,
@@ -18,14 +18,11 @@ storiesOf('components/Checkbox', module)
   .add('disabled checkbox', () => ({
     template: `
       <foret-storybook-template>
-        <foret-checkbox-group [legendText]="'Select your options'" [name]="'sample-checkbox'" [disabled]="disabled">
-          <foret-checkbox [id]="'checkbox-1'" [labelText]="'Disabled Checkbox 1'" [value]="'checkbox1'"></foret-checkbox>
-          <foret-checkbox [id]="'checkbox-2'" [labelText]="'Disabled Checkbox 2'" [value]="'checkbox2'" [checked]="true"></foret-checkbox>
-          <foret-checkbox [id]="'checkbox-3'" [labelText]="'Disabled Checkbox 3'" [value]="'checkbox3'"></foret-checkbox>
+        <foret-checkbox-group [legendText]="'checkbox'" [name]="'foret-ng-checkbox'" [disabled]="true">
+          <foret-checkbox [id]="'disabled-checkbox-1'" [labelText]="'option 1'" [value]="'disabledCheckbox1'"></foret-checkbox>
+          <foret-checkbox [id]="'disabled-checkbox-2'" [labelText]="'option 2'" [value]="'disabledCheckbox2'" [checked]="true"></foret-checkbox>
+          <foret-checkbox [id]="'disabled-checkbox-3'" [labelText]="'option 3'" [value]="'disabledCheckbox3'" [checked]="true"></foret-checkbox>
         </foret-checkbox-group>
       </foret-storybook-template>
     `,
-    props: {
-      disabled: true,
-    },
   }));

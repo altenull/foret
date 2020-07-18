@@ -7,10 +7,10 @@ storiesOf('components/RadioButton', module)
   .add('radio button', () => ({
     template: `
       <foret-storybook-template>
-        <foret-radio-button-group [legendText]="'Select your option'" [selectedValue]="'radioButton2'" [name]="'sample-radio-button'">
-          <foret-radio-button [id]="'radio-button-1'" [labelText]="'Radio button 1'" [value]="'radioButton1'"></foret-radio-button>
-          <foret-radio-button [id]="'radio-button-2'" [labelText]="'Radio button 2'" [value]="'radioButton2'"></foret-radio-button>
-          <foret-radio-button [id]="'radio-button-3'" [labelText]="'Radio button 3'" [value]="'radioButton3'"></foret-radio-button>
+        <foret-radio-button-group [legendText]="'radio button'" [selectedValue]="'radioButton2'" [name]="'foret-ng-radio-button'">
+          <foret-radio-button [id]="'radio-button-1'" [labelText]="'option 1'" [value]="'radioButton1'"></foret-radio-button>
+          <foret-radio-button [id]="'radio-button-2'" [labelText]="'option 2'" [value]="'radioButton2'"></foret-radio-button>
+          <foret-radio-button [id]="'radio-button-3'" [labelText]="'option 3'" [value]="'radioButton3'"></foret-radio-button>
         </foret-radio-button-group>
       </foret-storybook-template>
     `,
@@ -18,14 +18,11 @@ storiesOf('components/RadioButton', module)
   .add('disabled radio button', () => ({
     template: `
       <foret-storybook-template>
-        <foret-radio-button-group [legendText]="'Select your options'" [selectedValue]="'radioButton2'" [name]="'sample-radio-button'" [disabled]="disabled">
-          <foret-radio-button [id]="'radio-button-1'" [labelText]="'Disabled radio button 1'" [value]="'radioButton1'"></foret-radio-button>
-          <foret-radio-button [id]="'radio-button-2'" [labelText]="'Disabled radio button 2'" [value]="'radioButton2'"></foret-radio-button>
-          <foret-radio-button [id]="'radio-button-3'" [labelText]="'Disabled radio button 3'" [value]="'radioButton3'"></foret-radio-button>
+        <foret-radio-button-group [legendText]="'radio button'" [selectedValue]="'disabledRadioButton2'" [name]="'foret-ng-radio-button'" [disabled]="true">
+          <foret-radio-button [id]="'radio-button-1'" [labelText]="'option 1'" [value]="'disabledRadioButton1'"></foret-radio-button>
+          <foret-radio-button [id]="'radio-button-2'" [labelText]="'option 2'" [value]="'disabledRadioButton2'"></foret-radio-button>
+          <foret-radio-button [id]="'radio-button-3'" [labelText]="'option 3'" [value]="'disabledRadioButton3'"></foret-radio-button>
         </foret-radio-button-group>
       </foret-storybook-template>
     `,
-    props: {
-      disabled: true,
-    },
   }));
