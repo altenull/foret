@@ -11,6 +11,6 @@
 }
 
 .__legend {
-  @include legend();
   @include subtitle2();
+  @include legend();
 }
