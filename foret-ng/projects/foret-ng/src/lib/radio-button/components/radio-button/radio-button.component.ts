@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostBinding, Input, OnInit, Output, HostListener } from '@angular/core';
 
 @Component({
   selector: 'foret-radio-button',
@@ -34,12 +34,14 @@ export class RadioButtonComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onChange(event: Event) {
-    event.stopPropagation();
-
+  onClick() {
     if (!this.disabled) {
       this.selectRadioButton.emit();
     }
+  }
+
+  onChange(event: Event) {
+    event.stopPropagation();
   }
 
   onFocus(): void {
