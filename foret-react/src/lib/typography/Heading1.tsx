@@ -1,17 +1,7 @@
 /** @jsx jsx */
-import { Color, FontWeight } from '@altenull/foret-core';
-import { css, jsx } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import { TypographyProps } from './models/typography-props';
-import { resetTypography, setFontFace } from './utils/typography.utils';
-
-const heading1Styles = css(resetTypography, setFontFace, {
-  fontStyle: 'normal',
-  fontWeight: FontWeight.light,
-  fontSize: '72px',
-  color: Color.Ink,
-  lineHeight: 1.25,
-  letterSpacing: '-1.2px',
-});
+import { heading1Styles } from './utils/typography.utils';
 
 const Heading1: React.FC<TypographyProps> = ({ children, ...props }: TypographyProps) => {
   return (
