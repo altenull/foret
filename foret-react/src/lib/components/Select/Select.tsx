@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Color } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
-import React, { useState } from 'react';
+import React from 'react';
 import { subtitle1Styles, subtitle2Styles } from '../../typography/utils/typography.utils';
 import { SelectProps } from './models/select-props';
 
@@ -14,7 +14,6 @@ const selectStyles = css(subtitle1Styles, {
   appearance: 'none',
   boxSizing: 'border-box',
   display: 'block',
-  width: '100%',
   height: '48px',
   border: '1px solid',
   borderColor: Color.Stone,
@@ -42,6 +41,8 @@ const Select: React.FC<SelectProps> = ({
   id,
   name,
   legendText,
+  selectedValue,
+  placeHolder,
   disabled,
   onChange = () => {},
   ...props
@@ -57,8 +58,19 @@ const Select: React.FC<SelectProps> = ({
           {legendText}
         </label>
       )}
-
-      <select css={selectStyles} id={id} name={name} disabled={disabled} onChange={handleChange} {...props}>
+      <select
+        css={selectStyles}
+        id={id}
+        name={name}
+        disabled={disabled}
+        defaultValue={selectedValue || ''}
+        onChange={handleChange}
+        {...props}>
+        {!!placeHolder && (
+          <option disabled hidden value={''}>
+            {placeHolder}
+          </option>
+        )}
         {children}
       </select>
     </div>
