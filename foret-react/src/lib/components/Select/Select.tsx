@@ -1,39 +1,55 @@
 /** @jsx jsx */
 import { Color } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
-import React from 'react';
+import React, { useState } from 'react';
+import { ChevronDownIcon } from '../../shared/icons';
 import { subtitle1Styles, subtitle2Styles } from '../../typography/utils/typography.utils';
 import { SelectProps } from './models/select-props';
+
+const selectWrapperStyles = css({
+  display: 'inline-flex',
+  flexDirection: 'column',
+});
 
 const legendStyles = css(subtitle2Styles, {
   display: 'inline-block',
   marginBottom: '12px',
 });
 
-const selectStyles = css(subtitle1Styles, {
-  appearance: 'none',
-  boxSizing: 'border-box',
-  display: 'block',
-  height: '48px',
-  border: '1px solid',
-  borderColor: Color.Stone,
-  borderRadius: '4px',
-  padding: '0 16px',
-  color: Color.Ink,
-  outline: 'none',
-  cursor: 'pointer',
-  transition: 'all 0.15s ease-in-out',
-  '&:hover': {
-    borderColor: Color.Black,
-  },
-  '&:focus': {
-    boxShadow: 'rgba(46, 139, 87, 0.35) 0 0 0 3px',
-  },
-  '&:disabled': {
-    borderColor: Color.Fog,
-    color: Color.Fog,
-    cursor: 'not-allowed',
-  },
+const relativeBoxStyle = css({
+  position: 'relative',
+});
+
+const selectStyles = (isHovered: boolean) =>
+  css(subtitle1Styles, {
+    appearance: 'none',
+    boxSizing: 'border-box',
+    display: 'block',
+    height: '48px',
+    border: '1px solid',
+    borderColor: isHovered ? Color.Black : Color.Stone,
+    borderRadius: '4px',
+    padding: '0 48px 0 16px',
+    color: Color.Ink,
+    outline: 'none',
+    cursor: 'pointer',
+    transition: 'all 0.15s ease-in-out',
+    '&:focus': {
+      boxShadow: 'rgba(46, 139, 87, 0.35) 0 0 0 3px',
+    },
+    '&:disabled': {
+      borderColor: Color.Fog,
+      color: Color.Fog,
+      cursor: 'not-allowed',
+    },
+  });
+
+const chevronDownSelectStyles = css({
+  position: 'absolute',
+  top: '16px',
+  right: '16px',
+  pointerEvents: 'none',
+  transition: 'fill 0.15s ease-in-out',
 });
 
 const Select: React.FC<SelectProps> = ({
@@ -47,32 +63,51 @@ const Select: React.FC<SelectProps> = ({
   onChange = () => {},
   ...props
 }: SelectProps) => {
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  const handleMouseOver = () => {
+    setIsHovered(!disabled && true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovered(false);
+  };
+
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     onChange(event.target.value, id, name);
   };
 
   return (
-    <div>
-      {!!legendText && (
-        <label css={legendStyles} htmlFor={id} aria-label={legendText}>
-          {legendText}
-        </label>
-      )}
-      <select
-        css={selectStyles}
-        id={id}
-        name={name}
-        disabled={disabled}
-        defaultValue={selectedValue || ''}
-        onChange={handleChange}
-        {...props}>
-        {!!placeHolder && (
-          <option disabled hidden value={''}>
-            {placeHolder}
-          </option>
+    <div {...props}>
+      <div css={selectWrapperStyles}>
+        {!!legendText && (
+          <label css={legendStyles} htmlFor={id} aria-label={legendText}>
+            {legendText}
+          </label>
         )}
-        {children}
-      </select>
+
+        <div css={relativeBoxStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+          <select
+            css={selectStyles(isHovered)}
+            id={id}
+            name={name}
+            disabled={disabled}
+            defaultValue={selectedValue || ''}
+            onChange={handleChange}
+            {...props}>
+            {!!placeHolder && (
+              <option disabled hidden value={''}>
+                {placeHolder}
+              </option>
+            )}
+            {children}
+          </select>
+
+          <ChevronDownIcon
+            css={chevronDownSelectStyles}
+            color={disabled ? Color.Fog : isHovered ? Color.Black : Color.Stone}></ChevronDownIcon>
+        </div>
+      </div>
     </div>
   );
 };
