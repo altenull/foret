@@ -78,7 +78,7 @@ const Select: React.FC<SelectProps> = ({
   };
 
   return (
-    <div {...props}>
+    <div>
       <div css={selectWrapperStyles}>
         {!!legendText && (
           <label css={legendStyles} htmlFor={id} aria-label={legendText}>
