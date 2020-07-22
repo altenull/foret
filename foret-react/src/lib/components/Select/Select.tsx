@@ -44,13 +44,15 @@ const selectStyles = (isHovered: boolean) =>
     },
   });
 
-const chevronDownSelectStyles = css({
-  position: 'absolute',
-  top: '16px',
-  right: '16px',
-  pointerEvents: 'none',
-  transition: 'fill 0.15s ease-in-out',
-});
+const chevronDownSelectStyles = (isHovered: boolean, disabled: boolean) =>
+  css({
+    position: 'absolute',
+    top: '16px',
+    right: '16px',
+    pointerEvents: 'none',
+    transition: 'fill 0.15s ease-in-out',
+    fill: disabled ? Color.Fog : isHovered ? Color.Black : Color.Stone,
+  });
 
 const Select: React.FC<SelectProps> = ({
   children,
@@ -103,9 +105,7 @@ const Select: React.FC<SelectProps> = ({
             {children}
           </select>
 
-          <ChevronDownIcon
-            css={chevronDownSelectStyles}
-            color={disabled ? Color.Fog : isHovered ? Color.Black : Color.Stone}></ChevronDownIcon>
+          <ChevronDownIcon css={chevronDownSelectStyles(isHovered, disabled)}></ChevronDownIcon>
         </div>
       </div>
     </div>
