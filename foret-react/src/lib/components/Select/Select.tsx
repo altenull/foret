@@ -31,7 +31,6 @@ const selectStyles = (isHovered: boolean) =>
     borderColor: isHovered ? Color.Black : Color.Stone,
     borderRadius: '4px',
     padding: '0 48px 0 16px',
-    color: Color.Ink,
     outline: 'none',
     cursor: 'pointer',
     transition: 'all 0.15s ease-in-out',
