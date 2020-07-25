@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { ChevronDownIcon } from '../../shared/icons';
 import { subtitle1Styles, subtitle2Styles } from '../../typography/utils/typography.utils';
 import { SelectProps } from './models/select-props';
+import SelectItem from './SelectItem';
 
 const selectWrapperStyles = css({
   display: 'inline-flex',
@@ -97,11 +98,7 @@ const Select: React.FC<SelectProps> = ({
             defaultValue={selectedValue || ''}
             onChange={handleChange}
             {...props}>
-            {!!placeHolder && (
-              <option disabled hidden value={''}>
-                {placeHolder}
-              </option>
-            )}
+            {!!placeHolder && <SelectItem hidden={true} disabled={true} value={''} itemText={placeHolder}></SelectItem>}
             {children}
           </select>
 

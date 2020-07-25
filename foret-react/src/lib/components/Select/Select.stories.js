@@ -1,6 +1,7 @@
 import React from 'react';
 import { StorybookTemplate } from '../../storybook-util';
 import Select from './Select';
+import SelectItem from './SelectItem';
 
 export default {
   title: 'components/Select',
@@ -16,12 +17,12 @@ export const withSelect = () => {
   return (
     <StorybookTemplate>
       <Select id={'select'} name={'foret-react-select'} legendText={'select'} onChange={customHandleChange}>
-        <option value='dog'>Dog</option>
-        <option value='cat'>Cat</option>
-        <option value='hamster'>Hamster</option>
-        <option value='parrot'>Parrot</option>
-        <option value='spider'>Spider</option>
-        <option value='goldfish'>Goldfish</option>
+        <SelectItem value={'dog'} itemText={'Dog'} />
+        <SelectItem value={'cat'} itemText={'Cat'} disabled={true} />
+        <SelectItem value={'hamster'} itemText={'Hamster'} disabled={true} />
+        <SelectItem value={'parrot'} itemText={'Parrot'} />
+        <SelectItem value={'spider'} itemText={'Spider'} />
+        <SelectItem value={'goldfish'} itemText={'Goldfish'} />
       </Select>
     </StorybookTemplate>
   );
@@ -42,12 +43,12 @@ export const withPlaceHolderSelect = () => {
         legendText={'select'}
         placeHolder={'Please choose an option'}
         onChange={customHandleChange}>
-        <option value='dog'>Dog</option>
-        <option value='cat'>Cat</option>
-        <option value='hamster'>Hamster</option>
-        <option value='parrot'>Parrot</option>
-        <option value='spider'>Spider</option>
-        <option value='goldfish'>Goldfish</option>
+        <SelectItem value={'dog'} itemText={'Dog'} />
+        <SelectItem value={'cat'} itemText={'Cat'} disabled={true} />
+        <SelectItem value={'hamster'} itemText={'Hamster'} disabled={true} />
+        <SelectItem value={'parrot'} itemText={'Parrot'} />
+        <SelectItem value={'spider'} itemText={'Spider'} />
+        <SelectItem value={'goldfish'} itemText={'Goldfish'} />
       </Select>
     </StorybookTemplate>
   );
@@ -62,12 +63,12 @@ export const withDisabledSelect = () => {
         legendText={'select'}
         placeHolder={'Please choose an option'}
         disabled={true}>
-        <option value='dog'>Dog</option>
-        <option value='cat'>Cat</option>
-        <option value='hamster'>Hamster</option>
-        <option value='parrot'>Parrot</option>
-        <option value='spider'>Spider</option>
-        <option value='goldfish'>Goldfish</option>
+        <SelectItem value={'dog'} itemText={'Dog'} />
+        <SelectItem value={'cat'} itemText={'Cat'} disabled={true} />
+        <SelectItem value={'hamster'} itemText={'Hamster'} disabled={true} />
+        <SelectItem value={'parrot'} itemText={'Parrot'} />
+        <SelectItem value={'spider'} itemText={'Spider'} />
+        <SelectItem value={'goldfish'} itemText={'Goldfish'} />
       </Select>
     </StorybookTemplate>
   );
