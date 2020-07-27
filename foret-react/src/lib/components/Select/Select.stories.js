@@ -55,7 +55,7 @@ export const withGrouppedSelect = () => {
   );
 };
 
-export const withPlaceHolderSelect = () => {
+export const withPlaceholderSelect = () => {
   const customHandleChange = (newValue, id, name) => {
     console.log(`custom handle change(newValue): ${newValue}`);
     console.log(`custom handle change(id): ${id}`);
@@ -68,7 +68,7 @@ export const withPlaceHolderSelect = () => {
         id={'select'}
         name={'foret-react-select'}
         legendText={'select'}
-        placeHolder={'Please choose an option'}
+        placeholder={'Please choose an option'}
         onChange={customHandleChange}>
         <SelectItem value={'dog'} itemText={'Dog'} />
         <SelectItem value={'cat'} itemText={'Cat'} disabled={true} />
@@ -88,7 +88,7 @@ export const withDisabledSelect = () => {
         id={'disabled-select'}
         name={'foret-react-disabled-select'}
         legendText={'select'}
-        placeHolder={'Please choose an option'}
+        placeholder={'Please choose an option'}
         disabled={true}>
         <SelectItem value={'dog'} itemText={'Dog'} />
         <SelectItem value={'cat'} itemText={'Cat'} disabled={true} />

@@ -60,7 +60,7 @@ const Select: React.FC<SelectProps> = ({
   name,
   legendText,
   selectedValue,
-  placeHolder,
+  placeholder,
   disabled,
   onChange = () => {},
   ...props
@@ -97,7 +97,7 @@ const Select: React.FC<SelectProps> = ({
             defaultValue={selectedValue || ''}
             onChange={handleChange}
             {...props}>
-            {!!placeHolder && <SelectItem hidden={true} disabled={true} value={''} itemText={placeHolder}></SelectItem>}
+            {!!placeholder && <SelectItem hidden={true} disabled={true} value={''} itemText={placeholder}></SelectItem>}
             {children}
           </select>
 
