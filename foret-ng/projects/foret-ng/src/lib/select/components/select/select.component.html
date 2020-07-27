@@ -1,0 +1,27 @@
+<div class="__select-wrapper">
+  <label *ngIf="!!legendText" class="__legend" htmlFor="{{ id }}" [attr.aria-label]="legendText">
+    {{ legendText }}
+  </label>
+
+  <div class="relative-box">
+    <select
+      class="__select"
+      [id]="id"
+      [disabled]="disabled"
+      (change)="onChange($event)"
+      (mouseover)="onMouseOver()"
+      (mouseout)="onMouseOut()"
+    >
+      <option *ngIf="!!placeholder" selected hidden disabled>
+        {{ placeholder }}
+      </option>
+
+      <ng-content></ng-content>
+    </select>
+
+    <foret-chevron-down-icon
+      class="__icon"
+      [color]="disabled ? Color.Fog : isHovered ? Color.Black : Color.Stone"
+    ></foret-chevron-down-icon>
+  </div>
+</div>

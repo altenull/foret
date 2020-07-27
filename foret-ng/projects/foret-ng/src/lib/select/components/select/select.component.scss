@@ -1,0 +1,57 @@
+@import '../../../../assets/stylesheets/foret';
+
+:host {
+  display: block;
+  position: relative;
+}
+
+.__select-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.__legend {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.relative-box {
+  position: relative;
+
+  &:hover {
+    .__select {
+      border-color: $black;
+    }
+  }
+}
+
+.__select {
+  @include subtitle1();
+  appearance: none;
+  box-sizing: border-box;
+  display: block;
+  height: 48px;
+  border: 1px solid;
+  border-color: $stone;
+  border-radius: 4px;
+  padding: 0 48px 0 16px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+
+  &:focus {
+    box-shadow: rgba($foret-green, 0.35) 0 0 0 3px;
+  }
+  &:disabled {
+    border-color: $fog !important;
+    color: $fog !important;
+    cursor: not-allowed;
+  }
+}
+
+.__icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  pointer-events: none;
+}
