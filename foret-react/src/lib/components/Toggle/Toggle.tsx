@@ -3,7 +3,9 @@ import { jsx, css } from '@emotion/core';
 import React, { useState } from 'react';
 import { hiddenInputStyles, inputWrapperStyles, labelStyles } from '../../shared/styles/input.styles';
 import { ToggleProps } from './models/toggle-props';
-import { Color } from '@altenull/foret-core';
+import { Color, hexToRgb } from '@altenull/foret-core';
+
+const foretGreenRgb = hexToRgb(Color.ForetGreen);
 
 const toggleSwitchContainerStyles = css({
   position: 'relative',
@@ -23,7 +25,7 @@ const switchWrapperStyles = (toggled: boolean, disabled: boolean, isFocused: boo
     borderRadius: '12px',
     backgroundColor: disabled ? Color.Fog : toggled ? Color.ForetGreen : Color.Stone,
     transition: 'all 0.15s ease-in-out',
-    ...(isFocused && { boxShadow: `rgba(46, 139, 87, 0.35) 0 0 0 3px` }),
+    ...(isFocused && { boxShadow: `rgba(${foretGreenRgb.r}, ${foretGreenRgb.g}, ${foretGreenRgb.b}, 0.35) 0 0 0 3px` }),
   });
 
 const switchStyles = (toggled: boolean) =>

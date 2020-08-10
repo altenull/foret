@@ -1,8 +1,10 @@
 /** @jsx jsx */
-import { Color } from '@altenull/foret-core';
+import { Color, hexToRgb } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
 import { ButtonProps } from './models/button-props';
 import { baseButtonStyles } from './utils/button.utils';
+
+const foretGreenRgb = hexToRgb(Color.ForetGreen);
 
 const primaryButtonEffectStyles = css({
   '&:hover': {
@@ -12,7 +14,7 @@ const primaryButtonEffectStyles = css({
     backgroundColor: Color.ForetGreenDarken2,
   },
   '&:focus': {
-    boxShadow: `rgba(46, 139, 87, 0.35) 0 0 0 3px`,
+    boxShadow: `rgba(${foretGreenRgb.r}, ${foretGreenRgb.g}, ${foretGreenRgb.b}, 0.35) 0 0 0 3px`,
   },
   '&:disabled': {
     backgroundColor: Color.ForetGreenLighten,

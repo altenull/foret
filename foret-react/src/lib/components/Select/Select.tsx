@@ -1,11 +1,13 @@
 /** @jsx jsx */
-import { Color } from '@altenull/foret-core';
+import { Color, hexToRgb } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
 import React, { useState } from 'react';
 import { ChevronDownIcon } from '../../shared/icons';
 import { subtitle1Styles, subtitle2Styles } from '../../typography/utils/typography.utils';
 import { SelectProps } from './models/select-props';
 import SelectItem from './SelectItem';
+
+const foretGreenRgb = hexToRgb(Color.ForetGreen);
 
 const selectWrapperStyles = css({
   display: 'inline-flex',
@@ -35,7 +37,7 @@ const selectStyles = (isHovered: boolean) =>
     cursor: 'pointer',
     transition: 'all 0.15s ease-in-out',
     '&:focus': {
-      boxShadow: 'rgba(46, 139, 87, 0.35) 0 0 0 3px',
+      boxShadow: `rgba(${foretGreenRgb.r}, ${foretGreenRgb.g}, ${foretGreenRgb.b}, 0.35) 0 0 0 3px`,
     },
     '&:disabled': {
       borderColor: Color.Fog,

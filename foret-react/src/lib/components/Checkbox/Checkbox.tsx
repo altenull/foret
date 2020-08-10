@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { Color } from '@altenull/foret-core';
+import { Color, hexToRgb } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
 import React, { useState } from 'react';
 import {
@@ -10,6 +10,8 @@ import {
 } from '../../shared/styles/input.styles';
 import { Subtitle1 } from '../../typography';
 import { CheckboxProps } from './models/checkbox-props';
+
+const foretGreenRgb = hexToRgb(Color.ForetGreen);
 
 const roundSquareBoxContainerStyles = css({
   position: 'relative',
@@ -40,7 +42,7 @@ const roundSquareBoxStyles = (checked: boolean, disabled: boolean, isHovered: bo
       ? Color.Paper
       : Color.White,
     transition: 'all 0.15s ease-in-out',
-    ...(isFocused && { boxShadow: `rgba(46, 139, 87, 0.35) 0 0 0 3px` }),
+    ...(isFocused && { boxShadow: `rgba(${foretGreenRgb.r}, ${foretGreenRgb.g}, ${foretGreenRgb.b}, 0.35) 0 0 0 3px` }),
   });
 
 const checkMarkStyles = (checked: boolean) =>
