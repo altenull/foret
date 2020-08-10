@@ -1,4 +1,6 @@
-export const hexToRgb = (hex: string) => {
+import { RgbColor } from "../models/rgb-color";
+
+export const hexToRgb = (hex: string): RgbColor => {
   const rgbArray = hex
     .replace(
       /^#?([a-f\d])([a-f\d])([a-f\d])$/i,
