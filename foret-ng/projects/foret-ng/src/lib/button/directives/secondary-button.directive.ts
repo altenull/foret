@@ -1,4 +1,4 @@
-import { Color } from '@altenull/foret-core';
+import { Color, hexToRgb } from '@altenull/foret-core';
 import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { baseButtonStyles, buttonText } from '../utils/button.utils';
 
@@ -30,7 +30,8 @@ export class SecondaryButtonDirective {
   }
 
   @HostListener('focus') onFocus() {
-    this.el.nativeElement.style.boxShadow = 'rgba(89, 55, 21, 0.35) 0 0 0 3px';
+    const soilRgb = hexToRgb(Color.Soil);
+    this.el.nativeElement.style.boxShadow = `rgba(${soilRgb.r}, ${soilRgb.g}, ${soilRgb.b}, 0.35) 0 0 0 3px`;
   }
 
   @HostListener('blur') onBlur() {
