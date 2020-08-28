@@ -12,30 +12,27 @@ export const resetTypography = css({
 });
 
 export const setFontFace = () => {
-  const ibmPlexSansKrLight = require('../../assets/fonts/IBMPlexSansKR-Light.ttf');
-  const ibmPlexSansKrRegular = require('../../assets/fonts/IBMPlexSansKR-Regular.ttf');
-  const ibmPlexSansKrSemiBold = require('../../assets/fonts/IBMPlexSansKR-SemiBold.ttf');
-
   return css`
     @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
 
     @font-face {
       font-family: 'IBMPlexSansKR';
-      src: url(${ibmPlexSansKrLight}) format('truetype');
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Light.woff') format('woff');
       font-weight: 300;
       font-style: normal;
       unicode-range: U+AC00- U+D7A3;
     }
     @font-face {
       font-family: 'IBMPlexSansKR';
-      src: url(${ibmPlexSansKrRegular}) format('truetype');
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff')
+        format('woff');
       font-weight: 400;
       font-style: normal;
       unicode-range: U+AC00- U+D7A3;
     }
     @font-face {
       font-family: 'IBMPlexSansKR';
-      src: url(${ibmPlexSansKrSemiBold}) format('truetype');
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Text.woff') format('woff');
       font-weight: 600;
       font-style: normal;
       unicode-range: U+AC00- U+D7A3;
