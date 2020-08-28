@@ -2,7 +2,7 @@ import { FontWeight } from '@altenull/foret-core';
 import { css } from '@emotion/core';
 import { setFontFace } from '../../../typography/utils/typography.utils';
 
-const buttonTextStyles = css(setFontFace, {
+const buttonTextStyles = css(setFontFace(), {
   fontStyle: 'normal',
   fontWeight: FontWeight.semiBold,
   fontSize: '18px',
