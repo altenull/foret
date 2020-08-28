@@ -14,7 +14,29 @@ export const resetTypography = css({
 export const setFontFace = css`
   @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
 
-  font-family: 'Overpass', sans-serif;
+  @font-face {
+    font-family: 'IBMPlexSansKR';
+    src: url(${require('../../assets/fonts/IBMPlexSansKR-Light.ttf')}) format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    unicode-range: U+AC00- U+D7A3;
+  }
+  @font-face {
+    font-family: 'IBMPlexSansKR';
+    src: url(${require('../../assets/fonts/IBMPlexSansKR-Regular.ttf')}) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+AC00- U+D7A3;
+  }
+  @font-face {
+    font-family: 'IBMPlexSansKR';
+    src: url(${require('../../assets/fonts/IBMPlexSansKR-SemiBold.ttf')}) format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    unicode-range: U+AC00- U+D7A3;
+  }
+
+  font-family: 'Overpass', 'IBMPlexSansKR', sans-serif;
 `;
 
 export const heading1Styles = css(resetTypography, setFontFace, {
