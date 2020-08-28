@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from 'rollup-plugin-typescript2';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import babel from '@rollup/plugin-babel';
+import url from '@rollup/plugin-url';
 
 import packageJson from './package.json';
 
@@ -24,5 +25,12 @@ export default {
     commonjs(), // enables transpilation into CommonJS (CJS) format
     typescript(),
     babel({ extensions, include: ['src/**/*'], babelHelpers: 'runtime' }),
+    url({
+      // by default, rollup-plugin-url will not handle font files
+      include: ['**/*.ttf'],
+      // setting infinite limit will ensure that the files
+      // are always bundled with the code, not copied to /dist
+      limit: Infinity,
+    }),
   ],
 };
