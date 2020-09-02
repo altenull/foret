@@ -5,3 +5,7 @@ export { default as Paragraph } from './Paragraph';
 export { default as Subtitle1 } from './Subtitle1';
 export { default as Subtitle2 } from './Subtitle2';
 export { default as SmallText } from './SmallText';
+export { default as MarginalHeading1 } from './MarginalHeading1';
+export { default as MarginalHeading2 } from './MarginalHeading2';
+export { default as MarginalHeading3 } from './MarginalHeading3';
+export { default as MarginalParagraph } from './MarginalParagraph';
