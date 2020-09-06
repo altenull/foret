@@ -60,15 +60,7 @@ const checkMarkStyles = (checked: boolean) =>
     visibility: checked ? 'visible' : 'hidden',
   });
 
-const Checkbox: React.FC<CheckboxProps> = ({
-  id,
-  labelText,
-  value,
-  checked,
-  disabled,
-  onChange,
-  ...props
-}: CheckboxProps) => {
+const Checkbox: React.FC<CheckboxProps> = ({ id, labelText, checked, disabled, onChange, ...props }: CheckboxProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
   const [isChecked, setIsChecked] = useState(!!checked);
@@ -91,14 +83,14 @@ const Checkbox: React.FC<CheckboxProps> = ({
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(event.target.checked);
-    onChange(event.target.checked, id, event);
+    onChange(id, event.target.checked);
   };
 
   return (
     <div css={inputWrapperStyles} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
       <input
         css={hiddenInputStyles}
-        type='checkbox'
+        type={'checkbox'}
         id={id}
         checked={isChecked}
         disabled={disabled}

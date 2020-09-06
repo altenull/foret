@@ -12,8 +12,8 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
   disabled,
   onChange = () => {},
 }: CheckboxGroupProps) => {
-  const handleChange = (newChecked: boolean, id: string, event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(newChecked, id, event);
+  const handleChange = (id: string, newChecked: boolean) => {
+    onChange(id, newChecked);
   };
 
   const getCheckboxes = () =>
