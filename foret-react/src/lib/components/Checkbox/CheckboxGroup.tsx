@@ -9,7 +9,7 @@ import { fieldSetStyles, legendStyles } from '../../shared/styles/form.styles';
 const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
   children,
   legendText,
-  disabled,
+  disabled = false,
   onChange = () => {},
 }: CheckboxGroupProps) => {
   const handleChange = (id: string, newChecked: boolean) => {

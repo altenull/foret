@@ -41,7 +41,13 @@ const switchStyles = (checked: boolean) =>
     transition: 'transform 0.15s ease-in-out',
   });
 
-const Toggle: React.FC<ToggleProps> = ({ id, checked, disabled, onToggle, ...props }: ToggleProps) => {
+const Toggle: React.FC<ToggleProps> = ({
+  id,
+  checked = false,
+  disabled = false,
+  onToggle = () => {},
+  ...props
+}: ToggleProps) => {
   const [isFocused, setIsFocused] = useState(false);
   const [isChecked, setIsChecked] = useState(!!checked);
 
