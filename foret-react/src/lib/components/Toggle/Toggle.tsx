@@ -13,7 +13,7 @@ const toggleSwitchContainerStyles = css({
   height: '24px',
 });
 
-const switchWrapperStyles = (toggled: boolean, disabled: boolean, isFocused: boolean) =>
+const switchWrapperStyles = (checked: boolean, disabled: boolean, isFocused: boolean) =>
   css({
     position: 'absolute',
     left: '0',
@@ -23,12 +23,12 @@ const switchWrapperStyles = (toggled: boolean, disabled: boolean, isFocused: boo
     width: '48px',
     height: '24px',
     borderRadius: '12px',
-    backgroundColor: disabled ? Color.Fog : toggled ? Color.ForetGreen : Color.Stone,
+    backgroundColor: disabled ? Color.Fog : checked ? Color.ForetGreen : Color.Stone,
     transition: 'all 0.15s ease-in-out',
     ...(isFocused && { boxShadow: `rgba(${foretGreenRgb.r}, ${foretGreenRgb.g}, ${foretGreenRgb.b}, 0.35) 0 0 0 3px` }),
   });
 
-const switchStyles = (toggled: boolean) =>
+const switchStyles = (checked: boolean) =>
   css({
     position: 'absolute',
     left: '2px',
@@ -37,13 +37,13 @@ const switchStyles = (toggled: boolean) =>
     height: '20px',
     borderRadius: '50%',
     backgroundColor: Color.White,
-    transform: `translateX(${toggled ? '24px' : '0'})`,
+    transform: `translateX(${checked ? '24px' : '0'})`,
     transition: 'transform 0.15s ease-in-out',
   });
 
-const Toggle: React.FC<ToggleProps> = ({ id, toggled, disabled, onToggle, ...props }: ToggleProps) => {
+const Toggle: React.FC<ToggleProps> = ({ id, checked, disabled, onToggle, ...props }: ToggleProps) => {
   const [isFocused, setIsFocused] = useState(false);
-  const [isToggled, setIsToggled] = useState(!!toggled);
+  const [isChecked, setIsChecked] = useState(!!checked);
 
   const handleFocus = () => {
     setIsFocused(!disabled && true);
@@ -54,17 +54,17 @@ const Toggle: React.FC<ToggleProps> = ({ id, toggled, disabled, onToggle, ...pro
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setIsToggled(event.target.checked);
-    onToggle(event.target.checked, id, event);
+    setIsChecked(event.target.checked);
+    onToggle(id, event.target.checked);
   };
 
   return (
     <div css={inputWrapperStyles}>
       <input
         css={hiddenInputStyles}
-        type='checkbox'
+        type={'checkbox'}
         id={id}
-        checked={isToggled}
+        checked={isChecked}
         disabled={disabled}
         onChange={handleChange}
         onFocus={handleFocus}
@@ -73,8 +73,8 @@ const Toggle: React.FC<ToggleProps> = ({ id, toggled, disabled, onToggle, ...pro
       />
       <label css={labelStyles(disabled)} htmlFor={id}>
         <div css={toggleSwitchContainerStyles}>
-          <span css={switchWrapperStyles(isToggled, disabled, isFocused)} />
-          <span css={switchStyles(isToggled)} />
+          <span css={switchWrapperStyles(isChecked, disabled, isFocused)} />
+          <span css={switchStyles(isChecked)} />
         </div>
       </label>
     </div>

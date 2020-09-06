@@ -1,6 +1,6 @@
 export interface ToggleProps {
   id: string;
-  toggled: boolean;
+  checked: boolean;
   disabled: boolean;
-  onToggle: (newToggled: boolean, id: string, event: React.ChangeEvent<HTMLInputElement>) => void;
+  onToggle: (id: string, newChecked: boolean) => void;
 }
