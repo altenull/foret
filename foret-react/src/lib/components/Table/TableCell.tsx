@@ -14,6 +14,7 @@ const thStyles = css`
 
 const tdStyles = css`
   ${smallTextStyles}
+  vertical-align: middle;
   padding: 16px;
   border-bottom: 1px solid ${Color.Fog};
 `;
