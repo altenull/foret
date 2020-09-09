@@ -1,4 +1,4 @@
 export interface TogglePayload {
   id: string;
-  newToggled: boolean;
+  newChecked: boolean;
 }

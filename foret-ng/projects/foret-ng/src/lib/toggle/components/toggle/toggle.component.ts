@@ -8,7 +8,7 @@ import { TogglePayload } from '../../models/toggle';
 })
 export class ToggleComponent implements OnInit {
   @Input() id: string;
-  @Input() toggled: boolean = false;
+  @Input() checked: boolean = false;
   @Input() disabled: boolean = false;
 
   @Output() toggle: EventEmitter<TogglePayload> = new EventEmitter();
@@ -23,13 +23,13 @@ export class ToggleComponent implements OnInit {
     event.stopPropagation();
 
     if (!this.disabled) {
-      const newToggled: boolean = !this.toggled;
+      const newChecked: boolean = !this.checked;
 
-      this.toggled = newToggled;
+      this.checked = newChecked;
 
       this.toggle.emit({
         id: this.id,
-        newToggled,
+        newChecked,
       });
     }
   }

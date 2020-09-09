@@ -2,7 +2,7 @@
   class="__input"
   type="checkbox"
   [id]="id"
-  [attr.checked]="toggled"
+  [attr.checked]="checked"
   [disabled]="disabled"
   (focus)="onFocus()"
   (blur)="onBlur()"
@@ -12,7 +12,7 @@
   class="__label"
   htmlFor="{{ id }}"
   [class.__label--focused]="isFocused"
-  [class.__label--toggled]="toggled"
+  [class.__label--checked]="checked"
   [class.__label--disabled]="disabled"
 >
   <div class="__toggle-switch-container">

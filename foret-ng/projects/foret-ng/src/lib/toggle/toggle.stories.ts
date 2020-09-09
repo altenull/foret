@@ -7,7 +7,7 @@ storiesOf('components/Toggle', module)
   .add('toggle', () => ({
     template: `
       <foret-storybook-template>
-        <foret-toggle [id]="'toggle-1'" [toggled]="true"></foret-toggle>
+        <foret-toggle [id]="'toggle-1'" [checked]="true"></foret-toggle>
 
         <foret-storybook-spacing></foret-storybook-spacing>
 
@@ -18,7 +18,7 @@ storiesOf('components/Toggle', module)
   .add('disabled toggle', () => ({
     template: `
       <foret-storybook-template>
-        <foret-toggle [id]="'disabled-toggle-1'" [toggled]="true" [disabled]="true"></foret-toggle>
+        <foret-toggle [id]="'disabled-toggle-1'" [checked]="true" [disabled]="true"></foret-toggle>
 
         <foret-storybook-spacing></foret-storybook-spacing>
 
