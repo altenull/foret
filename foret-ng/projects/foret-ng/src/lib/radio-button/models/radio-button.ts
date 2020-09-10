@@ -1,4 +1,4 @@
 export interface ChangeRadioButtonPayload {
-  name: string;
+  id: string;
   newSelectedValue: string;
 }

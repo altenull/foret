@@ -28,7 +28,6 @@ export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnCh
 
   @Input() legendText: string;
   @Input() selectedValue: string;
-  @Input() name: string;
   @Input() disabled: boolean = false;
 
   @Output() changeRadioButton: EventEmitter<ChangeRadioButtonPayload> = new EventEmitter();
@@ -102,17 +101,16 @@ export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnCh
     if (this.radioButtons != null && !this.disabled) {
       this.radioButtons.toArray().forEach((radioButton: RadioButtonComponent) => {
         radioButton.selectRadioButton.pipe(takeUntil(this.destroyed$)).subscribe(() => {
-          const isNewRadioButtonSelected: boolean = this.selectedValue !== radioButton.value;
+          const newSelectedValue: string = radioButton.value;
+          const isNewRadioButtonSelected: boolean = this.selectedValue !== newSelectedValue;
 
           if (isNewRadioButtonSelected) {
-            const newSelectedValue: string = radioButton.value;
-
             this.selectedValue = newSelectedValue;
 
             this.updateCheckedState();
 
             this.changeRadioButton.emit({
-              name: this.name,
+              id: radioButton.id,
               newSelectedValue,
             });
           }
