@@ -64,7 +64,6 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   id,
   labelText,
   value,
-  name,
   checked,
   disabled,
   onChange,
@@ -90,14 +89,14 @@ const RadioButton: React.FC<RadioButtonProps> = ({
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(value, name, event);
+    onChange(id, value);
   };
 
   return (
     <div css={inputWrapperStyles} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
       <input
         css={hiddenInputStyles}
-        type='radio'
+        type={'radio'}
         id={id}
         checked={checked}
         disabled={disabled}

@@ -10,16 +10,15 @@ const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
   children,
   legendText,
   selectedValue,
-  name,
-  disabled,
+  disabled = false,
   onChange = () => {},
 }: RadioButtonGroupProps) => {
   const [selected, setSelected] = useState<string>(selectedValue);
 
-  const handleChange = (newSelection: string, name: string, event: React.ChangeEvent<HTMLInputElement>) => {
-    if (newSelection !== selected) {
-      setSelected(newSelection);
-      onChange(newSelection, name, event);
+  const handleChange = (id: string, newSelectedValue: string) => {
+    if (newSelectedValue !== selected) {
+      setSelected(newSelectedValue);
+      onChange(id, newSelectedValue);
     }
   };
 
@@ -31,7 +30,6 @@ const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
         return (
           <RadioButton
             key={value}
-            name={name}
             value={value}
             checked={value === selected}
             disabled={disabled}
