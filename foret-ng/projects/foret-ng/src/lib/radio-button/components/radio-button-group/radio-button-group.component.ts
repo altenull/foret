@@ -27,7 +27,7 @@ export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnCh
   @ContentChildren(RadioButtonComponent) radioButtons: QueryList<RadioButtonComponent>;
 
   @Input() legendText: string;
-  @Input() selectedValue: string;
+  @Input() checkedValue: string;
   @Input() disabled: boolean = false;
 
   @Output() changeRadioButton: EventEmitter<ChangeRadioButtonPayload> = new EventEmitter();
@@ -39,24 +39,24 @@ export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnCh
   ngOnInit() {}
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['selectedValue'] && !!this.selectedValue) {
+    if (changes['checkedValue'] && !!this.checkedValue) {
       this.updateCheckedState();
     }
 
     if (changes['disabled']) {
       this.updateDisabledState();
-      this.subscribeSelectRadioButtonEvent();
+      this.subscribeCheckRadioButtonEvent();
     }
   }
 
   ngAfterContentInit() {
     this.radioButtons.changes.subscribe(() => {
       this.setSpacingBetweenRadioButtons();
-      this.subscribeSelectRadioButtonEvent();
+      this.subscribeCheckRadioButtonEvent();
     });
 
     this.setSpacingBetweenRadioButtons();
-    this.subscribeSelectRadioButtonEvent();
+    this.subscribeCheckRadioButtonEvent();
 
     this.updateCheckedState();
     this.updateDisabledState();
@@ -84,7 +84,7 @@ export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnCh
       this.radioButtons
         .toArray()
         .forEach(
-          (radioButton: RadioButtonComponent) => (radioButton.checked = radioButton.value === this.selectedValue)
+          (radioButton: RadioButtonComponent) => (radioButton.checked = radioButton.value === this.checkedValue)
         );
     }
   }
@@ -97,21 +97,21 @@ export class RadioButtonGroupComponent implements OnInit, AfterContentInit, OnCh
     }
   }
 
-  private subscribeSelectRadioButtonEvent(): void {
+  private subscribeCheckRadioButtonEvent(): void {
     if (this.radioButtons != null && !this.disabled) {
       this.radioButtons.toArray().forEach((radioButton: RadioButtonComponent) => {
-        radioButton.selectRadioButton.pipe(takeUntil(this.destroyed$)).subscribe(() => {
-          const newSelectedValue: string = radioButton.value;
-          const isNewRadioButtonSelected: boolean = this.selectedValue !== newSelectedValue;
+        radioButton.checkRadioButton.pipe(takeUntil(this.destroyed$)).subscribe(() => {
+          const newCheckedValue: string = radioButton.value;
+          const isNewRadioButtonChecked: boolean = this.checkedValue !== newCheckedValue;
 
-          if (isNewRadioButtonSelected) {
-            this.selectedValue = newSelectedValue;
+          if (isNewRadioButtonChecked) {
+            this.checkedValue = newCheckedValue;
 
             this.updateCheckedState();
 
             this.changeRadioButton.emit({
               id: radioButton.id,
-              newSelectedValue,
+              newCheckedValue,
             });
           }
         });

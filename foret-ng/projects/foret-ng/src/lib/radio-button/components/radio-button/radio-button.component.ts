@@ -25,7 +25,7 @@ export class RadioButtonComponent implements OnInit {
   }
   private _disabled: boolean = false;
 
-  @Output() selectRadioButton: EventEmitter<void> = new EventEmitter();
+  @Output() checkRadioButton: EventEmitter<void> = new EventEmitter();
 
   isFocused: boolean = false;
 
@@ -36,7 +36,7 @@ export class RadioButtonComponent implements OnInit {
 
   onClick() {
     if (!this.disabled) {
-      this.selectRadioButton.emit();
+      this.checkRadioButton.emit();
     }
   }
 
