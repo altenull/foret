@@ -4,5 +4,5 @@ export interface RadioButtonProps {
   value: string;
   checked: boolean;
   disabled: boolean;
-  onChange: (id: string, newSelectedValue: string) => void;
+  onChange: (id: string, newCheckedValue: string) => void;
 }

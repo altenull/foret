@@ -9,16 +9,16 @@ import RadioButton from './RadioButton';
 const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
   children,
   legendText,
-  selectedValue,
+  checkedValue,
   disabled = false,
   onChange = () => {},
 }: RadioButtonGroupProps) => {
-  const [selected, setSelected] = useState<string>(selectedValue);
+  const [checked, setChecked] = useState<string>(checkedValue);
 
-  const handleChange = (id: string, newSelectedValue: string) => {
-    if (newSelectedValue !== selected) {
-      setSelected(newSelectedValue);
-      onChange(id, newSelectedValue);
+  const handleChange = (id: string, newCheckedValue: string) => {
+    if (newCheckedValue !== checked) {
+      setChecked(newCheckedValue);
+      onChange(id, newCheckedValue);
     }
   };
 
@@ -31,7 +31,7 @@ const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
           <RadioButton
             key={value}
             value={value}
-            checked={value === selected}
+            checked={value === checked}
             disabled={disabled}
             onChange={handleChange}
             {...props}
