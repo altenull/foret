@@ -3,7 +3,6 @@ export interface SelectCheckboxPayload {
 }
 
 export interface ChangeCheckboxPayload {
-  name: string;
-  value: string;
+  id: string;
   newChecked: boolean;
 }

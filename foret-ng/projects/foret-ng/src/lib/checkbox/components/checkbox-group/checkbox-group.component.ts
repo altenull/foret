@@ -27,7 +27,6 @@ export class CheckboxGroupComponent implements OnInit, AfterContentInit, OnChang
   @ContentChildren(CheckboxComponent) checkboxes: QueryList<CheckboxComponent>;
 
   @Input() legendText: string;
-  @Input() name: string;
   @Input() disabled: boolean = false;
 
   @Output() changeCheckbox: EventEmitter<ChangeCheckboxPayload> = new EventEmitter();
@@ -84,11 +83,10 @@ export class CheckboxGroupComponent implements OnInit, AfterContentInit, OnChang
     if (this.checkboxes != null && !this.disabled) {
       this.checkboxes.toArray().forEach((checkbox: CheckboxComponent) => {
         checkbox.selectCheckbox.pipe(takeUntil(this.destroyed$)).subscribe(({ newChecked }: SelectCheckboxPayload) => {
-          const { value } = checkbox;
+          const { id } = checkbox;
 
           this.changeCheckbox.emit({
-            name: this.name,
-            value,
+            id,
             newChecked,
           });
         });
