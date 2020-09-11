@@ -1,7 +1,7 @@
 import { Color } from '@altenull/foret-core';
 import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { ChangeSelectPayload } from '../../models/select';
+import { SelectOptionPayload } from '../../models/select';
 
 @Component({
   selector: 'foret-select',
@@ -17,12 +17,11 @@ import { ChangeSelectPayload } from '../../models/select';
 })
 export class SelectComponent implements OnInit, ControlValueAccessor {
   @Input() id: string;
-  @Input() name: string;
   @Input() legendText: string;
   @Input() placeholder: string;
   @Input() disabled: boolean = false;
 
-  @Output() changeSelect: EventEmitter<ChangeSelectPayload> = new EventEmitter();
+  @Output() selectOption: EventEmitter<SelectOptionPayload> = new EventEmitter();
 
   isHovered: boolean = false;
 
@@ -54,8 +53,8 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
 
   onChange(event: any) {
     this.onChangeHandler(event.target.value);
-    this.changeSelect.emit({
-      name: this.name,
+    this.selectOption.emit({
+      id: this.id,
       newSelectedValue: event.target.value,
     });
   }

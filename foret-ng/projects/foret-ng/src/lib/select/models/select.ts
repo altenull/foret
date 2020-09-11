@@ -1,4 +1,4 @@
-export interface ChangeSelectPayload {
-  name: string;
+export interface SelectOptionPayload {
+  id: string;
   newSelectedValue: string;
 }
