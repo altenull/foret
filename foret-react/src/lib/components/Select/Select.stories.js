@@ -9,46 +9,44 @@ export default {
 };
 
 export const withSelect = () => {
-  const customHandleChange = (newValue, id, name) => {
-    console.log(`custom handle change(newValue): ${newValue}`);
+  const customHandleChange = (id, newSelectedValue) => {
     console.log(`custom handle change(id): ${id}`);
-    console.log(`custom handle change(name): ${name}`);
+    console.log(`custom handle change(newSelectedValue): ${newSelectedValue}`);
   };
 
   return (
     <StorybookTemplate>
-      <Select id={'select'} name={'foret-react-select'} legendText={'select'} onChange={customHandleChange}>
-        <SelectItem value={'dog'} itemText={'Dog'} />
-        <SelectItem value={'cat'} itemText={'Cat'} disabled={true} />
-        <SelectItem value={'hamster'} itemText={'Hamster'} disabled={true} />
-        <SelectItem value={'parrot'} itemText={'Parrot'} />
-        <SelectItem value={'spider'} itemText={'Spider'} />
-        <SelectItem value={'goldfish'} itemText={'Goldfish'} />
+      <Select id={'select'} legendText={'select'} selectedValue={'option2'} onChange={customHandleChange}>
+        <SelectItem value={'option1'} labelText={'option 1'} />
+        <SelectItem value={'option2'} labelText={'option 2'} />
+        <SelectItem value={'option3'} labelText={'option 3'} disabled={true} />
+        <SelectItem value={'option4'} labelText={'option 4'} disabled={true} />
+        <SelectItem value={'option5'} labelText={'option 5'} />
+        <SelectItem value={'option6'} labelText={'option 6'} />
       </Select>
     </StorybookTemplate>
   );
 };
 
 export const withGrouppedSelect = () => {
-  const customHandleChange = (newValue, id, name) => {
-    console.log(`custom handle change(newValue): ${newValue}`);
+  const customHandleChange = (id, newSelectedValue) => {
     console.log(`custom handle change(id): ${id}`);
-    console.log(`custom handle change(name): ${name}`);
+    console.log(`custom handle change(newSelectedValue): ${newSelectedValue}`);
   };
 
   return (
     <StorybookTemplate>
-      <Select id={'select'} name={'foret-react-select'} legendText={'select'} onChange={customHandleChange}>
-        <SelectItemGroup label={'Category 1'}>
-          <SelectItem value={'dog'} itemText={'Dog'} />
-          <SelectItem value={'cat'} itemText={'Cat'} />
-          <SelectItem value={'hamster'} itemText={'Hamster'} />
+      <Select id={'groupped-select'} legendText={'select'} selectedValue={'option2'} onChange={customHandleChange}>
+        <SelectItemGroup labelText={'Category 1'}>
+          <SelectItem value={'option1'} labelText={'option 1'} />
+          <SelectItem value={'option2'} labelText={'option 2'} />
+          <SelectItem value={'option3'} labelText={'option 3'} disabled={true} />
         </SelectItemGroup>
 
-        <SelectItemGroup label={'Category 2'} disabled={true}>
-          <SelectItem value={'parrot'} itemText={'Parrot'} />
-          <SelectItem value={'spider'} itemText={'Spider'} />
-          <SelectItem value={'goldfish'} itemText={'Goldfish'} />
+        <SelectItemGroup labelText={'Category 2'} disabled={true}>
+          <SelectItem value={'option4'} labelText={'option 4'} disabled={true} />
+          <SelectItem value={'option5'} labelText={'option 5'} />
+          <SelectItem value={'option6'} labelText={'option 6'} />
         </SelectItemGroup>
       </Select>
     </StorybookTemplate>
@@ -56,26 +54,24 @@ export const withGrouppedSelect = () => {
 };
 
 export const withPlaceholderSelect = () => {
-  const customHandleChange = (newValue, id, name) => {
-    console.log(`custom handle change(newValue): ${newValue}`);
+  const customHandleChange = (id, newSelectedValue) => {
     console.log(`custom handle change(id): ${id}`);
-    console.log(`custom handle change(name): ${name}`);
+    console.log(`custom handle change(newSelectedValue): ${newSelectedValue}`);
   };
 
   return (
     <StorybookTemplate>
       <Select
-        id={'select'}
-        name={'foret-react-select'}
+        id={'select-with-placeholder'}
         legendText={'select'}
         placeholder={'Please choose an option'}
         onChange={customHandleChange}>
-        <SelectItem value={'dog'} itemText={'Dog'} />
-        <SelectItem value={'cat'} itemText={'Cat'} disabled={true} />
-        <SelectItem value={'hamster'} itemText={'Hamster'} disabled={true} />
-        <SelectItem value={'parrot'} itemText={'Parrot'} />
-        <SelectItem value={'spider'} itemText={'Spider'} />
-        <SelectItem value={'goldfish'} itemText={'Goldfish'} />
+        <SelectItem value={'option1'} labelText={'option 1'} />
+        <SelectItem value={'option2'} labelText={'option 2'} />
+        <SelectItem value={'option3'} labelText={'option 3'} disabled={true} />
+        <SelectItem value={'option4'} labelText={'option 4'} disabled={true} />
+        <SelectItem value={'option5'} labelText={'option 5'} />
+        <SelectItem value={'option6'} labelText={'option 6'} />
       </Select>
     </StorybookTemplate>
   );
@@ -84,18 +80,13 @@ export const withPlaceholderSelect = () => {
 export const withDisabledSelect = () => {
   return (
     <StorybookTemplate>
-      <Select
-        id={'disabled-select'}
-        name={'foret-react-disabled-select'}
-        legendText={'select'}
-        placeholder={'Please choose an option'}
-        disabled={true}>
-        <SelectItem value={'dog'} itemText={'Dog'} />
-        <SelectItem value={'cat'} itemText={'Cat'} disabled={true} />
-        <SelectItem value={'hamster'} itemText={'Hamster'} disabled={true} />
-        <SelectItem value={'parrot'} itemText={'Parrot'} />
-        <SelectItem value={'spider'} itemText={'Spider'} />
-        <SelectItem value={'goldfish'} itemText={'Goldfish'} />
+      <Select id={'disabled-select'} legendText={'select'} selectedValue={'option2'} disabled={true}>
+        <SelectItem value={'option1'} labelText={'option 1'} />
+        <SelectItem value={'option2'} labelText={'option 2'} />
+        <SelectItem value={'option3'} labelText={'option 3'} />
+        <SelectItem value={'option4'} labelText={'option 4'} />
+        <SelectItem value={'option5'} labelText={'option 5'} />
+        <SelectItem value={'option6'} labelText={'option 6'} />
       </Select>
     </StorybookTemplate>
   );

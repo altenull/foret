@@ -59,11 +59,10 @@ const chevronDownSelectStyles = (isHovered: boolean, disabled: boolean) =>
 const Select: React.FC<SelectProps> = ({
   children,
   id,
-  name,
   legendText,
   selectedValue,
   placeholder,
-  disabled,
+  disabled = false,
   onChange = () => {},
   ...props
 }: SelectProps) => {
@@ -78,7 +77,7 @@ const Select: React.FC<SelectProps> = ({
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    onChange(event.target.value, id, name);
+    onChange(id, event.target.value);
   };
 
   return (
@@ -94,12 +93,13 @@ const Select: React.FC<SelectProps> = ({
           <select
             css={selectStyles(isHovered)}
             id={id}
-            name={name}
             disabled={disabled}
             defaultValue={selectedValue || ''}
             onChange={handleChange}
             {...props}>
-            {!!placeholder && <SelectItem hidden={true} disabled={true} value={''} itemText={placeholder}></SelectItem>}
+            {!!placeholder && (
+              <SelectItem hidden={true} disabled={true} value={''} labelText={placeholder}></SelectItem>
+            )}
             {children}
           </select>
 

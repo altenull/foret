@@ -1,6 +1,6 @@
 export interface SelectItemProps {
   value: string;
-  itemText: string;
-  hidden?: boolean;
-  disabled?: boolean;
+  labelText: string;
+  hidden: boolean;
+  disabled: boolean;
 }
