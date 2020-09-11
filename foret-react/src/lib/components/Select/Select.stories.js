@@ -44,7 +44,7 @@ export const withGrouppedSelect = () => {
         </SelectItemGroup>
 
         <SelectItemGroup labelText={'Category 2'} disabled={true}>
-          <SelectItem value={'option4'} labelText={'option 4'} disabled={true} />
+          <SelectItem value={'option4'} labelText={'option 4'} />
           <SelectItem value={'option5'} labelText={'option 5'} />
           <SelectItem value={'option6'} labelText={'option 6'} />
         </SelectItemGroup>
