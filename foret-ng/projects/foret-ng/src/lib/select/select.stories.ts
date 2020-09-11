@@ -32,10 +32,10 @@ storiesOf('components/Select', module)
       </foret-storybook-template>
     `,
   }))
-  .add('groupped select', () => ({
+  .add('grouped select', () => ({
     template: `
       <foret-storybook-template>
-        <foret-select [id]="'groupped-select'" [legendText]="'select'">
+        <foret-select [id]="'grouped-select'" [legendText]="'select'">
           <optgroup label="Category 1">
             <option value="option1">option 1</option>
             <option value="option2" selected>option 2</option>
@@ -55,12 +55,12 @@ storiesOf('components/Select', module)
     template: `
       <foret-storybook-template>
         <foret-select [id]="'disabled-select'" [legendText]="'select'" [disabled]="true">
-        <option value="option1">option 1</option>
-        <option value="option2">option 2</option>
-        <option value="option3">option 3</option>
-        <option value="option4">option 4</option>
-        <option value="option5">option 5</option>
-        <option value="option6">option 6</option>
+          <option value="option1">option 1</option>
+          <option value="option2">option 2</option>
+          <option value="option3">option 3</option>
+          <option value="option4">option 4</option>
+          <option value="option5">option 5</option>
+          <option value="option6">option 6</option>
         </foret-select>
       </foret-storybook-template>
     `,

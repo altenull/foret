@@ -28,7 +28,7 @@ export const withSelect = () => {
   );
 };
 
-export const withGrouppedSelect = () => {
+export const withGroupedSelect = () => {
   const customHandleChange = (id, newSelectedValue) => {
     console.log(`custom handle change(id): ${id}`);
     console.log(`custom handle change(newSelectedValue): ${newSelectedValue}`);
@@ -36,7 +36,7 @@ export const withGrouppedSelect = () => {
 
   return (
     <StorybookTemplate>
-      <Select id={'groupped-select'} legendText={'select'} selectedValue={'option2'} onChange={customHandleChange}>
+      <Select id={'grouped-select'} legendText={'select'} selectedValue={'option2'} onChange={customHandleChange}>
         <SelectItemGroup labelText={'Category 1'}>
           <SelectItem value={'option1'} labelText={'option 1'} />
           <SelectItem value={'option2'} labelText={'option 2'} />
