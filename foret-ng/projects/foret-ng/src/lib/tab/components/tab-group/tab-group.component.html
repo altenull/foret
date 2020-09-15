@@ -1,0 +1,15 @@
+<ul #tabListContainer class="__tab-list-container">
+  <ng-container *ngFor="let tab of tabs">
+    <li #tabItem class="__tab-item" [ngClass]="{ '__tab-item--selected': tab.selected }" (click)="selectTab(tab.value)">
+      {{ tab.labelText }}
+    </li>
+  </ng-container>
+  <span
+    *ngIf="tabIndicatorLeft != null && tabIndicatorWidth != null"
+    class="__tab-indicator"
+    [style.minWidth.px]="tabIndicatorWidth"
+    [style.left.px]="tabIndicatorLeft"
+  ></span>
+</ul>
+
+<ng-content></ng-content>

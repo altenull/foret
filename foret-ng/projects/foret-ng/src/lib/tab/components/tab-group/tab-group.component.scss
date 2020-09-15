@@ -1,0 +1,47 @@
+@import '../../../../assets/stylesheets/foret';
+
+:host {
+  display: block;
+  position: relative;
+}
+
+.__tab-list-container {
+  position: relative;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid $fog;
+}
+
+.__tab-indicator {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  min-width: 0;
+  min-height: 2px;
+  background-color: $foret-green;
+  transition: all 0.3s linear;
+}
+
+.__tab-item {
+  @include smallText();
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 24px !important;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  transition: border-bottom-color 0.15s ease-in-out;
+  &:hover {
+    border-bottom-color: $fog;
+  }
+  &--selected {
+    @include subtitle2();
+    border-bottom-color: $foret-green;
+  }
+}
