@@ -25,7 +25,7 @@ const tabIndicatorStyles = (left: number, width: number) => css`
   transition: all 0.3s linear;
 `;
 
-const TabGroup: React.FC<TabGroupProps> = ({ children, selectedValue, name, onSelect = () => {} }: TabGroupProps) => {
+const TabGroup: React.FC<TabGroupProps> = ({ children, selectedValue, onChange = () => {} }: TabGroupProps) => {
   const [selected, setSelected] = useState<string>(selectedValue);
   const [tabIndicatorStatus, setTabIndicatorStatus] = useState<{ left: number; width: number }>(null);
   const tabListContainerRef = useRef(null);
@@ -47,10 +47,10 @@ const TabGroup: React.FC<TabGroupProps> = ({ children, selectedValue, name, onSe
     }
   }, [children, selected, tabListContainerRef, setTabIndicatorStatus]);
 
-  const handleSelect = (newSelection: string, name: string, event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-    if (newSelection !== selected) {
-      setSelected(newSelection);
-      onSelect(newSelection, name, event);
+  const handleChange = (id: string, newSelectedValue: string) => {
+    if (newSelectedValue !== selected) {
+      setSelected(newSelectedValue);
+      onChange(id, newSelectedValue);
     }
   };
 
@@ -69,10 +69,9 @@ const TabGroup: React.FC<TabGroupProps> = ({ children, selectedValue, name, onSe
                 margin-left: 16px;
               `
             }
-            name={name}
             value={value}
             selected={value === selected}
-            onSelect={handleSelect}
+            onChange={handleChange}
             {...props}
           />
         );

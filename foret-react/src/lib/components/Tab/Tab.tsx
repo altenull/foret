@@ -21,9 +21,9 @@ const tabStyles = (selected: boolean) => css`
   }
 `;
 
-const Tab: React.FC<TabProps> = ({ labelText, value, name, selected = false, onSelect, ...props }: TabProps) => {
+const Tab: React.FC<TabProps> = ({ id, labelText, value, selected, onChange, ...props }: TabProps) => {
   const handleClick = (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-    onSelect(value, name, event);
+    onChange(id, value);
   };
 
   return (

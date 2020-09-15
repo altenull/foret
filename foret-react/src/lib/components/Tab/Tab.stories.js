@@ -8,15 +8,14 @@ export default {
 };
 
 export const withTab = () => {
-  const customHandleClick = (newSelection, name, event) => {
-    console.log(`custom handle click(newSelection): ${newSelection}`);
-    console.log(`custom handle click(name): ${name}`);
-    console.log(`custom handle click(event): ${event}`);
+  const customHandleChange = (id, newSelectedValue) => {
+    console.log(`custom handle click(id): ${id}`);
+    console.log(`custom handle click(newSelectedValue): ${newSelectedValue}`);
   };
 
   return (
     <StorybookTemplate>
-      <TabGroup selectedValue={'tab2'} name={'foret-react-tab'} onSelect={customHandleClick}>
+      <TabGroup selectedValue={'tab2'} onChange={customHandleChange}>
         <Tab id={'tab-1'} labelText={'Tab 1'} value={'tab1'}>
           <h1>Tab 1 content</h1>
         </Tab>
