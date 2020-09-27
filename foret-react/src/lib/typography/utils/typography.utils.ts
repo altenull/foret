@@ -44,7 +44,7 @@ export const setFontFace = () => {
 
 export const heading1Styles = css(resetTypography, setFontFace(), {
   fontStyle: 'normal',
-  fontWeight: FontWeight.light,
+  fontWeight: FontWeight.Light,
   fontSize: '72px',
   color: Color.Ink,
   lineHeight: 1.25,
@@ -53,7 +53,7 @@ export const heading1Styles = css(resetTypography, setFontFace(), {
 
 export const heading2Styles = css(resetTypography, setFontFace(), {
   fontStyle: 'normal',
-  fontWeight: FontWeight.semiBold,
+  fontWeight: FontWeight.SemiBold,
   fontSize: '48px',
   color: Color.Ink,
   lineHeight: 1.375,
@@ -62,7 +62,7 @@ export const heading2Styles = css(resetTypography, setFontFace(), {
 
 export const heading3Styles = css(resetTypography, setFontFace(), {
   fontStyle: 'normal',
-  fontWeight: FontWeight.regular,
+  fontWeight: FontWeight.Regular,
   fontSize: '36px',
   color: Color.Ink,
   lineHeight: 1.5,
@@ -71,7 +71,7 @@ export const heading3Styles = css(resetTypography, setFontFace(), {
 
 export const paragraphStyles = css(resetTypography, setFontFace(), {
   fontStyle: 'normal',
-  fontWeight: FontWeight.regular,
+  fontWeight: FontWeight.Regular,
   fontSize: '20px',
   color: Color.Ink,
   lineHeight: 1.8,
@@ -79,7 +79,7 @@ export const paragraphStyles = css(resetTypography, setFontFace(), {
 
 export const smallTextStyles = css(resetTypography, setFontFace(), {
   fontStyle: 'normal',
-  fontWeight: FontWeight.light,
+  fontWeight: FontWeight.Light,
   fontSize: '15px',
   color: Color.Ink,
   lineHeight: 1.35,
@@ -88,7 +88,7 @@ export const smallTextStyles = css(resetTypography, setFontFace(), {
 
 export const subtitle1Styles = css(resetTypography, setFontFace(), {
   fontStyle: 'normal',
-  fontWeight: FontWeight.light,
+  fontWeight: FontWeight.Light,
   fontSize: '18px',
   color: Color.Ink,
   lineHeight: 1.5,
@@ -97,7 +97,7 @@ export const subtitle1Styles = css(resetTypography, setFontFace(), {
 
 export const subtitle2Styles = css(resetTypography, setFontFace(), {
   fontStyle: 'normal',
-  fontWeight: FontWeight.semiBold,
+  fontWeight: FontWeight.SemiBold,
   fontSize: '16px',
   color: Color.Ink,
   lineHeight: 1.5,

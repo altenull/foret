@@ -4,7 +4,7 @@ import { setFontFace } from '../../../typography/utils/typography.utils';
 
 const buttonTextStyles = css(setFontFace(), {
   fontStyle: 'normal',
-  fontWeight: FontWeight.semiBold,
+  fontWeight: FontWeight.SemiBold,
   fontSize: '18px',
   textTransform: 'uppercase',
   lineHeight: '1.25',
