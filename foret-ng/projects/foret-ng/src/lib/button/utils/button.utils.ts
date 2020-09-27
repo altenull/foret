@@ -15,7 +15,7 @@ export const baseButtonStyles = {
 
 export const buttonText = {
   'font-style': 'normal',
-  'font-weight': FontWeight.semiBold,
+  'font-weight': FontWeight.SemiBold,
   'font-size': '18px',
   'text-transform': 'uppercase',
   'line-height': 1.25,
