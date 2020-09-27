@@ -1,5 +1,13 @@
-import { Color, FontWeight } from '@altenull/foret-core';
 import { css } from '@emotion/core';
+import {
+  heading1,
+  heading2,
+  heading3,
+  paragraph,
+  smallText,
+  subtitle1,
+  subtitle2,
+} from '../../theme/utils/text-style.util';
 
 // https://meyerweb.com/eric/tools/css/reset/
 export const resetTypography = css({
@@ -42,64 +50,10 @@ export const setFontFace = () => {
   `;
 };
 
-export const heading1Styles = css(resetTypography, setFontFace(), {
-  fontStyle: 'normal',
-  fontWeight: FontWeight.Light,
-  fontSize: '72px',
-  color: Color.Ink,
-  lineHeight: 1.25,
-  letterSpacing: '-1.2px',
-});
-
-export const heading2Styles = css(resetTypography, setFontFace(), {
-  fontStyle: 'normal',
-  fontWeight: FontWeight.SemiBold,
-  fontSize: '48px',
-  color: Color.Ink,
-  lineHeight: 1.375,
-  letterSpacing: '-0.25px',
-});
-
-export const heading3Styles = css(resetTypography, setFontFace(), {
-  fontStyle: 'normal',
-  fontWeight: FontWeight.Regular,
-  fontSize: '36px',
-  color: Color.Ink,
-  lineHeight: 1.5,
-  letterSpacing: '-0.5px',
-});
-
-export const paragraphStyles = css(resetTypography, setFontFace(), {
-  fontStyle: 'normal',
-  fontWeight: FontWeight.Regular,
-  fontSize: '20px',
-  color: Color.Ink,
-  lineHeight: 1.8,
-});
-
-export const smallTextStyles = css(resetTypography, setFontFace(), {
-  fontStyle: 'normal',
-  fontWeight: FontWeight.Light,
-  fontSize: '15px',
-  color: Color.Ink,
-  lineHeight: 1.35,
-  letterSpacing: '0.8px',
-});
-
-export const subtitle1Styles = css(resetTypography, setFontFace(), {
-  fontStyle: 'normal',
-  fontWeight: FontWeight.Light,
-  fontSize: '18px',
-  color: Color.Ink,
-  lineHeight: 1.5,
-  letterSpacing: '0.5px',
-});
-
-export const subtitle2Styles = css(resetTypography, setFontFace(), {
-  fontStyle: 'normal',
-  fontWeight: FontWeight.SemiBold,
-  fontSize: '16px',
-  color: Color.Ink,
-  lineHeight: 1.5,
-  letterSpacing: '0.25px',
-});
+export const heading1Styles = css(resetTypography, setFontFace(), heading1 as any);
+export const heading2Styles = css(resetTypography, setFontFace(), heading2 as any);
+export const heading3Styles = css(resetTypography, setFontFace(), heading3 as any);
+export const paragraphStyles = css(resetTypography, setFontFace(), paragraph as any);
+export const smallTextStyles = css(resetTypography, setFontFace(), smallText as any);
+export const subtitle1Styles = css(resetTypography, setFontFace(), subtitle1 as any);
+export const subtitle2Styles = css(resetTypography, setFontFace(), subtitle2 as any);
