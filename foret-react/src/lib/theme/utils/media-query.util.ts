@@ -1,12 +1,13 @@
 import { Breakpoint } from '../enums/breakpoint.enum';
 
-const transformMinWidthToMediaQuery = (minWidth: string) => `@media screen and (min-width:${minWidth})`;
+const transformMinWidthToMediaQuery: (minWidth: string) => string = (minWidth: string) =>
+  `@media screen and (min-width:${minWidth})`;
 
-export const createMediaQueries = () => {
+export const createMediaQueries: () => { [breakpoint: string]: string } = () => {
   // Breakpoint references
   // https://dev.to/rstacruz/what-media-query-breakpoints-should-i-use-292c
   // https://flaviocopes.com/css-breakpoints/
-  const breakpointMinWidthMap = {
+  const breakpointMinWidthMap: { [breakpoint: string]: string } = {
     [Breakpoint.ViewPort4]: '480px', // mobile(landscape) ~ tablet(portrait)
     [Breakpoint.ViewPort9]: '992px', // tablet(landscape) ~ desktop
     [Breakpoint.ViewPort12]: '1200px', // fullhd ~

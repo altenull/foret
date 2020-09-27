@@ -1,4 +1,4 @@
-export const toCamelCase = (value: string) => {
+export const toCamelCase: (value: string) => string = (value: string) => {
   if (value.length <= 1) {
     return value.toLowerCase();
   } else {

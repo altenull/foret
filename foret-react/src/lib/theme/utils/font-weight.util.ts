@@ -1,7 +1,7 @@
 import { FontWeight } from '@altenull/foret-core';
 import { toCamelCase } from './shared.util';
 
-export const createFontWeights = () =>
+export const createFontWeights: () => { [fontWeightInCamelCase: string]: number } = () =>
   Object.keys(FontWeight).reduce((acc, key) => {
     return {
       ...acc,
