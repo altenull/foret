@@ -1,27 +1,24 @@
 const deepmerge = require('deepmerge');
 
+import { Duration } from '../models/duration';
+import { Theme } from '../models/theme';
 import { createColors } from './color.util';
 import { createFontWeights } from './font-weight.util';
 import { createMediaQueries } from './media-query.util';
+import { createTextStyles } from './text-style.util';
 
-const duration = {
-  fast: '150ms',
-  normal: '300ms',
-  slow: '450ms',
-  slowest: '600ms',
+const duration: Duration = {
+  fast: '100ms',
+  normal: '200ms',
+  slow: '300ms',
 };
 
-const defaultTheme = {
+const defaultTheme: Theme = {
   duration,
+  colors: createColors(),
+  fontWeights: createFontWeights(),
+  mediaQueries: createMediaQueries(),
+  textStyles: createTextStyles(),
 };
 
-export const createTheme = (theme = {}) => {
-  const mergedTheme = deepmerge(defaultTheme, theme);
-
-  return {
-    ...mergedTheme,
-    colors: createColors(),
-    fontWeights: createFontWeights(),
-    mediaQueries: createMediaQueries(),
-  };
-};
+export const createTheme: (theme?: {}) => Theme = (theme = {}) => deepmerge(defaultTheme, theme);
