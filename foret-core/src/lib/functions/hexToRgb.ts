@@ -1,5 +1,14 @@
 import { RgbColor } from "../models/rgb-color";
 
+/**
+ * Converts a hex color to rgb
+ *
+ * @example hexToRgb('#2e8b57') => { r: 46, g: 139, b: 87 }
+ *
+ * @param {string} hex The color to transform to rgb
+ *
+ * @returns {RgbColor} The color in rgb object
+ */
 export const hexToRgb = (hex: string): RgbColor => {
   const rgbArray = hex
     .replace(
