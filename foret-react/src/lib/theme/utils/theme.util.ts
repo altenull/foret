@@ -1,10 +1,9 @@
-const deepmerge = require('deepmerge');
-
 import { Duration } from '../models/duration';
 import { Theme } from '../models/theme';
 import { createColors } from './color.util';
 import { createFontWeights } from './font-weight.util';
 import { createMediaQueries } from './media-query.util';
+import { deepMerge } from './object.util';
 import { createTextStyles } from './text-style.util';
 
 const duration: Duration = {
@@ -21,4 +20,4 @@ const defaultTheme: Theme = {
   textStyles: createTextStyles(),
 };
 
-export const createTheme: (theme?: {}) => Theme = (theme = {}) => deepmerge(defaultTheme, theme);
+export const createTheme: (theme?: {}) => Theme = (theme = {}) => deepMerge(defaultTheme, theme);
