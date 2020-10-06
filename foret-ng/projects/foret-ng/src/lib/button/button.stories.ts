@@ -25,4 +25,15 @@ storiesOf('components/Button', module)
         <button foretSecondaryButton disabled>secondary button (disabled)</button>
       </foret-storybook-template>
     `,
+  }))
+  .add('danger button', () => ({
+    template: `
+      <foret-storybook-template>
+        <button foretDangerButton>danger button</button>
+
+        <foret-storybook-spacing></foret-storybook-spacing>
+
+        <button foretDangerButton disabled>danger button (disabled)</button>
+      </foret-storybook-template>
+    `,
   }));
