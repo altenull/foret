@@ -12,6 +12,9 @@ export enum Color {
   Ink = "#262626",
   Paper = "#f5f5f0",
   Stone = "#8c8c8c",
+  StoneDarken1 = "#808080", // darken - 8%
+  StoneDarken2 = "#757575", // darken - 16%
+  StoneLighten = "#D5D5D5", // lighten - 64%
   Fog = "#c6c6c6",
   Black = "#000000",
   White = "#ffffff",
