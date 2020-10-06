@@ -3,10 +3,10 @@ import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { baseButtonStyles, buttonText } from '../utils/button.utils';
 
 const secondaryButtonBackgroundColorSet = {
-  default: Color.Soil,
-  hover: Color.SoilDarken1,
-  active: Color.SoilDarken2,
-  disabled: Color.SoilLighten,
+  default: Color.Stone,
+  hover: Color.StoneDarken1,
+  active: Color.StoneDarken2,
+  disabled: Color.StoneLighten,
 };
 
 @Directive({
@@ -30,8 +30,8 @@ export class SecondaryButtonDirective {
   }
 
   @HostListener('focus') onFocus() {
-    const soilRgb = hexToRgb(Color.Soil);
-    this.el.nativeElement.style.boxShadow = `rgba(${soilRgb.r}, ${soilRgb.g}, ${soilRgb.b}, 0.35) 0 0 0 3px`;
+    const stoneRgb = hexToRgb(Color.Stone);
+    this.el.nativeElement.style.boxShadow = `rgba(${stoneRgb.r}, ${stoneRgb.g}, ${stoneRgb.b}, 0.35) 0 0 0 3px`;
   }
 
   @HostListener('blur') onBlur() {
