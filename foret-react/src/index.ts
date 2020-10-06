@@ -1,4 +1,4 @@
-export { PrimaryButton, SecondaryButton } from './lib/components/Button';
+export { DangerButton, PrimaryButton, SecondaryButton } from './lib/components/Button';
 export { Checkbox, CheckboxGroup } from './lib/components/Checkbox';
 export { RadioButton, RadioButtonGroup } from './lib/components/RadioButton';
 export { Select, SelectItem, SelectItemGroup } from './lib/components/Select';

@@ -3,6 +3,7 @@ import React from 'react';
 import { StorybookSpacing, StorybookTemplate } from '../../storybook-util';
 import PrimaryButton from './PrimaryButton';
 import SecondaryButton from './SecondaryButton';
+import DangerButton from './DangerButton';
 
 export default {
   title: 'components/Button',
@@ -25,5 +26,15 @@ export const withSecondaryButton = () => (
     <StorybookSpacing />
 
     <SecondaryButton disabled={true}>secondary button (disabled)</SecondaryButton>
+  </StorybookTemplate>
+);
+
+export const withDangerButton = () => (
+  <StorybookTemplate>
+    <DangerButton onClick={action('danger button clicked')}>danger button</DangerButton>
+
+    <StorybookSpacing />
+
+    <DangerButton disabled={true}>danger button (disabled)</DangerButton>
   </StorybookTemplate>
 );
