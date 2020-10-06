@@ -1,6 +1,6 @@
 {
   "name": "@altenull/foret-ng",
-  "version": "1.0.0-18",
+  "version": "1.0.0-19",
   "peerDependencies": {
     "@angular/common": "^10.0.0",
     "@angular/core": "^10.0.0"
