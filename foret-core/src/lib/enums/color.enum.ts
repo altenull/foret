@@ -19,6 +19,9 @@ export enum Color {
   Black = "#000000",
   White = "#ffffff",
   Danger = "#de2e21",
+  DangerDarken1 = "#cc2a1e", // darken - 8%
+  DangerDarken2 = "#ba261b", // darken - 16%
+  DangerLighten = "#f3b3af", // lighten - 64%
   Warning = "#ffa126",
   Success = "#43c463",
   Information = "#0875e1",
