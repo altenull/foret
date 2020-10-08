@@ -3,10 +3,10 @@ import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { baseButtonStyles, buttonText } from '../utils/button.utils';
 
 const dangerButtonBackgroundColorSet = {
-  default: Color.Danger,
-  hover: Color.DangerDarken1,
-  active: Color.DangerDarken2,
-  disabled: Color.DangerLighten,
+  default: Color.Sun,
+  hover: Color.SunDarken1,
+  active: Color.SunDarken2,
+  disabled: Color.SunLighten,
 };
 
 @Directive({
@@ -30,8 +30,8 @@ export class DangerButtonDirective {
   }
 
   @HostListener('focus') onFocus() {
-    const dangerRgb = hexToRgb(Color.Danger);
-    this.el.nativeElement.style.boxShadow = `rgba(${dangerRgb.r}, ${dangerRgb.g}, ${dangerRgb.b}, 0.35) 0 0 0 3px`;
+    const sunRgb = hexToRgb(Color.Sun);
+    this.el.nativeElement.style.boxShadow = `rgba(${sunRgb.r}, ${sunRgb.g}, ${sunRgb.b}, 0.35) 0 0 0 3px`;
   }
 
   @HostListener('blur') onBlur() {
