@@ -4,25 +4,25 @@ import { css, jsx } from '@emotion/core';
 import { ButtonProps } from './models/button-props';
 import { baseButtonStyles } from './utils/button.utils';
 
-const dangerRgb = hexToRgb(Color.Danger);
+const sunRgb = hexToRgb(Color.Sun);
 
 const dangerButtonEffectStyles = css({
   '&:hover': {
-    backgroundColor: Color.DangerDarken1,
+    backgroundColor: Color.SunDarken1,
   },
   '&:active': {
-    backgroundColor: Color.DangerDarken2,
+    backgroundColor: Color.SunDarken2,
   },
   '&:focus': {
-    boxShadow: `rgba(${dangerRgb.r}, ${dangerRgb.g}, ${dangerRgb.b}, 0.35) 0 0 0 3px`,
+    boxShadow: `rgba(${sunRgb.r}, ${sunRgb.g}, ${sunRgb.b}, 0.35) 0 0 0 3px`,
   },
   '&:disabled': {
-    backgroundColor: Color.DangerLighten,
+    backgroundColor: Color.SunLighten,
   },
 });
 
 const dangerButtonStyles = css(baseButtonStyles, dangerButtonEffectStyles, {
-  backgroundColor: Color.Danger,
+  backgroundColor: Color.Sun,
   color: Color.White,
 });
 
