@@ -1,5 +1,6 @@
-@mixin fieldSet() {
+@mixin fieldset() {
   display: inline-flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
   border: none;
