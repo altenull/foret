@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import React, { useState } from 'react';
-import { fieldSetStyles, legendStyles } from '../../shared/styles/form.styles';
+import { fieldsetStyles, legendStyles } from '../../shared/styles/form.styles';
 import { Subtitle2 } from '../../typography';
 import { RadioButtonGroupProps } from './models/radio-button-group-props';
 import RadioButton from './RadioButton';
@@ -44,7 +44,7 @@ const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
 
   return (
     <form>
-      <fieldset css={fieldSetStyles}>
+      <fieldset css={fieldsetStyles}>
         {!!legendText && (
           <legend css={legendStyles}>
             <Subtitle2>{legendText}</Subtitle2>

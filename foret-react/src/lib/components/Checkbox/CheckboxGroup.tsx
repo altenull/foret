@@ -4,7 +4,7 @@ import React from 'react';
 import { Subtitle2 } from '../../typography';
 import Checkbox from './Checkbox';
 import { CheckboxGroupProps } from './models/checkbox-group-props';
-import { fieldSetStyles, legendStyles } from '../../shared/styles/form.styles';
+import { fieldsetStyles, legendStyles } from '../../shared/styles/form.styles';
 
 const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
   children,
@@ -38,7 +38,7 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
 
   return (
     <form>
-      <fieldset css={fieldSetStyles}>
+      <fieldset css={fieldsetStyles}>
         {!!legendText && (
           <legend css={legendStyles}>
             <Subtitle2>{legendText}</Subtitle2>
