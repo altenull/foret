@@ -14,11 +14,11 @@ export enum Color {
   StoneLighten = "#D5D5D5", // lighten - 64%
   Ink = "#262626",
   Black = "#000000",
-  Danger = "#de2e21",
-  DangerDarken1 = "#cc2a1e", // darken - 8%
-  DangerDarken2 = "#ba261b", // darken - 16%
-  DangerLighten = "#f3b3af", // lighten - 64%
-  Warning = "#ffa126",
-  Success = "#43c463",
-  Information = "#0875e1",
+  Sun = "#de2e21",
+  SunDarken1 = "#cc2a1e", // darken - 8%
+  SunDarken2 = "#ba261b", // darken - 16%
+  SunLighten = "#f3b3af", // lighten - 64%
+  Soil = "#ffa126",
+  Grass = "#43c463",
+  Sky = "#0875e1",
 }
