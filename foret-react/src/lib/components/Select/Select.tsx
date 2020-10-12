@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Color, hexToRgb } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
-import React, { useState } from 'react';
+import React, { forwardRef, ForwardRefExoticComponent, RefAttributes, useState } from 'react';
 import { ChevronDownIcon } from '../../shared/icons';
 import { subtitle1Styles, subtitle2Styles } from '../../typography/utils/typography.utils';
 import { SelectProps } from './models/select-props';
@@ -56,58 +56,63 @@ const chevronDownSelectStyles = (isHovered: boolean, disabled: boolean) =>
     fill: disabled ? Color.Fog : isHovered ? Color.Black : Color.Stone,
   });
 
-const Select: React.FC<SelectProps> = ({
-  children,
-  id,
-  legendText,
-  selectedValue,
-  placeholder,
-  disabled = false,
-  onChange = () => {},
-  ...props
-}: SelectProps) => {
-  const [isHovered, setIsHovered] = useState<boolean>(false);
+const Select: ForwardRefExoticComponent<SelectProps & RefAttributes<any>> = forwardRef<any, SelectProps>(
+  (
+    {
+      children,
+      id,
+      legendText,
+      selectedValue,
+      placeholder,
+      disabled = false,
+      onChange = () => {},
+      ...props
+    }: SelectProps,
+    ref?: any
+  ) => {
+    const [isHovered, setIsHovered] = useState<boolean>(false);
 
-  const handleMouseOver = () => {
-    setIsHovered(!disabled && true);
-  };
+    const handleMouseOver = () => {
+      setIsHovered(!disabled && true);
+    };
 
-  const handleMouseOut = () => {
-    setIsHovered(false);
-  };
+    const handleMouseOut = () => {
+      setIsHovered(false);
+    };
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    onChange(id, event.target.value);
-  };
+    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      onChange(id, event.target.value);
+    };
 
-  return (
-    <div>
-      <div css={selectWrapperStyles}>
-        {!!legendText && (
-          <label css={legendStyles} htmlFor={id} aria-label={legendText}>
-            {legendText}
-          </label>
-        )}
+    return (
+      <div css={ref}>
+        <div css={selectWrapperStyles}>
+          {!!legendText && (
+            <label css={legendStyles} htmlFor={id} aria-label={legendText}>
+              {legendText}
+            </label>
+          )}
 
-        <div css={relativeBoxStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-          <select
-            css={selectStyles(isHovered)}
-            id={id}
-            disabled={disabled}
-            defaultValue={selectedValue || ''}
-            onChange={handleChange}
-            {...props}>
-            {!!placeholder && (
-              <SelectItem hidden={true} disabled={true} value={''} labelText={placeholder}></SelectItem>
-            )}
-            {children}
-          </select>
+          <div css={relativeBoxStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+            <select
+              css={selectStyles(isHovered)}
+              id={id}
+              disabled={disabled}
+              defaultValue={selectedValue || ''}
+              onChange={handleChange}
+              {...props}>
+              {!!placeholder && (
+                <SelectItem hidden={true} disabled={true} value={''} labelText={placeholder}></SelectItem>
+              )}
+              {children}
+            </select>
 
-          <ChevronDownIcon css={chevronDownSelectStyles(isHovered, disabled)}></ChevronDownIcon>
+            <ChevronDownIcon css={chevronDownSelectStyles(isHovered, disabled)}></ChevronDownIcon>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+);
 
 export default Select;
