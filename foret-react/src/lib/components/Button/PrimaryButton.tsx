@@ -27,7 +27,7 @@ const primaryButtonStyles = css(baseButtonStyles, primaryButtonEffectStyles, {
   color: Color.White,
 });
 
-const PrimaryButton: ForwardRefExoticComponent<ButtonProps & RefAttributes<any>> = forwardRef(
+const PrimaryButton: ForwardRefExoticComponent<ButtonProps & RefAttributes<any>> = forwardRef<any, ButtonProps>(
   ({ children, ...props }: ButtonProps, ref?: any) => {
     return (
       <button css={primaryButtonStyles} ref={ref} {...props}>
