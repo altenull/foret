@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Color } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
-import React from 'react';
+import React, { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 import { SmallText, Subtitle2 } from '../../typography';
 import { TabProps } from './models/tab-props';
 
@@ -21,16 +21,18 @@ const tabStyles = (selected: boolean) => css`
   }
 `;
 
-const Tab: React.FC<TabProps> = ({ id, labelText, value, selected, onChange, ...props }: TabProps) => {
-  const handleClick = (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-    onChange(id, value);
-  };
+const Tab: ForwardRefExoticComponent<TabProps & RefAttributes<any>> = forwardRef<any, TabProps>(
+  ({ id, labelText, value, selected, onChange, ...props }: TabProps, ref?: any) => {
+    const handleClick = (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+      onChange(id, value);
+    };
 
-  return (
-    <li css={tabStyles(selected)} onClick={handleClick} {...props}>
-      {selected ? <Subtitle2>{labelText}</Subtitle2> : <SmallText>{labelText}</SmallText>}
-    </li>
-  );
-};
+    return (
+      <li css={tabStyles(selected)} ref={ref} onClick={handleClick} {...props}>
+        {selected ? <Subtitle2>{labelText}</Subtitle2> : <SmallText>{labelText}</SmallText>}
+      </li>
+    );
+  }
+);
 
 export default Tab;
