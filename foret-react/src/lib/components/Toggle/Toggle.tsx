@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { jsx, css } from '@emotion/core';
-import React, { useState } from 'react';
+import { Color, hexToRgb } from '@altenull/foret-core';
+import { css, jsx } from '@emotion/core';
+import React, { forwardRef, ForwardRefExoticComponent, RefAttributes, useState } from 'react';
 import { hiddenInputStyles, inputWrapperStyles, labelStyles } from '../../shared/styles/input.styles';
 import { ToggleProps } from './models/toggle-props';
-import { Color, hexToRgb } from '@altenull/foret-core';
 
 const foretGreenRgb = hexToRgb(Color.ForetGreen);
 
@@ -41,50 +41,46 @@ const switchStyles = (checked: boolean) =>
     transition: 'transform 0.15s ease-in-out',
   });
 
-const Toggle: React.FC<ToggleProps> = ({
-  id,
-  checked = false,
-  disabled = false,
-  onToggle = () => {},
-  ...props
-}: ToggleProps) => {
-  const [isFocused, setIsFocused] = useState(false);
-  const [isChecked, setIsChecked] = useState(!!checked);
+const Toggle: ForwardRefExoticComponent<ToggleProps & RefAttributes<any>> = forwardRef<any, ToggleProps>(
+  ({ id, checked = false, disabled = false, onToggle = () => {}, ...props }: ToggleProps, ref?: any) => {
+    const [isFocused, setIsFocused] = useState(false);
+    const [isChecked, setIsChecked] = useState(!!checked);
 
-  const handleFocus = () => {
-    setIsFocused(!disabled && true);
-  };
+    const handleFocus = () => {
+      setIsFocused(!disabled && true);
+    };
 
-  const handleBlur = () => {
-    setIsFocused(false);
-  };
+    const handleBlur = () => {
+      setIsFocused(false);
+    };
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setIsChecked(event.target.checked);
-    onToggle(id, event.target.checked);
-  };
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setIsChecked(event.target.checked);
+      onToggle(id, event.target.checked);
+    };
 
-  return (
-    <div css={inputWrapperStyles}>
-      <input
-        css={hiddenInputStyles}
-        type={'checkbox'}
-        id={id}
-        checked={isChecked}
-        disabled={disabled}
-        onChange={handleChange}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        {...props}
-      />
-      <label css={labelStyles(disabled)} htmlFor={id}>
-        <div css={toggleSwitchContainerStyles}>
-          <span css={switchWrapperStyles(isChecked, disabled, isFocused)} />
-          <span css={switchStyles(isChecked)} />
-        </div>
-      </label>
-    </div>
-  );
-};
+    return (
+      <div css={inputWrapperStyles} ref={ref}>
+        <input
+          css={hiddenInputStyles}
+          type={'checkbox'}
+          id={id}
+          checked={isChecked}
+          disabled={disabled}
+          onChange={handleChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          {...props}
+        />
+        <label css={labelStyles(disabled)} htmlFor={id}>
+          <div css={toggleSwitchContainerStyles}>
+            <span css={switchWrapperStyles(isChecked, disabled, isFocused)} />
+            <span css={switchStyles(isChecked)} />
+          </div>
+        </label>
+      </div>
+    );
+  }
+);
 
 export default Toggle;
