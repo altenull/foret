@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Color, hexToRgb } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
-import React, { useState } from 'react';
+import React, { forwardRef, ForwardRefExoticComponent, RefAttributes, useState } from 'react';
 import {
   hiddenInputStyles,
   inputSubtitle1Style,
@@ -60,54 +60,56 @@ const checkMarkStyles = (checked: boolean) =>
     visibility: checked ? 'visible' : 'hidden',
   });
 
-const Checkbox: React.FC<CheckboxProps> = ({ id, labelText, checked, disabled, onChange, ...props }: CheckboxProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
-  const [isChecked, setIsChecked] = useState(!!checked);
+const Checkbox: ForwardRefExoticComponent<CheckboxProps & RefAttributes<any>> = forwardRef<any, CheckboxProps>(
+  ({ id, labelText, checked, disabled, onChange, ...props }: CheckboxProps, ref?: any) => {
+    const [isHovered, setIsHovered] = useState(false);
+    const [isFocused, setIsFocused] = useState(false);
+    const [isChecked, setIsChecked] = useState(!!checked);
 
-  const handleMouseOver = () => {
-    setIsHovered(!disabled && true);
-  };
+    const handleMouseOver = () => {
+      setIsHovered(!disabled && true);
+    };
 
-  const handleMouseOut = () => {
-    setIsHovered(false);
-  };
+    const handleMouseOut = () => {
+      setIsHovered(false);
+    };
 
-  const handleFocus = () => {
-    setIsFocused(!disabled && true);
-  };
+    const handleFocus = () => {
+      setIsFocused(!disabled && true);
+    };
 
-  const handleBlur = () => {
-    setIsFocused(false);
-  };
+    const handleBlur = () => {
+      setIsFocused(false);
+    };
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setIsChecked(event.target.checked);
-    onChange(id, event.target.checked);
-  };
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setIsChecked(event.target.checked);
+      onChange(id, event.target.checked);
+    };
 
-  return (
-    <div css={inputWrapperStyles} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-      <input
-        css={hiddenInputStyles}
-        type={'checkbox'}
-        id={id}
-        checked={isChecked}
-        disabled={disabled}
-        onChange={handleChange}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        {...props}
-      />
-      <label css={labelStyles(disabled)} htmlFor={id} aria-label={labelText}>
-        <div css={roundSquareBoxContainerStyles}>
-          <span css={roundSquareBoxStyles(isChecked, disabled, isHovered, isFocused)} />
-          <span css={checkMarkStyles(isChecked)} />
-        </div>
-        <Subtitle1 css={inputSubtitle1Style(disabled)}>{labelText}</Subtitle1>
-      </label>
-    </div>
-  );
-};
+    return (
+      <div css={inputWrapperStyles} ref={ref} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+        <input
+          css={hiddenInputStyles}
+          type={'checkbox'}
+          id={id}
+          checked={isChecked}
+          disabled={disabled}
+          onChange={handleChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          {...props}
+        />
+        <label css={labelStyles(disabled)} htmlFor={id} aria-label={labelText}>
+          <div css={roundSquareBoxContainerStyles}>
+            <span css={roundSquareBoxStyles(isChecked, disabled, isHovered, isFocused)} />
+            <span css={checkMarkStyles(isChecked)} />
+          </div>
+          <Subtitle1 css={inputSubtitle1Style(disabled)}>{labelText}</Subtitle1>
+        </label>
+      </div>
+    );
+  }
+);
 
 export default Checkbox;

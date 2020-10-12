@@ -1,17 +1,15 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import React from 'react';
+import React, { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import { fieldsetStyles, legendStyles } from '../../shared/styles/form.styles';
 import { Subtitle2 } from '../../typography';
 import Checkbox from './Checkbox';
 import { CheckboxGroupProps } from './models/checkbox-group-props';
-import { fieldsetStyles, legendStyles } from '../../shared/styles/form.styles';
 
-const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
-  children,
-  legendText,
-  disabled = false,
-  onChange = () => {},
-}: CheckboxGroupProps) => {
+const CheckboxGroup: ForwardRefExoticComponent<CheckboxGroupProps & RefAttributes<any>> = forwardRef<
+  any,
+  CheckboxGroupProps
+>(({ children, legendText, disabled = false, onChange = () => {} }: CheckboxGroupProps, ref?: any) => {
   const handleChange = (id: string, newChecked: boolean) => {
     onChange(id, newChecked);
   };
@@ -37,7 +35,7 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
     });
 
   return (
-    <form>
+    <form ref={ref}>
       <fieldset css={fieldsetStyles}>
         {!!legendText && (
           <legend css={legendStyles}>
@@ -48,6 +46,6 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
       </fieldset>
     </form>
   );
-};
+});
 
 export default CheckboxGroup;
