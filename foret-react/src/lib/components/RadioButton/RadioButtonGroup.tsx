@@ -1,18 +1,15 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import React, { useState } from 'react';
+import React, { forwardRef, ForwardRefExoticComponent, RefAttributes, useState } from 'react';
 import { fieldsetStyles, legendStyles } from '../../shared/styles/form.styles';
 import { Subtitle2 } from '../../typography';
 import { RadioButtonGroupProps } from './models/radio-button-group-props';
 import RadioButton from './RadioButton';
 
-const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
-  children,
-  legendText,
-  checkedValue,
-  disabled = false,
-  onChange = () => {},
-}: RadioButtonGroupProps) => {
+const RadioButtonGroup: ForwardRefExoticComponent<RadioButtonGroupProps & RefAttributes<any>> = forwardRef<
+  any,
+  RadioButtonGroupProps
+>(({ children, legendText, checkedValue, disabled = false, onChange = () => {} }: RadioButtonGroupProps, ref?: any) => {
   const [checked, setChecked] = useState<string>(checkedValue);
 
   const handleChange = (id: string, newCheckedValue: string) => {
@@ -43,7 +40,7 @@ const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
     });
 
   return (
-    <form>
+    <form ref={ref}>
       <fieldset css={fieldsetStyles}>
         {!!legendText && (
           <legend css={legendStyles}>
@@ -54,6 +51,6 @@ const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
       </fieldset>
     </form>
   );
-};
+});
 
 export default RadioButtonGroup;

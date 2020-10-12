@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Color, hexToRgb } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
-import React, { useState } from 'react';
+import React, { forwardRef, ForwardRefExoticComponent, RefAttributes, useState } from 'react';
 import { hiddenInputStyles, inputWrapperStyles, labelStyles } from '../../shared/styles/input.styles';
 import { Subtitle1 } from '../../typography';
 import { RadioButtonProps } from './models/radio-button-props';
@@ -60,60 +60,54 @@ const radioSubtitle1Style = (disabled: boolean) =>
     }),
   });
 
-const RadioButton: React.FC<RadioButtonProps> = ({
-  id,
-  labelText,
-  value,
-  checked,
-  disabled,
-  onChange,
-  ...props
-}: RadioButtonProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
+const RadioButton: ForwardRefExoticComponent<RadioButtonProps & RefAttributes<any>> = forwardRef<any, RadioButtonProps>(
+  ({ id, labelText, value, checked, disabled, onChange, ...props }: RadioButtonProps, ref?: any) => {
+    const [isHovered, setIsHovered] = useState(false);
+    const [isFocused, setIsFocused] = useState(false);
 
-  const handleMouseOver = () => {
-    setIsHovered(!disabled && true);
-  };
+    const handleMouseOver = () => {
+      setIsHovered(!disabled && true);
+    };
 
-  const handleMouseOut = () => {
-    setIsHovered(false);
-  };
+    const handleMouseOut = () => {
+      setIsHovered(false);
+    };
 
-  const handleFocus = () => {
-    setIsFocused(!disabled && true);
-  };
+    const handleFocus = () => {
+      setIsFocused(!disabled && true);
+    };
 
-  const handleBlur = () => {
-    setIsFocused(false);
-  };
+    const handleBlur = () => {
+      setIsFocused(false);
+    };
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(id, value);
-  };
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      onChange(id, value);
+    };
 
-  return (
-    <div css={inputWrapperStyles} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-      <input
-        css={hiddenInputStyles}
-        type={'radio'}
-        id={id}
-        checked={checked}
-        disabled={disabled}
-        onChange={handleChange}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        {...props}
-      />
-      <label css={labelStyles(disabled)} htmlFor={id} aria-label={labelText}>
-        <div css={radioCircleContainerStyles}>
-          <span css={radioOuterCircleStyles(checked, disabled, isHovered, isFocused)} />
-          <span css={radioInnerCircleStyles(checked, disabled, isHovered)} />
-        </div>
-        <Subtitle1 css={radioSubtitle1Style(disabled)}>{labelText}</Subtitle1>
-      </label>
-    </div>
-  );
-};
+    return (
+      <div css={inputWrapperStyles} ref={ref} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+        <input
+          css={hiddenInputStyles}
+          type={'radio'}
+          id={id}
+          checked={checked}
+          disabled={disabled}
+          onChange={handleChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          {...props}
+        />
+        <label css={labelStyles(disabled)} htmlFor={id} aria-label={labelText}>
+          <div css={radioCircleContainerStyles}>
+            <span css={radioOuterCircleStyles(checked, disabled, isHovered, isFocused)} />
+            <span css={radioInnerCircleStyles(checked, disabled, isHovered)} />
+          </div>
+          <Subtitle1 css={radioSubtitle1Style(disabled)}>{labelText}</Subtitle1>
+        </label>
+      </div>
+    );
+  }
+);
 
 export default RadioButton;
