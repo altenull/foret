@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
-import React from 'react';
+import { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 import { TableProps } from './models/table-props';
 
 const tableStyles = css`
@@ -8,12 +8,14 @@ const tableStyles = css`
   width: 100%;
 `;
 
-const Table: React.FC<TableProps> = ({ children, ...props }: TableProps) => {
-  return (
-    <table css={tableStyles} {...props}>
-      {children}
-    </table>
-  );
-};
+const Table: ForwardRefExoticComponent<TableProps & RefAttributes<any>> = forwardRef<any, TableProps>(
+  ({ children, ...props }: TableProps, ref?: any) => {
+    return (
+      <table css={tableStyles} ref={ref} {...props}>
+        {children}
+      </table>
+    );
+  }
+);
 
 export default Table;

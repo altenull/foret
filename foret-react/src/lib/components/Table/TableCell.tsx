@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Color } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
-import React from 'react';
+import { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 import { smallTextStyles, subtitle2Styles } from '../../typography/utils/typography.utils';
 import { TableCellAlign } from './enums/table-cell-align.enum';
 import { TableCellType } from './enums/table-cell-type.enum';
@@ -24,19 +24,16 @@ const tableCellStyles = (align: TableCellAlign, type: TableCellType) => css`
   text-align: ${align};
 `;
 
-const TableCell: React.FC<TableCellProps> = ({
-  children,
-  type = TableCellType.Td,
-  align = TableCellAlign.Left,
-  ...props
-}: TableCellProps) => {
-  const Component = type;
+const TableCell: ForwardRefExoticComponent<TableCellProps & RefAttributes<any>> = forwardRef<any, TableCellProps>(
+  ({ children, type = TableCellType.Td, align = TableCellAlign.Left, ...props }: TableCellProps, ref?: any) => {
+    const Component = type;
 
-  return (
-    <Component css={tableCellStyles(align, type)} {...props}>
-      {children}
-    </Component>
-  );
-};
+    return (
+      <Component css={tableCellStyles(align, type)} ref={ref} {...props}>
+        {children}
+      </Component>
+    );
+  }
+);
 
 export default TableCell;

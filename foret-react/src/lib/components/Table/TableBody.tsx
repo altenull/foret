@@ -1,10 +1,16 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import React from 'react';
+import { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react';
 import { TableBodyProps } from './models/table-body-props';
 
-const TableBody: React.FC<TableBodyProps> = ({ children, ...props }: TableBodyProps) => {
-  return <tbody {...props}>{children}</tbody>;
-};
+const TableBody: ForwardRefExoticComponent<TableBodyProps & RefAttributes<any>> = forwardRef<any, TableBodyProps>(
+  ({ children, ...props }: TableBodyProps, ref?: any) => {
+    return (
+      <tbody ref={ref} {...props}>
+        {children}
+      </tbody>
+    );
+  }
+);
 
 export default TableBody;
