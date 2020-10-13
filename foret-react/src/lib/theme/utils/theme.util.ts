@@ -12,7 +12,7 @@ const duration: Duration = {
   slow: '300ms',
 };
 
-const defaultTheme: Theme = {
+export const defaultTheme: Theme = {
   duration,
   colors: createColors(),
   fontWeights: createFontWeights(),

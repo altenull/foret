@@ -1,11 +1,27 @@
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
+import { defaultTheme } from '../theme/utils/theme.util';
 import { TypographyProps } from './models/typography-props';
-import { paragraphStyles } from './utils/typography.utils';
+import { getResponsiveTypographyStyles, paragraphStyles } from './utils/typography.utils';
 
-const Paragraph: React.FC<TypographyProps> = ({ children, ...props }: TypographyProps) => {
+const paragraphMarginBottomStyles = css`
+  margin-bottom: 0.35em;
+`;
+
+const Paragraph: React.FC<TypographyProps> = ({
+  children,
+  enableMargin = false,
+  enableResponsive = false,
+  ...props
+}: TypographyProps) => {
   return (
-    <p css={paragraphStyles} {...props}>
+    <p
+      css={[
+        paragraphStyles,
+        enableMargin && paragraphMarginBottomStyles,
+        enableResponsive && getResponsiveTypographyStyles(defaultTheme.textStyles.paragraph.fontSize),
+      ]}
+      {...props}>
       {children}
     </p>
   );

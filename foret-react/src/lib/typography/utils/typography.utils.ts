@@ -6,8 +6,9 @@ import {
   paragraph,
   smallText,
   subtitle1,
-  subtitle2,
+  subtitle2
 } from '../../theme/utils/text-style.util';
+import { defaultTheme } from '../../theme/utils/theme.util';
 
 // https://meyerweb.com/eric/tools/css/reset/
 export const resetTypography = css({
@@ -57,3 +58,11 @@ export const paragraphStyles = css(resetTypography, setFontFace(), paragraph as 
 export const smallTextStyles = css(resetTypography, setFontFace(), smallText as any);
 export const subtitle1Styles = css(resetTypography, setFontFace(), subtitle1 as any);
 export const subtitle2Styles = css(resetTypography, setFontFace(), subtitle2 as any);
+
+export const getResponsiveTypographyStyles = (fontSize: string) => css`
+  font-size: ${parseInt(fontSize, 10) * 0.8}px;
+
+  ${defaultTheme.mediaQueries.viewPort9} {
+    font-size: ${fontSize};
+  }
+`;
