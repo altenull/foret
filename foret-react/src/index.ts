@@ -5,7 +5,7 @@ export { Select, SelectItem, SelectItemGroup } from './lib/components/Select';
 export { Tab, TabGroup } from './lib/components/Tab';
 export { Table, TableBody, TableCell, TableHead, TableRow } from './lib/components/Table';
 export { Toggle } from './lib/components/Toggle';
-export { ThemeProvider } from './lib/theme';
+export { Foret } from './lib/theme';
 export {
   Heading1,
   Heading2,
@@ -13,5 +13,6 @@ export {
   Paragraph,
   SmallText,
   Subtitle1,
-  Subtitle2,
+  Subtitle2
 } from './lib/typography';
+

@@ -1,7 +1,7 @@
 import { Duration } from './duration';
 import { TextStyle } from './test-style';
 
-export interface ThemeProviderPayload {
+export interface ForetPayload {
   theme?: any;
   children: React.ReactNode;
 }

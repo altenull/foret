@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, Global, jsx } from '@emotion/core';
-import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
-import { ThemeProviderPayload } from './models/theme';
+import { ThemeProvider } from 'emotion-theming';
+import { ForetPayload } from './models/theme';
 import { createTheme } from './utils/theme.util';
 
 const globalStyles = css`
@@ -34,15 +34,15 @@ const globalStyles = css`
   }
 `;
 
-const ThemeProvider = ({ theme, children }: ThemeProviderPayload) => {
+const Foret = ({ theme, children }: ForetPayload) => {
   const mergedTheme = createTheme(theme);
 
   return (
-    <EmotionThemeProvider theme={mergedTheme}>
+    <ThemeProvider theme={mergedTheme}>
       <Global styles={globalStyles} />
       {children}
-    </EmotionThemeProvider>
+    </ThemeProvider>
   );
 };
 
-export default ThemeProvider;
+export default Foret;
