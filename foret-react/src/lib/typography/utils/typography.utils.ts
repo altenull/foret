@@ -60,7 +60,7 @@ export const subtitle1Styles = css(resetTypography, setFontFace(), subtitle1 as 
 export const subtitle2Styles = css(resetTypography, setFontFace(), subtitle2 as any);
 
 export const getResponsiveTypographyStyles = (fontSize: string) => css`
-  font-size: ${parseInt(fontSize, 10) * 0.8}px;
+  font-size: ${Math.round(parseInt(fontSize, 10) * 0.8)}px;
 
   ${defaultTheme.mediaQueries.viewPort9} {
     font-size: ${fontSize};
