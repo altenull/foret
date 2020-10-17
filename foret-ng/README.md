@@ -1,27 +1,39 @@
-# Foret (Angular)
+<h1 align="center">
+  Foret Ng
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
+<p align="center">
+  <a href="https://github.com/altenull/foret/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Foret is released under the MIT license" />
+  </a>
+  <a href="https://www.npmjs.com/package/@altenull/foret-ng">
+    <img src="https://img.shields.io/npm/v/@altenull/foret-ng?logo=npm&logoColor=fff&label=%40altenull%2Fforet-ng&color=limegreen" alt="@altenull/foret-ng package version" />
+  </a>
+</p>
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Using npm:
 
-## Code scaffolding
+```shell
+$ npm install --save @altenull/foret-ng
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+If you prefer yarn:
 
-## Build
+```shell
+$ yarn add @altenull/foret-ng
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Supported UI Components
 
-## Running unit tests
+- Button
+- Checkbox
+- Radio Button
+- Select
+- Tab
+- Toggle
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📝 License
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Licensed under the [MIT](../LICENSE).
