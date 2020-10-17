@@ -1,25 +1,39 @@
-# ForetNg
+<h1 align="center">
+  Foret Ng
+</h1>
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
+<p align="center">
+  <a href="https://github.com/altenull/foret/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Foret is released under the MIT license" />
+  </a>
+  <a href="https://www.npmjs.com/package/@altenull/foret-ng">
+    <img src="https://img.shields.io/npm/v/@altenull/foret-ng?logo=npm&logoColor=fff&label=%40altenull%2Fforet-ng&color=limegreen" alt="@altenull/foret-ng package version" />
+  </a>
+</p>
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project foret-ng` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project foret-ng`.
+Using npm:
 
-> Note: Don't forget to add `--project foret-ng` or else it will be added to the default project in your `angular.json` file.
+```shell
+$ npm install --save @altenull/foret-ng
+```
 
-## Build
+If you prefer yarn:
 
-Run `ng build foret-ng` to build the project. The build artifacts will be stored in the `dist/` directory.
+```shell
+$ yarn add @altenull/foret-ng
+```
 
-## Publishing
+## Supported UI Components
 
-After building your library with `ng build foret-ng`, go to the dist folder `cd dist/foret-ng` and run `npm publish`.
+- Button
+- Checkbox
+- Radio Button
+- Select
+- Tab
+- Toggle
 
-## Running unit tests
+## 📝 License
 
-Run `ng test foret-ng` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Licensed under the [MIT](../LICENSE).
