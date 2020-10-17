@@ -30,6 +30,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "license": "MIT",
   "dependencies": {
     "@angular/animations": "~10.0.0",
     "@angular/common": "~10.0.0",
