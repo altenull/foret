@@ -17,3 +17,7 @@ we support!
 | [`@altenull/foret-react`](./foret-react) | React components                                  |
 | [`@altenull/foret-ng`](./foret-ng)       | Angular components                                |
 | [`@altenull/foret-core`](./foret-core)   | Shared resources such as color, font-weigth enum. |
+
+## 📝 License
+
+Licensed under the [MIT](./LICENSE).
