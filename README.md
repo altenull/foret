@@ -1,6 +1,4 @@
-<h1 align="center">
-  Foret Design System
-</h1>
+# Foret Design System
 
 > Foret is an open-source design system for building web applications related to nature with Foret design language.
 

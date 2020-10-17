@@ -1,6 +1,4 @@
-<h1 align="center">
-  Foret Ng
-</h1>
+# Foret Ng
 
 <p align="center">
   <a href="https://github.com/altenull/foret/blob/master/LICENSE">
