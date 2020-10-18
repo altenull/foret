@@ -1,11 +1,25 @@
 {
   "name": "@altenull/foret-ng",
   "version": "1.0.0-22",
+  "description": "Foret design system for Angular",
+  "keywords": [
+    "foret",
+    "design system",
+    "angular",
+    "ng"
+  ],
+  "author": "Heonyoung Kim <altenull@gmail.com> (https://github.com/altenull)",
+  "homepage": "https://github.com/altenull/foret/tree/master/foret-ng#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altenull/foret.git"
+  },
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^10.0.0",
     "@angular/core": "^10.0.0"
   },
   "dependencies": {
     "tslib": "^2.0.0"
-  }
+  },
 }
