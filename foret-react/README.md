@@ -7,9 +7,14 @@
   <a href="https://www.npmjs.com/package/@altenull/foret-react">
     <img src="https://img.shields.io/npm/v/@altenull/foret-react?logo=npm&logoColor=fff&label=%40altenull%2Fforet-react&color=limegreen" alt="@altenull/foret-react package version" />
   </a>
+  <a href="https://www.npmjs.com/package/@altenull/foret-react">
+    <img src="https://img.shields.io/npm/dw/@altenull/foret-react?color=green" alt="@altenull/foret-react download per week" />
+  </a>
 </p>
 
 ## Installation
+
+foret-react is built on [@emotion/core](https://emotion.sh/docs/@emotion/core), a CSS-in-JS library, so you need to install @emotion/core as well.
 
 Using npm:
 
@@ -31,6 +36,10 @@ $ yarn add @altenull/foret-react @emotion/core@^10.0.0
 - Select
 - Tab
 - Toggle
+
+## For More Information
+
+Please visit our website https://foretdesign.netlify.app.
 
 ## 📝 License
 

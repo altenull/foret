@@ -7,6 +7,9 @@
   <a href="https://www.npmjs.com/package/@altenull/foret-ng">
     <img src="https://img.shields.io/npm/v/@altenull/foret-ng?logo=npm&logoColor=fff&label=%40altenull%2Fforet-ng&color=limegreen" alt="@altenull/foret-ng package version" />
   </a>
+  <a href="https://www.npmjs.com/package/@altenull/foret-ng">
+    <img src="https://img.shields.io/npm/dw/@altenull/foret-ng?color=green" alt="@altenull/foret-ng download per week" />
+  </a>
 </p>
 
 ## Installation
@@ -31,6 +34,10 @@ $ yarn add @altenull/foret-ng
 - Select
 - Tab
 - Toggle
+
+## For More Information
+
+Please visit our website https://foretdesign.netlify.app.
 
 ## 📝 License
 

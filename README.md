@@ -14,19 +14,28 @@
   </a>
 </p>
 
-## Getting started
+## Motivation
+
+The Forest Design System is a personal project started to experience the creation of a design system.
+
+First, I needed a brand before building a design system. Since I was always interested in nature, I created a fake brand called Foret, which has a mission of 'creating a green space within the living area for modern people in the city.'
+
+After creating the brand, I defined design principles that serve as guidelines to follow when approaching the design system. Within the design principles, I selected basic elements of the design system such as color and font that match the brand, and developed UI components based on them.
+
+## Getting Started
+
+The Foret Design System is available in [React](https://reactjs.org/) and [Angular](https://angular.io/) versions.
 
 If you're looking for React version, check out [`foret-react`](./foret-react). If you're looking for Angular
 version, take a look at [`foret-ng`](./foret-ng).
 
-If you're trying to find something specific, here's a full list of packages that
-we support!
+Here's a full list of packages that are included in Foret Design System.
 
-| Package name                             | Description                                       |
-| ---------------------------------------- | ------------------------------------------------- |
-| [`@altenull/foret-react`](./foret-react) | React components                                  |
-| [`@altenull/foret-ng`](./foret-ng)       | Angular components                                |
-| [`@altenull/foret-core`](./foret-core)   | Shared resources such as color, font-weigth enum. |
+| Package                                  | Description                                              |
+| ---------------------------------------- | -------------------------------------------------------- |
+| [`@altenull/foret-react`](./foret-react) | React components                                         |
+| [`@altenull/foret-ng`](./foret-ng)       | Angular components                                       |
+| [`@altenull/foret-core`](./foret-core)   | A shared resource used by both foret-react and foret-ng. |
 
 ## 📝 License
 
