@@ -11,7 +11,7 @@ storiesOf('components/Button', module)
 
         <foret-storybook-spacing></foret-storybook-spacing>
 
-        <button foretPrimaryButton disabled>primary button (disabled)</button>
+        <button foretPrimaryButton disabled>primary button</button>
       </foret-storybook-template>
     `,
   }))
@@ -22,7 +22,7 @@ storiesOf('components/Button', module)
 
         <foret-storybook-spacing></foret-storybook-spacing>
 
-        <button foretSecondaryButton disabled>secondary button (disabled)</button>
+        <button foretSecondaryButton disabled>secondary button</button>
       </foret-storybook-template>
     `,
   }))
@@ -33,7 +33,7 @@ storiesOf('components/Button', module)
 
         <foret-storybook-spacing></foret-storybook-spacing>
 
-        <button foretDangerButton disabled>danger button (disabled)</button>
+        <button foretDangerButton disabled>danger button</button>
       </foret-storybook-template>
     `,
   }));

@@ -17,9 +17,6 @@ storiesOf('components/Tab', module)
           <foret-tab [id]="'tab-3'" [labelText]="'Tab 3'" [value]="'tab3'">
             <h3>Tab 3 content</h3>
           </foret-tab>
-          <foret-tab [id]="'tab-4'" [labelText]="'Tab 4'" [value]="'tab4'">
-            <h4>Tab 4 content</h4>
-          </foret-tab>
         </foret-tab-group>
       </foret-storybook-template>
     `,
