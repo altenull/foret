@@ -14,6 +14,7 @@ export const baseButtonStyles = {
 };
 
 export const buttonText = {
+  'font-family': 'Overpass, IBMPlexSansKR, sans-serif',
   'font-style': 'normal',
   'font-weight': FontWeight.SemiBold,
   'font-size': '18px',

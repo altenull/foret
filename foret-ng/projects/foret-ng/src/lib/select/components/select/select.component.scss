@@ -11,6 +11,7 @@
 }
 
 .__legend {
+  @include subtitle2();
   display: inline-block;
   margin-bottom: 12px;
 }
