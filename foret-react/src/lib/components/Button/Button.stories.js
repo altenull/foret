@@ -15,7 +15,7 @@ export const withPrimaryButton = () => (
 
     <StorybookSpacing />
 
-    <PrimaryButton disabled={true}>primary button (disabled)</PrimaryButton>
+    <PrimaryButton disabled={true}>primary button</PrimaryButton>
   </StorybookTemplate>
 );
 
@@ -25,7 +25,7 @@ export const withSecondaryButton = () => (
 
     <StorybookSpacing />
 
-    <SecondaryButton disabled={true}>secondary button (disabled)</SecondaryButton>
+    <SecondaryButton disabled={true}>secondary button</SecondaryButton>
   </StorybookTemplate>
 );
 
@@ -35,6 +35,6 @@ export const withDangerButton = () => (
 
     <StorybookSpacing />
 
-    <DangerButton disabled={true}>danger button (disabled)</DangerButton>
+    <DangerButton disabled={true}>danger button</DangerButton>
   </StorybookTemplate>
 );
