@@ -35,6 +35,7 @@ Here's a full list of packages that are included in Foret Design System.
 | ---------------------------------------- | -------------------------------------------------------- |
 | [`@altenull/foret-react`](./foret-react) | React components                                         |
 | [`@altenull/foret-ng`](./foret-ng)       | Angular components                                       |
+| [`@altenull/foret-sass`](./foret-sass)   | Package that should be installed with foret-ng.          |
 | [`@altenull/foret-core`](./foret-core)   | A shared resource used by both foret-react and foret-ng. |
 
 ## 📝 License
