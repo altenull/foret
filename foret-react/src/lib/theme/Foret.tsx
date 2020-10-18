@@ -12,21 +12,21 @@ const globalStyles = css`
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
-    unicode-range: U+AC00- U+D7A3;
+    unicode-range: U+AC00-D7A3;
   }
   @font-face {
     font-family: 'IBMPlexSansKR';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
-    unicode-range: U+AC00- U+D7A3;
+    unicode-range: U+AC00-D7A3;
   }
   @font-face {
     font-family: 'IBMPlexSansKR';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Text.woff') format('woff');
     font-weight: 600;
     font-style: normal;
-    unicode-range: U+AC00- U+D7A3;
+    unicode-range: U+AC00-D7A3;
   }
 
   body {
