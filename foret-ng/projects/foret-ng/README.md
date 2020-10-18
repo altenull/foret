@@ -17,13 +17,13 @@
 Using npm:
 
 ```shell
-$ npm install --save @altenull/foret-ng
+$ npm install --save @altenull/foret-ng @altenull/foret-sass
 ```
 
 If you prefer yarn:
 
 ```shell
-$ yarn add @altenull/foret-ng
+$ yarn add @altenull/foret-ng @altenull/foret-sass
 ```
 
 ## Supported UI Components
