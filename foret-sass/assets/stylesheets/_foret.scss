@@ -1,6 +1,23 @@
 @import "fonts";
+@import "./mixins/typography";
 
 html,
 body {
   font-family: "Overpass", "IBMPlexSansKR", sans-serif;
+}
+
+h1 {
+  @include heading1();
+}
+
+h2 {
+  @include heading2();
+}
+
+h3 {
+  @include heading3();
+}
+
+p {
+  @include paragraph();
 }

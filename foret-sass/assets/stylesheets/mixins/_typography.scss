@@ -1,0 +1,88 @@
+@import "../variables";
+
+// https://meyerweb.com/eric/tools/css/reset/
+@mixin resetTypography() {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+@mixin heading1() {
+  @include resetTypography();
+  font-family: $foret-font;
+  font-style: normal;
+  font-weight: $light;
+  font-size: 72px;
+  color: $ink;
+  line-height: 1.25;
+  letter-spacing: -1.2px;
+}
+
+@mixin heading2() {
+  @include resetTypography();
+  font-family: $foret-font;
+  font-style: normal;
+  font-weight: $semiBold;
+  font-size: 48px;
+  color: $ink;
+  line-height: 1.375;
+  letter-spacing: -0.25px;
+}
+
+@mixin heading3() {
+  @include resetTypography();
+  font-family: $foret-font;
+  font-style: normal;
+  font-weight: $regular;
+  font-size: 36px;
+  color: $ink;
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+}
+
+@mixin paragraph() {
+  @include resetTypography();
+  font-family: $foret-font;
+  font-style: normal;
+  font-weight: $regular;
+  font-size: 20px;
+  color: $ink;
+  line-height: 1.8;
+  letter-spacing: 0;
+}
+
+@mixin smallText() {
+  @include resetTypography();
+  font-family: $foret-font;
+  font-style: normal;
+  font-weight: $light;
+  font-size: 15px;
+  color: $ink;
+  line-height: 1.35;
+  letter-spacing: 0.8px;
+}
+
+@mixin subtitle1() {
+  @include resetTypography();
+  font-family: $foret-font;
+  font-style: normal;
+  font-weight: $light;
+  font-size: 18px;
+  color: $ink;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+@mixin subtitle2() {
+  @include resetTypography();
+  font-family: $foret-font;
+  font-style: normal;
+  font-weight: $semiBold;
+  font-size: 16px;
+  color: $ink;
+  line-height: 1.5;
+  letter-spacing: 0.25px;
+}
