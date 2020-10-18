@@ -12,6 +12,9 @@
   <a href="https://www.npmjs.com/package/@altenull/foret-ng">
     <img src="https://img.shields.io/npm/v/@altenull/foret-ng?logo=npm&logoColor=fff&label=%40altenull%2Fforet-ng&color=limegreen" alt="@altenull/foret-ng package version" />
   </a>
+  <a href="https://www.npmjs.com/package/@altenull/foret-sass">
+    <img src="https://img.shields.io/npm/v/@altenull/foret-sass?logo=npm&logoColor=fff&label=%40altenull%2Fforet-sass&color=limegreen" alt="@altenull/foret-sass package version" />
+  </a>
 </p>
 
 ## Motivation
@@ -33,8 +36,8 @@ Here's a full list of packages that are included in Foret Design System.
 
 | Package                                  | Description                                              |
 | ---------------------------------------- | -------------------------------------------------------- |
-| [`@altenull/foret-react`](./foret-react) | React components                                         |
-| [`@altenull/foret-ng`](./foret-ng)       | Angular components                                       |
+| [`@altenull/foret-react`](./foret-react) | React components.                                        |
+| [`@altenull/foret-ng`](./foret-ng)       | Angular components.                                      |
 | [`@altenull/foret-sass`](./foret-sass)   | Package that should be installed with foret-ng.          |
 | [`@altenull/foret-core`](./foret-core)   | A shared resource used by both foret-react and foret-ng. |
 

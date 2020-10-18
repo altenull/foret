@@ -26,6 +26,14 @@ If you prefer yarn:
 $ yarn add @altenull/foret-ng @altenull/foret-sass
 ```
 
+## Setting up Angular App
+
+After the above packages are installed, import foret-sass package into your `src/styles.scss` file like below.
+
+```scss
+@import '~@altenull/foret-sass';
+```
+
 ## Supported UI Components
 
 - Button
