@@ -1,5 +1,6 @@
 @import "fonts";
 
-@import "variables";
-
-@import "mixins/typography";
+html,
+body {
+  font-family: "Overpass", "IBMPlexSansKR", sans-serif;
+}
