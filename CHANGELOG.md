@@ -43,9 +43,9 @@ What's included in the v1.0.0 version release.
 ### foret-ng
 
 - button
-  - primary-button `(directive)`
-  - secondary-button `(directive)`
-  - danger-button `(directive)`
+  - primary-button **(directive)**
+  - secondary-button **(directive)**
+  - danger-button **(directive)**
 - checkbox
   - checkbox
   - checkbox-group
