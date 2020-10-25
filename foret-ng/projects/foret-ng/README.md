@@ -45,7 +45,7 @@ After the above packages are installed, import foret-sass package into your `src
 
 ## For More Information
 
-Please visit our website https://foretdesign.netlify.app.
+Please visit our website https://foretdesign.io
 
 ## 📝 License
 

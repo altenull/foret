@@ -39,7 +39,7 @@ $ yarn add @altenull/foret-react @emotion/core@^10.0.0
 
 ## For More Information
 
-Please visit our website https://foretdesign.netlify.app.
+Please visit our website https://foretdesign.io
 
 ## 📝 License
 
