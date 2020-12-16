@@ -7,9 +7,14 @@ export default {
 };
 
 export const withDatePicker = () => {
+  const customHandleChange = (newSelectedDate, id) => {
+    console.log(`custom handle change(newSelectedDate): ${newSelectedDate}`);
+    console.log(`custom handle change(id): ${id}`);
+  };
+
   return (
     <StorybookTemplate>
-      <DatePicker />
+      <DatePicker id='date-picker' onChange={customHandleChange} />
     </StorybookTemplate>
   );
 };

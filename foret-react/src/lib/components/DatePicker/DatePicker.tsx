@@ -14,26 +14,32 @@ const datePickerStyles = css({
 });
 
 const DatePicker: ForwardRefExoticComponent<DatePickerProps & RefAttributes<any>> = forwardRef<any, DatePickerProps>(
-  ({ selectedDate, ...props }: DatePickerProps, ref?: any) => {
+  ({ id, selectedDate, onChange = () => {}, ...props }: DatePickerProps, ref?: any) => {
     // baseDate is always a date which is first day of month.
     const [baseDate, setBaseDate] = useState<Date>(startOfMonth(selectedDate != null ? selectedDate : new Date()));
+    const [selectedDay, setSelectedDay] = useState<Date | null>(selectedDate != null ? selectedDate : null);
 
-    const navigateToNextMonth = (_baseDate: Date): void => {
-      setBaseDate(add(_baseDate, { months: 1 }));
+    const navigateToNextMonth = (date: Date): void => {
+      setBaseDate(add(date, { months: 1 }));
     };
 
-    const navigateToPrevMonth = (_baseDate: Date): void => {
-      setBaseDate(sub(_baseDate, { months: 1 }));
+    const navigateToPrevMonth = (date: Date): void => {
+      setBaseDate(sub(date, { months: 1 }));
+    };
+
+    const handleSelectDay = (newSelectedDay: Date): void => {
+      onChange(newSelectedDay, id);
+      setSelectedDay(newSelectedDay);
     };
 
     return (
-      <div css={datePickerStyles} ref={ref} {...props}>
+      <div id={id} css={datePickerStyles} ref={ref} {...props}>
         <Paragraph>
           {baseDate.getFullYear()}년 {baseDate.getMonth() + 1}월
           <button onClick={() => navigateToPrevMonth(baseDate)}>prev</button>
           <button onClick={() => navigateToNextMonth(baseDate)}>next</button>
         </Paragraph>
-        <Calendar daysOfMonth={getDaysOfMonth(baseDate, selectedDate)} />
+        <Calendar daysOfMonth={getDaysOfMonth(baseDate, selectedDay)} onSelectDay={handleSelectDay} />
       </div>
     );
   }

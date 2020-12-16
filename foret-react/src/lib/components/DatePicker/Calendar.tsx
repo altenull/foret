@@ -26,7 +26,7 @@ const dayStyles = (isToday: boolean, isSelected: Boolean, disabled: boolean) =>
     },
   });
 
-const Calendar: React.FC<CalendarProps> = ({ daysOfMonth }: CalendarProps) => {
+const Calendar: React.FC<CalendarProps> = ({ daysOfMonth, onSelectDay }: CalendarProps) => {
   const dayOfWeekToKoreanMap: { [dayOfWeek: string]: string } = {
     [DayOfWeek.Sun]: '일',
     [DayOfWeek.Mon]: '월',
@@ -54,7 +54,10 @@ const Calendar: React.FC<CalendarProps> = ({ daysOfMonth }: CalendarProps) => {
             {weekIndex === 0 && daysOfWeek.length < 7 && <td colSpan={7 - daysOfWeek.length} />}
 
             {daysOfWeek.map(({ date, isToday, isSelected, disabled }: DayCell) => (
-              <td key={date.toISOString()} css={dayStyles(isToday, isSelected, disabled)}>
+              <td
+                key={date.toISOString()}
+                css={dayStyles(isToday, isSelected, disabled)}
+                onClick={() => onSelectDay(date)}>
                 <SmallText>{getDate(date)}</SmallText>
               </td>
             ))}
