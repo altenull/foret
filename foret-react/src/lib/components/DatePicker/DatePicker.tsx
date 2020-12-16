@@ -5,12 +5,23 @@ import { forwardRef, ForwardRefExoticComponent, RefAttributes, useState } from '
 import { defaultTheme } from '../../theme/utils/theme.util';
 import { Paragraph } from '../../typography';
 import Calendar from './Calendar';
+import { MonthNavigatorType } from './enums/month-navigator-type.enum';
 import { DatePickerProps } from './models/date-picker-props';
+import MonthNavigator from './MonthNavigator';
 import { getDaysOfMonth } from './utils/date-picker.utils';
 
 const datePickerStyles = css({
   display: 'inline-block',
   backgroundColor: defaultTheme.colors.white,
+});
+
+const navigationStyles = css({
+  display: 'flex',
+});
+
+const titleStyles = css({
+  width: '100%',
+  paddingLeft: '16px',
 });
 
 const DatePicker: ForwardRefExoticComponent<DatePickerProps & RefAttributes<any>> = forwardRef<any, DatePickerProps>(
@@ -19,12 +30,12 @@ const DatePicker: ForwardRefExoticComponent<DatePickerProps & RefAttributes<any>
     const [baseDate, setBaseDate] = useState<Date>(startOfMonth(selectedDate != null ? selectedDate : new Date()));
     const [selectedDay, setSelectedDay] = useState<Date | null>(selectedDate != null ? selectedDate : null);
 
-    const navigateToNextMonth = (date: Date): void => {
-      setBaseDate(add(date, { months: 1 }));
-    };
-
     const navigateToPrevMonth = (date: Date): void => {
       setBaseDate(sub(date, { months: 1 }));
+    };
+
+    const navigateToNextMonth = (date: Date): void => {
+      setBaseDate(add(date, { months: 1 }));
     };
 
     const handleSelectDay = (newSelectedDay: Date): void => {
@@ -34,11 +45,14 @@ const DatePicker: ForwardRefExoticComponent<DatePickerProps & RefAttributes<any>
 
     return (
       <div id={id} css={datePickerStyles} ref={ref} {...props}>
-        <Paragraph>
-          {baseDate.getFullYear()}년 {baseDate.getMonth() + 1}월
-          <button onClick={() => navigateToPrevMonth(baseDate)}>prev</button>
-          <button onClick={() => navigateToNextMonth(baseDate)}>next</button>
-        </Paragraph>
+        <div css={navigationStyles}>
+          <Paragraph css={titleStyles}>
+            {baseDate.getFullYear()}년 {baseDate.getMonth() + 1}월
+          </Paragraph>
+          <MonthNavigator type={MonthNavigatorType.Prev} onNavigateMonth={() => navigateToPrevMonth(baseDate)} />
+          <MonthNavigator type={MonthNavigatorType.Next} onNavigateMonth={() => navigateToNextMonth(baseDate)} />
+        </div>
+
         <Calendar daysOfMonth={getDaysOfMonth(baseDate, selectedDay)} onSelectDay={handleSelectDay} />
       </div>
     );
