@@ -13,15 +13,17 @@ import { getDaysOfMonth } from './utils/date-picker.utils';
 const datePickerStyles = css({
   display: 'inline-block',
   backgroundColor: defaultTheme.colors.white,
+  padding: '12px',
 });
 
 const navigationStyles = css({
   display: 'flex',
+  marginBottom: '12px',
 });
 
 const titleStyles = css({
   width: '100%',
-  paddingLeft: '16px',
+  paddingLeft: '12px',
 });
 
 const DatePicker: ForwardRefExoticComponent<DatePickerProps & RefAttributes<any>> = forwardRef<any, DatePickerProps>(

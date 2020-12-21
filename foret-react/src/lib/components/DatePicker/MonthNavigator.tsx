@@ -14,7 +14,7 @@ const monthNavigatorStyles = css({
   outline: 'none',
   minWidth: '40px',
   height: '40px',
-  padding: '0',
+  padding: 0,
   border: 'none',
   borderRadius: '50%',
   cursor: 'pointer',
