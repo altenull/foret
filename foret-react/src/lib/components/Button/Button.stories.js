@@ -9,7 +9,7 @@ export default {
   title: 'components/Button',
 };
 
-export const withPrimaryButton = () => (
+export const primaryButton = () => (
   <StorybookTemplate>
     <PrimaryButton onClick={action('primary button clicked')}>primary button</PrimaryButton>
 
@@ -19,7 +19,7 @@ export const withPrimaryButton = () => (
   </StorybookTemplate>
 );
 
-export const withSecondaryButton = () => (
+export const secondaryButton = () => (
   <StorybookTemplate>
     <SecondaryButton onClick={action('secondary button clicked')}>secondary button</SecondaryButton>
 
@@ -29,7 +29,7 @@ export const withSecondaryButton = () => (
   </StorybookTemplate>
 );
 
-export const withDangerButton = () => (
+export const dangerButton = () => (
   <StorybookTemplate>
     <DangerButton onClick={action('danger button clicked')}>danger button</DangerButton>
 

@@ -7,7 +7,7 @@ export default {
   title: 'components/DatePicker',
 };
 
-export const withDatePicker = () => {
+export const datePicker = () => {
   const customHandleChange = (newSelectedDate, id) => {
     console.log(`custom handle change(newSelectedDate): ${newSelectedDate}`);
     console.log(`custom handle change(id): ${id}`);
@@ -20,7 +20,7 @@ export const withDatePicker = () => {
   );
 };
 
-export const withSelectedDateDatePicker = () => {
+export const withSelectedDate = () => {
   const customHandleChange = (newSelectedDate, id) => {
     console.log(`custom handle change(newSelectedDate): ${newSelectedDate}`);
     console.log(`custom handle change(id): ${id}`);
@@ -39,7 +39,7 @@ export const withSelectedDateDatePicker = () => {
   );
 };
 
-export const withLocaleDatePicker = () => {
+export const withLocale = () => {
   const customHandleChange = (newSelectedDate, id) => {
     console.log(`custom handle change(newSelectedDate): ${newSelectedDate}`);
     console.log(`custom handle change(id): ${id}`);

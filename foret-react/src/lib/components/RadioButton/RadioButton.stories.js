@@ -7,7 +7,7 @@ export default {
   title: 'components/RadioButton',
 };
 
-export const withRadioButton = () => {
+export const radioButton = () => {
   const customHandleChange = (id, newCheckedValue) => {
     console.log(`custom handle change(id): ${id}`);
     console.log(`custom handle change(newCheckedValue): ${newCheckedValue}`);
@@ -24,7 +24,7 @@ export const withRadioButton = () => {
   );
 };
 
-export const withDisabledRadioButton = () => {
+export const withDisabled = () => {
   return (
     <StorybookTemplate>
       <RadioButtonGroup legendText={'Radio button'} checkedValue={'disabledRadioButton2'} disabled={true}>

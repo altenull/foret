@@ -7,7 +7,7 @@ export default {
   title: 'components/Checkbox',
 };
 
-export const withCheckbox = () => {
+export const checkbox = () => {
   const customHandleChange = (newChecked, id) => {
     console.log(`custom handle change(newChecked): ${newChecked}`);
     console.log(`custom handle change(id): ${id}`);
@@ -24,7 +24,7 @@ export const withCheckbox = () => {
   );
 };
 
-export const withDisabledCheckbox = () => {
+export const withDisabled = () => {
   return (
     <StorybookTemplate>
       <CheckboxGroup legendText={'Checkbox'} disabled={true}>

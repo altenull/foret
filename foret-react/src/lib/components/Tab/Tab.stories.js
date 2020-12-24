@@ -7,7 +7,7 @@ export default {
   title: 'components/Tab',
 };
 
-export const withTab = () => {
+export const tab = () => {
   const customHandleChange = (id, newSelectedValue) => {
     console.log(`custom handle click(id): ${id}`);
     console.log(`custom handle click(newSelectedValue): ${newSelectedValue}`);

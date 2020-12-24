@@ -6,7 +6,7 @@ export default {
   title: 'components/Toggle',
 };
 
-export const withToggle = () => {
+export const toggle = () => {
   const customHandleToggle = (id, newChecked) => {
     console.log(`custom handle change(id): ${id}`);
     console.log(`custom handle change(newChecked): ${newChecked}`);
@@ -23,7 +23,7 @@ export const withToggle = () => {
   );
 };
 
-export const withDisabledToggle = () => {
+export const withDisabled = () => {
   return (
     <StorybookTemplate>
       <Toggle id={'disabled-toggle-1'} checked={true} disabled={true} />

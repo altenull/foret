@@ -12,7 +12,7 @@ export default {
   title: 'components/Table',
 };
 
-export const withTable = () => {
+export const table = () => {
   return (
     <StorybookTemplate>
       <Table>

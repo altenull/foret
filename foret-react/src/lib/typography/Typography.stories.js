@@ -12,7 +12,7 @@ export default {
   title: 'components/Typography',
 };
 
-export const withTypography = () => (
+export const typography = () => (
   <StorybookTemplate>
     <Heading1>Heading 1</Heading1>
     <Heading2>Heading 2</Heading2>
@@ -24,7 +24,7 @@ export const withTypography = () => (
   </StorybookTemplate>
 );
 
-export const withMarginalTypography = () => (
+export const withMarginal = () => (
   <StorybookTemplate>
     <Heading1 enableMargin>Marginal Heading 1</Heading1>
     <Heading2 enableMargin>Marginal Heading 2</Heading2>

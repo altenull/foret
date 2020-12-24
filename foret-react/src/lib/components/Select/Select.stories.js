@@ -8,7 +8,7 @@ export default {
   title: 'components/Select',
 };
 
-export const withSelect = () => {
+export const select = () => {
   const customHandleChange = (id, newSelectedValue) => {
     console.log(`custom handle change(id): ${id}`);
     console.log(`custom handle change(newSelectedValue): ${newSelectedValue}`);
@@ -28,7 +28,7 @@ export const withSelect = () => {
   );
 };
 
-export const withGroupedSelect = () => {
+export const withGroup = () => {
   const customHandleChange = (id, newSelectedValue) => {
     console.log(`custom handle change(id): ${id}`);
     console.log(`custom handle change(newSelectedValue): ${newSelectedValue}`);
@@ -53,7 +53,7 @@ export const withGroupedSelect = () => {
   );
 };
 
-export const withPlaceholderSelect = () => {
+export const withPlaceholder = () => {
   const customHandleChange = (id, newSelectedValue) => {
     console.log(`custom handle change(id): ${id}`);
     console.log(`custom handle change(newSelectedValue): ${newSelectedValue}`);
@@ -77,7 +77,7 @@ export const withPlaceholderSelect = () => {
   );
 };
 
-export const withDisabledSelect = () => {
+export const withDisabled = () => {
   return (
     <StorybookTemplate>
       <Select id={'disabled-select'} legendText={'select'} selectedValue={'option2'} disabled={true}>
