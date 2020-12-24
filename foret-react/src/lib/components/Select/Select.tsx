@@ -85,7 +85,7 @@ const Select: ForwardRefExoticComponent<SelectProps & RefAttributes<any>> = forw
     };
 
     return (
-      <div css={ref}>
+      <div ref={ref}>
         <div css={selectWrapperStyles}>
           {!!legendText && (
             <label css={legendStyles} htmlFor={id} aria-label={legendText}>
