@@ -2,9 +2,8 @@
 import { css, jsx } from '@emotion/core';
 import { memo, useContext } from 'react';
 import { defaultTheme } from '../../theme/utils/theme.util';
-import { LocaleHandlerContext } from './DatePicker';
+import { LocaleHandlerContext, LocaleHandlerContextType } from './contexts/locale-handler.context';
 import { CalendarDayOfWeekProps } from './models/calendar-day-of-week-props';
-import { LocaleHandlerContextType } from './models/shared';
 
 const dayOfWeekStyles = css({
   ...defaultTheme.textStyles.subtitle1,

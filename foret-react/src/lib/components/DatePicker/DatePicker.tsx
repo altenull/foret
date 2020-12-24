@@ -2,13 +2,13 @@
 import { LanguageCode } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
 import { add, startOfMonth, sub } from 'date-fns';
-import { createContext, forwardRef, ForwardRefExoticComponent, RefAttributes, useState } from 'react';
+import { forwardRef, ForwardRefExoticComponent, RefAttributes, useState } from 'react';
 import { defaultTheme } from '../../theme/utils/theme.util';
 import { Paragraph } from '../../typography';
 import Calendar from './Calendar';
+import { LocaleHandlerContext } from './contexts/locale-handler.context';
 import { MonthNavigatorType } from './enums/month-navigator-type.enum';
 import { DatePickerProps } from './models/date-picker-props';
-import { LocaleHandlerContextType } from './models/shared';
 import MonthNavigator from './MonthNavigator';
 import { getDaysOfMonth } from './utils/date-picker.utils';
 import { getLocaleHandler, LocaleHandler } from './utils/locale-handler.utils';
@@ -28,8 +28,6 @@ const titleStyles = css({
   width: '100%',
   paddingLeft: '12px',
 });
-
-export const LocaleHandlerContext = createContext<LocaleHandlerContextType | null>(null);
 
 const DatePicker: ForwardRefExoticComponent<DatePickerProps & RefAttributes<any>> = forwardRef<any, DatePickerProps>(
   ({ id, selectedDate, locale = LanguageCode.EN, onChange = () => {}, ...props }: DatePickerProps, ref?: any) => {
