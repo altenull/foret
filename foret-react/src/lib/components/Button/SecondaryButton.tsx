@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Color, hexToRgb } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
-import { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import { forwardRef } from 'react';
 import { ButtonProps } from './models/button-props';
 import { baseButtonStyles } from './utils/button.utils';
 
@@ -27,14 +27,12 @@ const secondaryButtonStyles = css(baseButtonStyles, secondaryButtonEffectStyles,
   color: Color.White,
 });
 
-const SecondaryButton: ForwardRefExoticComponent<ButtonProps & RefAttributes<any>> = forwardRef<any, ButtonProps>(
-  ({ children, ...props }: ButtonProps, ref?: any) => {
-    return (
-      <button css={secondaryButtonStyles} ref={ref} {...props}>
-        {children}
-      </button>
-    );
-  }
-);
+const SecondaryButton = forwardRef<HTMLButtonElement, ButtonProps>(({ children, ...props }: ButtonProps, ref) => {
+  return (
+    <button css={secondaryButtonStyles} ref={ref} {...props}>
+      {children}
+    </button>
+  );
+});
 
 export default SecondaryButton;

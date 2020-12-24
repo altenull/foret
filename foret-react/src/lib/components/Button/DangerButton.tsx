@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Color, hexToRgb } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
-import { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import { forwardRef } from 'react';
 import { ButtonProps } from './models/button-props';
 import { baseButtonStyles } from './utils/button.utils';
 
@@ -27,14 +27,12 @@ const dangerButtonStyles = css(baseButtonStyles, dangerButtonEffectStyles, {
   color: Color.White,
 });
 
-const DangerButton: ForwardRefExoticComponent<ButtonProps & RefAttributes<any>> = forwardRef<any, ButtonProps>(
-  ({ children, ...props }: ButtonProps, ref?: any) => {
-    return (
-      <button css={dangerButtonStyles} ref={ref} {...props}>
-        {children}
-      </button>
-    );
-  }
-);
+const DangerButton = forwardRef<HTMLButtonElement, ButtonProps>(({ children, ...props }, ref) => {
+  return (
+    <button css={dangerButtonStyles} ref={ref} {...props}>
+      {children}
+    </button>
+  );
+});
 
 export default DangerButton;

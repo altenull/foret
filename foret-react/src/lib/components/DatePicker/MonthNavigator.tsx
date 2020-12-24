@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
-import { FC } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '../../shared/icons';
 import { defaultTheme } from '../../theme/utils/theme.util';
 import { MonthNavigatorType } from './enums/month-navigator-type.enum';
@@ -25,7 +24,7 @@ const monthNavigatorStyles = css({
   },
 });
 
-const MonthNavigator: FC<MonthNavigatorProps> = ({ type, onNavigateMonth }: MonthNavigatorProps) => {
+const MonthNavigator: React.FC<MonthNavigatorProps> = ({ type, onNavigateMonth }: MonthNavigatorProps) => {
   const ICON_SIZE: number = 18;
 
   return (

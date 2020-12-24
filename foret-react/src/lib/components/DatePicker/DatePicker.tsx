@@ -2,7 +2,7 @@
 import { LanguageCode } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
 import { add, startOfMonth, sub } from 'date-fns';
-import { forwardRef, ForwardRefExoticComponent, RefAttributes, useState } from 'react';
+import { forwardRef, useState } from 'react';
 import { defaultTheme } from '../../theme/utils/theme.util';
 import { Paragraph } from '../../typography';
 import Calendar from './Calendar';
@@ -29,8 +29,8 @@ const titleStyles = css({
   paddingLeft: '12px',
 });
 
-const DatePicker: ForwardRefExoticComponent<DatePickerProps & RefAttributes<any>> = forwardRef<any, DatePickerProps>(
-  ({ id, selectedDate, locale = LanguageCode.EN, onChange = () => {}, ...props }: DatePickerProps, ref?: any) => {
+const DatePicker = forwardRef<HTMLDivElement, DatePickerProps>(
+  ({ id, selectedDate, locale = LanguageCode.EN, onChange = () => {}, ...props }: DatePickerProps, ref) => {
     // baseDate is always a date which is first day of month.
     const [baseDate, setBaseDate] = useState<Date>(startOfMonth(selectedDate != null ? selectedDate : new Date()));
     const [selectedDay, setSelectedDay] = useState<Date | null>(selectedDate != null ? selectedDate : null);

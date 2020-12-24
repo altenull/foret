@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Color } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
-import React, { forwardRef, ForwardRefExoticComponent, RefAttributes, useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useEffect, useRef, useState } from 'react';
 import { TabGroupProps } from './models/tab-group-props';
 import Tab from './Tab';
 
@@ -25,8 +25,8 @@ const tabIndicatorStyles = (left: number, width: number) => css`
   transition: all 0.3s linear;
 `;
 
-const TabGroup: ForwardRefExoticComponent<TabGroupProps & RefAttributes<any>> = forwardRef<any, TabGroupProps>(
-  ({ children, selectedValue, onChange = () => {} }: TabGroupProps, ref?: any) => {
+const TabGroup = forwardRef<HTMLDivElement, TabGroupProps>(
+  ({ children, selectedValue, onChange = () => {} }: TabGroupProps, ref) => {
     const [selected, setSelected] = useState<string>(selectedValue);
     const [tabIndicatorStatus, setTabIndicatorStatus] = useState<{ left: number; width: number }>(null);
     const tabListContainerRef = useRef(null);

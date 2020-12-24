@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Color } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
-import { forwardRef, ForwardRefExoticComponent, RefAttributes } from 'react';
+import { forwardRef } from 'react';
 import { TableRowProps } from './models/table-row-props';
 
 const tableRowStyles = css`
@@ -10,14 +10,12 @@ const tableRowStyles = css`
   }
 `;
 
-const TableRow: ForwardRefExoticComponent<TableRowProps & RefAttributes<any>> = forwardRef<any, TableRowProps>(
-  ({ children, ...props }: TableRowProps, ref?: any) => {
-    return (
-      <tr css={tableRowStyles} ref={ref} {...props}>
-        {children}
-      </tr>
-    );
-  }
-);
+const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(({ children, ...props }: TableRowProps, ref) => {
+  return (
+    <tr css={tableRowStyles} ref={ref} {...props}>
+      {children}
+    </tr>
+  );
+});
 
 export default TableRow;

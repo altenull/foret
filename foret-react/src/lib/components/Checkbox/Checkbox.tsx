@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Color, hexToRgb } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
-import React, { forwardRef, ForwardRefExoticComponent, RefAttributes, useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 import {
   hiddenInputStyles,
   inputSubtitle1Style,
@@ -60,8 +60,8 @@ const checkMarkStyles = (checked: boolean) =>
     visibility: checked ? 'visible' : 'hidden',
   });
 
-const Checkbox: ForwardRefExoticComponent<CheckboxProps & RefAttributes<any>> = forwardRef<any, CheckboxProps>(
-  ({ id, labelText, checked, disabled, onChange, ...props }: CheckboxProps, ref?: any) => {
+const Checkbox = forwardRef<HTMLDivElement, CheckboxProps>(
+  ({ id, labelText, checked, disabled, onChange, ...props }: CheckboxProps, ref) => {
     const [isHovered, setIsHovered] = useState(false);
     const [isFocused, setIsFocused] = useState(false);
     const [isChecked, setIsChecked] = useState(!!checked);

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Color, hexToRgb } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
-import React, { forwardRef, ForwardRefExoticComponent, RefAttributes, useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 import { hiddenInputStyles, inputWrapperStyles, labelStyles } from '../../shared/styles/input.styles';
 import { Subtitle1 } from '../../typography';
 import { RadioButtonProps } from './models/radio-button-props';
@@ -60,8 +60,8 @@ const radioSubtitle1Style = (disabled: boolean) =>
     }),
   });
 
-const RadioButton: ForwardRefExoticComponent<RadioButtonProps & RefAttributes<any>> = forwardRef<any, RadioButtonProps>(
-  ({ id, labelText, value, checked, disabled, onChange, ...props }: RadioButtonProps, ref?: any) => {
+const RadioButton = forwardRef<HTMLDivElement, RadioButtonProps>(
+  ({ id, labelText, value, checked, disabled, onChange, ...props }: RadioButtonProps, ref) => {
     const [isHovered, setIsHovered] = useState(false);
     const [isFocused, setIsFocused] = useState(false);
 

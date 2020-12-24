@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Color, hexToRgb } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
-import React, { forwardRef, ForwardRefExoticComponent, RefAttributes, useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 import { ChevronDownIcon } from '../../shared/icons';
 import { subtitle1Styles, subtitle2Styles } from '../../typography/utils/typography.utils';
 import { SelectProps } from './models/select-props';
@@ -56,7 +56,7 @@ const chevronDownSelectStyles = (isHovered: boolean, disabled: boolean) =>
     fill: disabled ? Color.Fog : isHovered ? Color.Black : Color.Stone,
   });
 
-const Select: ForwardRefExoticComponent<SelectProps & RefAttributes<any>> = forwardRef<any, SelectProps>(
+const Select = forwardRef<HTMLDivElement, SelectProps>(
   (
     {
       children,
@@ -68,7 +68,7 @@ const Select: ForwardRefExoticComponent<SelectProps & RefAttributes<any>> = forw
       onChange = () => {},
       ...props
     }: SelectProps,
-    ref?: any
+    ref
   ) => {
     const [isHovered, setIsHovered] = useState<boolean>(false);
 

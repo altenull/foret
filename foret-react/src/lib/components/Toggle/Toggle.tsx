@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Color, hexToRgb } from '@altenull/foret-core';
 import { css, jsx } from '@emotion/core';
-import React, { forwardRef, ForwardRefExoticComponent, RefAttributes, useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 import { hiddenInputStyles, inputWrapperStyles, labelStyles } from '../../shared/styles/input.styles';
 import { ToggleProps } from './models/toggle-props';
 
@@ -41,8 +41,8 @@ const switchStyles = (checked: boolean) =>
     transition: 'transform 0.15s ease-in-out',
   });
 
-const Toggle: ForwardRefExoticComponent<ToggleProps & RefAttributes<any>> = forwardRef<any, ToggleProps>(
-  ({ id, checked = false, disabled = false, onToggle = () => {}, ...props }: ToggleProps, ref?: any) => {
+const Toggle = forwardRef<HTMLDivElement, ToggleProps>(
+  ({ id, checked = false, disabled = false, onToggle = () => {}, ...props }: ToggleProps, ref) => {
     const [isFocused, setIsFocused] = useState(false);
     const [isChecked, setIsChecked] = useState(!!checked);
 
@@ -63,7 +63,7 @@ const Toggle: ForwardRefExoticComponent<ToggleProps & RefAttributes<any>> = forw
       <div css={inputWrapperStyles} ref={ref}>
         <input
           css={hiddenInputStyles}
-          type={'checkbox'}
+          type='checkbox'
           id={id}
           checked={isChecked}
           disabled={disabled}
