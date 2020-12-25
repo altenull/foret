@@ -29,11 +29,9 @@ const TableCell = forwardRef<HTMLTableHeaderCellElement | HTMLTableDataCellEleme
     const Component = type;
 
     return (
-      <td ref={ref}>
-        <Component css={tableCellStyles(align, type)} ref={ref} {...props}>
-          {children}
-        </Component>
-      </td>
+      <Component css={tableCellStyles(align, type)} ref={ref} {...props}>
+        {children}
+      </Component>
     );
   }
 );
